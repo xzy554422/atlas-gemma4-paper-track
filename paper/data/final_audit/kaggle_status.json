@@ -1,7 +1,10 @@
 {
   "status": "authenticated",
   "username": "yzx22442255",
-  "competition_membership_verified": ["gemma-4-developer-agent", "gemma-4-developer-agent-paper"],
+  "competition_membership_verified": [
+    "gemma-4-developer-agent",
+    "gemma-4-developer-agent-paper"
+  ],
   "gpu_total_hours": 30,
   "gpu_used_hours_before_preflight": 0,
   "preflight_kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight",
@@ -11,6 +14,42 @@
   "gpu_observed": "Tesla T4, capability 7.5",
   "failure": "Triton unified attention requested 98304 bytes shared memory; T4 limit 65536 bytes",
   "agent_status": "not_run",
-  "writeup_submission": "not_submitted_sdk_method_unavailable",
-  "checked_at": "2026-10-18"
+  "writeup_submission": "submitted",
+  "checked_at": "2026-10-21",
+  "writeup_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791929370440",
+  "writeup_id": 119115,
+  "writeup_content_state": "PUBLISHED",
+  "writeup_publish_time": "2026-10-21T18:26:49.557Z",
+  "writeup_word_count": 1989,
+  "writeup_checklist": "6 of 6 complete",
+  "project_link": "https://github.com/xzy554422/atlas-gemma4-paper-track",
+  "preflight_v1": {
+    "kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight",
+    "result": "failed_bounded_probe",
+    "failure": "Triton unified attention requested 98304 bytes shared memory; T4 limit 65536 bytes",
+    "agent_status": "not_run"
+  },
+  "preflight_v2": {
+    "kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight-v2-sm75-tile-patch",
+    "result": "failed",
+    "failure": "module-level monkey-patch not inherited by the spawned EngineCore process; same shared-memory error",
+    "agent_status": "not_run"
+  },
+  "preflight_v3": {
+    "kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight-v3-sm75-source-patch",
+    "result": "passed",
+    "model": "gemma-4-e4b-it-qat-w4a16-ct",
+    "gpu": "Tesla T4, capability 7.5, 15636037632 bytes",
+    "patch": "source-level _get_tile_size guard: tile 16 when head_size > 128",
+    "patch_sha256_before": "5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921",
+    "patch_sha256_after": "4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f",
+    "generated_tokens": 32,
+    "generated_text": "\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum",
+    "weights_gib": 9.01,
+    "weight_load_seconds": 223.0,
+    "engine_init_seconds": 17.35,
+    "elapsed_seconds": 360.629,
+    "output_quality": "degenerate and repetitive; compatibility only, not a capability result",
+    "agent_status": "not_run"
+  }
 }

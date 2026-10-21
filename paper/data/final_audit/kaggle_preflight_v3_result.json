@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "python": "3.12.13",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+  "generation_status": "passed",
+  "agent_status": "not_run",
+  "configuration_scope": "short-context runtime probe, not official scoring",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1",
+    "compressed-tensors": "0.15.0.1",
+    "swegemma": "0.2.11",
+    "adk-submission": "0.2.13"
+  },
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    }
+  ],
+  "compatibility": {
+    "status": "requires_runtime_test",
+    "attention_risk": true,
+    "note": "Memory capacity alone does not establish attention-kernel support."
+  },
+  "checkpoint_architectures": [
+    "Gemma4ForConditionalGeneration"
+  ],
+  "checkpoint_attention": {
+    "head_dim": 256,
+    "global_head_dim": 512,
+    "dtype": "bfloat16",
+    "torch_dtype": null
+  },
+  "runtime_config": {
+    "model": "/kaggle/input/models/google/gemma-4/other/gemma-4-e4b-it-qat-w4a16-ct/2",
+    "dtype": "half",
+    "tensor_parallel_size": 1,
+    "max_model_len": 2048,
+    "gpu_memory_utilization": 0.8,
+    "enforce_eager": true,
+    "disable_log_stats": true,
+    "limit_mm_per_prompt": {
+      "image": 0,
+      "video": 0,
+      "audio": 0
+    }
+  },
+  "sm75_tile_patch": {
+    "source_files": [
+      {
+        "path": "/usr/local/lib/python3.12/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py",
+        "status": "patched",
+        "sha256_before": "5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921",
+        "sha256_after": "4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f"
+      }
+    ],
+    "capability_major": 7,
+    "applied_modules": [
+      "vllm.v1.attention.ops.triton_unified_attention"
+    ],
+    "verify": {
+      "head512_decode": 16,
+      "head512_prefill": 16
+    }
+  },
+  "generated_text": "\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum",
+  "generated_tokens": 32,
+  "elapsed_seconds": 360.629,
+  "notebook_elapsed_seconds": 430.823
+}
