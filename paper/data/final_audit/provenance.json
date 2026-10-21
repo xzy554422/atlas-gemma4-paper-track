@@ -1,0 +1,3668 @@
+{
+  "rule": "Maximum per-record finished timestamp, falling back to started; timestamped records outrank missing/invalid timestamps. Naive timestamps use UTC+08:00. Ties: more observed mode results, then JUnit-bearing results, then delta-bearing results; explicit source priority resume rN > shardN-M > main (higher numeric generation/index wins); final tie uses canonical record SHA256. No filesystem mtime or enumeration-order overwrite.",
+  "tasks": [
+    {
+      "instance_id": "fastapi_11194",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "4ce5bc71e324f8ae532b14cc031322cce510a9d04215b1150f665c844bdd1b6a",
+      "candidate_count": 2,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.json",
+          "started": "2026-10-16T17:33:28",
+          "finished": "2026-10-16T17:35:19",
+          "timestamp_status": "finished",
+          "quality": [
+            12,
+            12,
+            9
+          ],
+          "source_priority": [
+            0,
+            0,
+            0
+          ],
+          "sha256": "22b749c2231b85ee49eed64e2f267f25ab7e746e628a41050034d7618dd82529"
+        },
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:07:01",
+          "finished": "2026-10-16T22:10:58",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "4ce5bc71e324f8ae532b14cc031322cce510a9d04215b1150f665c844bdd1b6a"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_11355",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "3dc1afd3ee9f2d7d1e249591f8001b415e2c518c0f3fc977cff2eb07f0df1e7d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:32:54",
+          "finished": "2026-10-16T18:36:57",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "3dc1afd3ee9f2d7d1e249591f8001b415e2c518c0f3fc977cff2eb07f0df1e7d"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_12942",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "2c7dc8258649bfd78dac4166f5ebae29b6b9d8f0fc6dc6bd5189749a898a6ba3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:25:04",
+          "finished": "2026-10-16T18:28:39",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "2c7dc8258649bfd78dac4166f5ebae29b6b9d8f0fc6dc6bd5189749a898a6ba3"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_13207",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "22e8d4f0c2d909167e1024c7a0bfc754aa16672a6c6afef924a35baabd1e2618",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T19:55:31",
+          "finished": "2026-10-16T19:58:42",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "22e8d4f0c2d909167e1024c7a0bfc754aa16672a6c6afef924a35baabd1e2618"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_13537",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "33a316298ae13776f703bddd1b7db7ab3531663c1f8a077eb6ea7cded4437217",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:19:14",
+          "finished": "2026-10-16T20:22:26",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "33a316298ae13776f703bddd1b7db7ab3531663c1f8a077eb6ea7cded4437217"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_13713",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "f5bf620eb25d127481be4fbf6a254645e6f2d10c0d1666351f80f694e369f245",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:00:51",
+          "finished": "2026-10-16T20:03:36",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "f5bf620eb25d127481be4fbf6a254645e6f2d10c0d1666351f80f694e369f245"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_13786",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "77d872a4cfdaa9442997a5e94bb7a9b115cc8015ffcc8d8699c7549bdb53162b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:06:43",
+          "finished": "2026-10-16T22:10:38",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "77d872a4cfdaa9442997a5e94bb7a9b115cc8015ffcc8d8699c7549bdb53162b"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_13920",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "f859215111a07a314103ebe7c2be5b9292762acc2f9e1c8920d9d3e7ea9b1823",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T19:46:47",
+          "finished": "2026-10-16T19:52:03",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "f859215111a07a314103ebe7c2be5b9292762acc2f9e1c8920d9d3e7ea9b1823"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14077",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "f3b9f3ebafba94f13f7066e6d7615835a12a402cda085d2ff441b20b4e6705fd",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T21:58:37",
+          "finished": "2026-10-16T22:02:21",
+          "timestamp_status": "finished",
+          "quality": [
+            28,
+            28,
+            24
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "f3b9f3ebafba94f13f7066e6d7615835a12a402cda085d2ff441b20b4e6705fd"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14099",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "a41ca24bb6265a6f4566e14b679ee8125d39d3270c2c37d289016bbd5e1b9f39",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:22:45",
+          "finished": "2026-10-16T18:26:05",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "a41ca24bb6265a6f4566e14b679ee8125d39d3270c2c37d289016bbd5e1b9f39"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14186",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "81190c0bc868f52f6854bc3260064f392e3900585039442cffd9754a78080c63",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:02:03",
+          "finished": "2026-10-16T20:04:42",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "81190c0bc868f52f6854bc3260064f392e3900585039442cffd9754a78080c63"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14246",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "5ce093690d3986cf385b4162e6417b6acd0472b58631d2f92b511f78b770d510",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:48:25",
+          "finished": "2026-10-16T22:52:19",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "5ce093690d3986cf385b4162e6417b6acd0472b58631d2f92b511f78b770d510"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14258",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "f7b1956621a3ef0fe13e93676bf5446a758bbd4c9583b1f499be0ec3558ef561",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:12:20",
+          "finished": "2026-10-16T18:17:01",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "f7b1956621a3ef0fe13e93676bf5446a758bbd4c9583b1f499be0ec3558ef561"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14262",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "4d8e74835f35063669e4da27e1953f8a4b36cd1a1069930ac3e9b9267a6f1f1d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T19:56:55",
+          "finished": "2026-10-16T19:59:48",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "4d8e74835f35063669e4da27e1953f8a4b36cd1a1069930ac3e9b9267a6f1f1d"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14266",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "002faa6b47e2c3ccaf404f0e41bc7ac568728d637a47c90c7a434f634671d7db",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T19:57:40",
+          "finished": "2026-10-16T20:00:51",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "002faa6b47e2c3ccaf404f0e41bc7ac568728d637a47c90c7a434f634671d7db"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14297",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "cd82d179dc55bd37961fda323c52fa4bc322df7aeac9719b4ce5476c5efdd203",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:02:37",
+          "finished": "2026-10-16T22:07:01",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "cd82d179dc55bd37961fda323c52fa4bc322df7aeac9719b4ce5476c5efdd203"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14301",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "2306a20dc5fcaa048368795c11cdd8b4af4847d41cb797c936458c5ca55c26c1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T19:58:42",
+          "finished": "2026-10-16T20:02:03",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "2306a20dc5fcaa048368795c11cdd8b4af4847d41cb797c936458c5ca55c26c1"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14303",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "7f83fe3e15e985eb646c32404fa61b4496fb93f49386865ad1d7033a55a41f18",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:18:55",
+          "finished": "2026-10-16T20:21:59",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "7f83fe3e15e985eb646c32404fa61b4496fb93f49386865ad1d7033a55a41f18"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14306",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "172ceb693eea09f5bd7f0e8954f8f985f314d718a7a38ad3e0e00d105226f4e4",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T19:52:03",
+          "finished": "2026-10-16T19:55:31",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "172ceb693eea09f5bd7f0e8954f8f985f314d718a7a38ad3e0e00d105226f4e4"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14349",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "73d06816fd268541425b8c59b61c68e8d9c63e6151d5e009885505afe623d7fb",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:28:39",
+          "finished": "2026-10-16T18:32:45",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "73d06816fd268541425b8c59b61c68e8d9c63e6151d5e009885505afe623d7fb"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14356",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "ab2475e6f846366cd4c7d2df65d48143dd31ef531026fdc949569e07959d21f4",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T19:53:44",
+          "finished": "2026-10-16T19:56:55",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "ab2475e6f846366cd4c7d2df65d48143dd31ef531026fdc949569e07959d21f4"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14360",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "38a6f9d7b59f627edc51cf0276955119cd3eff38742b90ff3d4aedc6b80c97ba",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:42:52",
+          "finished": "2026-10-16T18:47:02",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "38a6f9d7b59f627edc51cf0276955119cd3eff38742b90ff3d4aedc6b80c97ba"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14361",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "a017f15ffcd582e877b16d6ca59e7c2120585fe48a4659835fc69e240d2e67eb",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T21:55:16",
+          "finished": "2026-10-16T21:59:03",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "a017f15ffcd582e877b16d6ca59e7c2120585fe48a4659835fc69e240d2e67eb"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14371",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "258131274e226af8079e9d580fd5089f77b04d0c6988317e862517c181096e6b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:02:21",
+          "finished": "2026-10-16T22:06:43",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "258131274e226af8079e9d580fd5089f77b04d0c6988317e862517c181096e6b"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14372",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "de8a47ebb2db160a8278cdf379f2fda102f9eb750b4eb165751f7388b446a9dd",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:28:44",
+          "finished": "2026-10-16T18:32:54",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "de8a47ebb2db160a8278cdf379f2fda102f9eb750b4eb165751f7388b446a9dd"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14419",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "67477c714594d5a9a540d4c918fa526da60293d8ad9a1d1ac18f549454ed1acb",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T21:55:16",
+          "finished": "2026-10-16T21:59:08",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "67477c714594d5a9a540d4c918fa526da60293d8ad9a1d1ac18f549454ed1acb"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14430",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "1477cf3afa8322444aab2143cba10067019ebb3d095b4aa8b7877c15dc3a8f7a",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:41:13",
+          "finished": "2026-10-16T18:45:37",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "1477cf3afa8322444aab2143cba10067019ebb3d095b4aa8b7877c15dc3a8f7a"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14448",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "600c92ae39665e6356c936304ff6de7d0d5296f3f0b21545ed453b213f7c4e2d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:34:31",
+          "finished": "2026-10-16T18:38:44",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "600c92ae39665e6356c936304ff6de7d0d5296f3f0b21545ed453b213f7c4e2d"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14455",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "86ca5006a95e5d360703a9455278a734bbf99b72b6c9462bf9e4559ccc3d04ee",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T19:50:40",
+          "finished": "2026-10-16T19:53:44",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "86ca5006a95e5d360703a9455278a734bbf99b72b6c9462bf9e4559ccc3d04ee"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14458",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "7c118c6568c6f9b09c49745125bdf6609f3eede9c11e2a556f776a428bf2006e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:36:57",
+          "finished": "2026-10-16T18:41:17",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "7c118c6568c6f9b09c49745125bdf6609f3eede9c11e2a556f776a428bf2006e"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14459",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "0f34c90c0821f5cb6f4252a4678ec0e039cf80f012f6c6bf9d332f65659d4976",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:36:52",
+          "finished": "2026-10-16T18:41:13",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "0f34c90c0821f5cb6f4252a4678ec0e039cf80f012f6c6bf9d332f65659d4976"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14463",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "08f5ad3e66a061165f209747d96e58623fe29d5852d6898411fbd650015b1ec6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:23:00",
+          "finished": "2026-10-16T18:28:44",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "08f5ad3e66a061165f209747d96e58623fe29d5852d6898411fbd650015b1ec6"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14479",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "39681e3408e2b479036c1ca27e1774346c6323b80b03518c42038a0822754145",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T19:46:48",
+          "finished": "2026-10-16T19:50:40",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "39681e3408e2b479036c1ca27e1774346c6323b80b03518c42038a0822754145"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14482",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "4cae800220285105fe51e2cf8b48ccd57ae41e433758c092d71fa7ee7cd2d307",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:30:13",
+          "finished": "2026-10-16T18:34:31",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "4cae800220285105fe51e2cf8b48ccd57ae41e433758c092d71fa7ee7cd2d307"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14485",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "15d9aa3a8868614d8473b47cd7fd9b8baa8f19ee94bdc70f3073891115f1155a",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:32:45",
+          "finished": "2026-10-16T18:36:52",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "15d9aa3a8868614d8473b47cd7fd9b8baa8f19ee94bdc70f3073891115f1155a"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14487",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "822a253633c62c872b6d0dd2169b035a194ea90fde732e07c44c80f5da0763db",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T21:55:15",
+          "finished": "2026-10-16T21:58:37",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "822a253633c62c872b6d0dd2169b035a194ea90fde732e07c44c80f5da0763db"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14492",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "fca77929ea67a20e41808bfb94c64cb7e57d9a08da940d442072c6388bb34a73",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:17:28",
+          "finished": "2026-10-16T18:22:45",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "fca77929ea67a20e41808bfb94c64cb7e57d9a08da940d442072c6388bb34a73"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14512",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "305a8d31a1c65fc29e828f5812228ccb755c87af900299fafbf59ef48140f997",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:26:05",
+          "finished": "2026-10-16T18:30:12",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "305a8d31a1c65fc29e828f5812228ccb755c87af900299fafbf59ef48140f997"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14583",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "b0c694f2c9ab7868a5dfe42d8b6b135d452c0291c8efda893577c39c435d5950",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:15:52",
+          "finished": "2026-10-16T20:19:14",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "b0c694f2c9ab7868a5dfe42d8b6b135d452c0291c8efda893577c39c435d5950"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14605",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "a69c5e7ce909f5f45e3d64de922802bc9cbf315f6c89491c7aa976c7e4f591d7",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:18:05",
+          "finished": "2026-10-16T20:21:54",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "a69c5e7ce909f5f45e3d64de922802bc9cbf315f6c89491c7aa976c7e4f591d7"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14609",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "383b86b6302eed79dc3b7adaab91f16fbd0cea1423f8b351d4754ad66af0508e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T19:46:48",
+          "finished": "2026-10-16T19:51:15",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            25,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "383b86b6302eed79dc3b7adaab91f16fbd0cea1423f8b351d4754ad66af0508e"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14616",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "56c8545c770c7bc3b29311eb004ab09514787ed46ff9a84949701ac7bbd27f12",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T22:07:07",
+          "finished": "2026-10-16T22:13:44",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "56c8545c770c7bc3b29311eb004ab09514787ed46ff9a84949701ac7bbd27f12"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14786",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "b6418644d931870a5f2c7c9a48e245ead55673ecf5e030c394f536da738688e1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:19:05",
+          "finished": "2026-10-16T18:25:04",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "b6418644d931870a5f2c7c9a48e245ead55673ecf5e030c394f536da738688e1"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14791",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "b8520de89f929003eb15552e16710efed1a6c272232378853b55e76134979da3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:13:00",
+          "finished": "2026-10-16T20:18:05",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "b8520de89f929003eb15552e16710efed1a6c272232378853b55e76134979da3"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14794",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "91a3e2ec348b596b01b117e9b0389fc981c6355c539b44d7ea0dc76bc53a29f7",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:17:01",
+          "finished": "2026-10-16T18:23:00",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "91a3e2ec348b596b01b117e9b0389fc981c6355c539b44d7ea0dc76bc53a29f7"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14851",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "0b539f43255f4b6fb5239c53e53be5340f96f85f2676cfa291d5f83ccbf77328",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:13:06",
+          "finished": "2026-10-16T18:19:05",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "0b539f43255f4b6fb5239c53e53be5340f96f85f2676cfa291d5f83ccbf77328"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14873",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "ca9542d2f8b7f57ca932ab24e4f3d7b051af9a9e041b2c027521aaece709c9ce",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:12:54",
+          "finished": "2026-10-16T18:17:28",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "ca9542d2f8b7f57ca932ab24e4f3d7b051af9a9e041b2c027521aaece709c9ce"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14953",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "e97441338e1d564aa6f33307fd8becb10fa00a0d4de280c0da943aec8f87bc67",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:48:26",
+          "finished": "2026-10-16T22:52:22",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "e97441338e1d564aa6f33307fd8becb10fa00a0d4de280c0da943aec8f87bc67"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14962",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "39c4a2b078e3b468e8712b1020393ce23d92e4587de604cc3813f1cdc185dd91",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T17:43:01",
+          "finished": "2026-10-16T17:46:48",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "39c4a2b078e3b468e8712b1020393ce23d92e4587de604cc3813f1cdc185dd91"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14964",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "010d905cef0af82711addd4b2de2dc00d9ac9bbc236d21505e1c6ab9efd22de4",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T17:44:10",
+          "finished": "2026-10-16T17:48:13",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "010d905cef0af82711addd4b2de2dc00d9ac9bbc236d21505e1c6ab9efd22de4"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14978",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "12616f60f58064234121274827b52e309356d76708d13941bbfc1071a11d1379",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T17:48:03",
+          "finished": "2026-10-16T17:51:25",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "12616f60f58064234121274827b52e309356d76708d13941bbfc1071a11d1379"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_14986",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "be43ea47895e80ad6de8517eaf3d47340df915ee6be78152a5031f92df6dc7d7",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T17:46:48",
+          "finished": "2026-10-16T17:50:46",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "be43ea47895e80ad6de8517eaf3d47340df915ee6be78152a5031f92df6dc7d7"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15023",
+      "selected_source": "p1d_h1_decision.shard3-4.json",
+      "selected_sha256": "aa52d7748ee7251406581840e428881f93a7efb380005dfc2a4aa59a530ed17b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard3-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard3-4.json",
+          "started": "2026-10-16T17:43:16",
+          "finished": "2026-10-16T17:46:58",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            3
+          ],
+          "sha256": "aa52d7748ee7251406581840e428881f93a7efb380005dfc2a4aa59a530ed17b"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15030",
+      "selected_source": "p1d_h1_decision.shard3-4.json",
+      "selected_sha256": "11b9f1d37c8d68a2b165e8cd5ad62c136ad76c77a2ac3d441367b42385034ba1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard3-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard3-4.json",
+          "started": "2026-10-16T17:39:06",
+          "finished": "2026-10-16T17:43:16",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            3
+          ],
+          "sha256": "11b9f1d37c8d68a2b165e8cd5ad62c136ad76c77a2ac3d441367b42385034ba1"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15280",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "2a2347f5a55d8a0959488fa753b989b1bbd6e8508fe8220d493f637fcb4258ac",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T17:44:04",
+          "finished": "2026-10-16T17:48:03",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "2a2347f5a55d8a0959488fa753b989b1bbd6e8508fe8220d493f637fcb4258ac"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15588",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "1008010255af74bd62153606a1918562bbe1d5b31abe25226520f89f9bd9bf34",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T17:39:05",
+          "finished": "2026-10-16T17:44:04",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "1008010255af74bd62153606a1918562bbe1d5b31abe25226520f89f9bd9bf34"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15589",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "4c8de37a4da658b363fe928815780feece5a8e5cceab61023e2708f89e71225b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T17:39:05",
+          "finished": "2026-10-16T17:44:10",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "4c8de37a4da658b363fe928815780feece5a8e5cceab61023e2708f89e71225b"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15661",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "1a726c793a1c1e7baa471664ab8f5eee0730792de61406ae7703dc7da2d167b1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T17:39:05",
+          "finished": "2026-10-16T17:43:01",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "1a726c793a1c1e7baa471664ab8f5eee0730792de61406ae7703dc7da2d167b1"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15745",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "8e2bab32c5a9818bfb7a92c80b30f9e04739239bce659f2658b35a3b89e22443",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T22:02:33",
+          "finished": "2026-10-16T22:07:07",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "8e2bab32c5a9818bfb7a92c80b30f9e04739239bce659f2658b35a3b89e22443"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15763",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "a139be61f1e9993dd6a231d233201b106550f8ead10e45128941ecc991736d6f",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:14:54",
+          "finished": "2026-10-16T20:18:55",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "a139be61f1e9993dd6a231d233201b106550f8ead10e45128941ecc991736d6f"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15785",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "95821dad43598cfba7534d957589a18089e1a4bb2fb7458890c47d0de3ce2321",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:11:53",
+          "finished": "2026-10-16T20:15:52",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "95821dad43598cfba7534d957589a18089e1a4bb2fb7458890c47d0de3ce2321"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_15800",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "45ded468c559f9edefa53a2fce2a7f006d9a4f54b62ec2327140f0dea7b9b78c",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:11:04",
+          "finished": "2026-10-16T20:14:54",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            25,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "45ded468c559f9edefa53a2fce2a7f006d9a4f54b62ec2327140f0dea7b9b78c"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_5077",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "db9a4bdd7f62c4233f8809941efc8eda4c8e36c61ac1ec83f92ab25fd4af8aa0",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:38:44",
+          "finished": "2026-10-16T18:42:52",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "db9a4bdd7f62c4233f8809941efc8eda4c8e36c61ac1ec83f92ab25fd4af8aa0"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_5624",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "cb28f0a916d064138a668c1dafa677cac155700f6c39fee9a595430587a840a3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T19:54:29",
+          "finished": "2026-10-16T19:57:40",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "cb28f0a916d064138a668c1dafa677cac155700f6c39fee9a595430587a840a3"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_9425",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "c7d4c86c4e8b3de06103809a046d62149ac1e73cfb759de1191224059fe7f8e1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T19:59:48",
+          "finished": "2026-10-16T20:02:55",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "c7d4c86c4e8b3de06103809a046d62149ac1e73cfb759de1191224059fe7f8e1"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_9555",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "1ac15af63c800bfda96fa46db2735e08b8c36e5a7cedf7c1ce567390a39d0ef3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T19:51:16",
+          "finished": "2026-10-16T19:54:29",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "1ac15af63c800bfda96fa46db2735e08b8c36e5a7cedf7c1ce567390a39d0ef3"
+        }
+      ]
+    },
+    {
+      "instance_id": "fastapi_9753",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "cf4a14e3174887644d61da73494432fca772b1425a9552b52cf5905fe6fd4a75",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:41:17",
+          "finished": "2026-10-16T18:45:27",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "cf4a14e3174887644d61da73494432fca772b1425a9552b52cf5905fe6fd4a75"
+        }
+      ]
+    },
+    {
+      "instance_id": "httpx_3672",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "25ff2179724698c07355ebe4e54b1e1999efef5ce38b47f8f658e45a38bcb3ee",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T22:48:25",
+          "finished": "2026-10-16T23:06:06",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            25,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "25ff2179724698c07355ebe4e54b1e1999efef5ce38b47f8f658e45a38bcb3ee"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_6589",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "9e98bc291b3c5ffd317bc659ec7cde9217837c4ef416ddf9904d9b36e0ae085c",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:10:58",
+          "finished": "2026-10-16T22:19:01",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            15,
+            12
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "9e98bc291b3c5ffd317bc659ec7cde9217837c4ef416ddf9904d9b36e0ae085c"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_6592",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "25192eb8c80b29ce8a4fdbe23ef566388ecd6af2e2de18bf36e070e091cdd591",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:52:19",
+          "finished": "2026-10-16T22:57:04",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            12,
+            8
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "25192eb8c80b29ce8a4fdbe23ef566388ecd6af2e2de18bf36e070e091cdd591"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_6629",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "c8ffa29b4a763ca1c24b7108e06f018ab63cdfaeecc1aee55f8458e46c2313fc",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:10:38",
+          "finished": "2026-10-16T22:18:47",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            17,
+            12
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "c8ffa29b4a763ca1c24b7108e06f018ab63cdfaeecc1aee55f8458e46c2313fc"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_6644",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "d91564bc34f8daae4a86d2011e9f97bf40736a89ec4b282066ad87d012e23558",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T22:13:44",
+          "finished": "2026-10-16T22:21:50",
+          "timestamp_status": "finished",
+          "quality": [
+            25,
+            17,
+            12
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "d91564bc34f8daae4a86d2011e9f97bf40736a89ec4b282066ad87d012e23558"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_6757",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "c13a72d286e60849bf627dc488ad0dcfacda7c792b259fe51c118fb391b520a7",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-16T23:54:03",
+          "finished": "2026-10-17T00:01:47",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            15,
+            12
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "c13a72d286e60849bf627dc488ad0dcfacda7c792b259fe51c118fb391b520a7"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7205",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "b44b479fd4283891eea558ea71106ead3902a06a118a2bcf15eef3fd009be886",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:00:14",
+          "finished": "2026-10-16T18:09:14",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "b44b479fd4283891eea558ea71106ead3902a06a118a2bcf15eef3fd009be886"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7309",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "d9836fa03d981f23f79135fee0cdfcbb86752f3c19a27c08218150b11c5dde0e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T17:59:40",
+          "finished": "2026-10-16T18:08:39",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "d9836fa03d981f23f79135fee0cdfcbb86752f3c19a27c08218150b11c5dde0e"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7315",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "61bfa94da94b8a84259a95376c865b106d5f5a3c9f7fa142693b3e737f460132",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T17:57:11",
+          "finished": "2026-10-16T18:05:58",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "61bfa94da94b8a84259a95376c865b106d5f5a3c9f7fa142693b3e737f460132"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7328",
+      "selected_source": "p1d_h1_decision.shard3-4.json",
+      "selected_sha256": "a6192dd03e32045f3b9ad238c6dd6a8e27b57463ce6e28c3d09147ce237eb5c6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard3-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard3-4.json",
+          "started": "2026-10-16T17:56:00",
+          "finished": "2026-10-16T18:04:50",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            3
+          ],
+          "sha256": "a6192dd03e32045f3b9ad238c6dd6a8e27b57463ce6e28c3d09147ce237eb5c6"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7427",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "03f37e9942b87405f885b530160ab9784cced84c6c8f53b93b40825448205c6d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T17:51:25",
+          "finished": "2026-10-16T18:00:14",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "03f37e9942b87405f885b530160ab9784cced84c6c8f53b93b40825448205c6d"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7433",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "0075794585ab00d9ccd253d08b3763993f9f3bf7e771f1a592f9df7ce6bda9a3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T17:50:46",
+          "finished": "2026-10-16T17:59:40",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "0075794585ab00d9ccd253d08b3763993f9f3bf7e771f1a592f9df7ce6bda9a3"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7502",
+      "selected_source": "p1d_h1_decision.shard3-4.json",
+      "selected_sha256": "9236c15f83bb03fc1d49c4e75860c8e0a17ad4c83302d48773d4b5484529c47f",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard3-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard3-4.json",
+          "started": "2026-10-16T17:46:58",
+          "finished": "2026-10-16T17:56:00",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            3
+          ],
+          "sha256": "9236c15f83bb03fc1d49c4e75860c8e0a17ad4c83302d48773d4b5484529c47f"
+        }
+      ]
+    },
+    {
+      "instance_id": "requests_7505",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "daf92f41935fc94adac05e612c4b1b6b3d1f8fce5b95f859ebbf31ac35a6d4a8",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T17:48:13",
+          "finished": "2026-10-16T17:57:11",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            15,
+            12
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "daf92f41935fc94adac05e612c4b1b6b3d1f8fce5b95f859ebbf31ac35a6d4a8"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_2725",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "9f1a248bc7c2d3f3d6d10c23e10d10e916f86d2f55e8bc7aaf07db8886abe1bb",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:34:57",
+          "finished": "2026-10-16T22:38:16",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "9f1a248bc7c2d3f3d6d10c23e10d10e916f86d2f55e8bc7aaf07db8886abe1bb"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_2943",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "4cc2ff01f9cf0c722b06dc592cb565ddf6ef2a32c3fdc12470642f9a13b7cde1",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-17T00:07:27",
+          "finished": "2026-10-17T00:10:22",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "4cc2ff01f9cf0c722b06dc592cb565ddf6ef2a32c3fdc12470642f9a13b7cde1"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3006",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "334356f4dd2b0aac1f4b0d5b59d5b07a55dd1398d1f3a6c2b6c84435cb3b2ab8",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T23:05:37",
+          "finished": "2026-10-16T23:08:36",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "334356f4dd2b0aac1f4b0d5b59d5b07a55dd1398d1f3a6c2b6c84435cb3b2ab8"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3043",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "a431e97c9159f8706070dce2f25ad9dca5334799cc0c84aaf8ba0f1fa967641e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-17T01:06:06",
+          "finished": "2026-10-17T01:08:15",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "a431e97c9159f8706070dce2f25ad9dca5334799cc0c84aaf8ba0f1fa967641e"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3052",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "35d9c40b5f246b1cf9043aff85e6a18a104135a87bb2cb3c8207ef11b201ad3e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T23:13:00",
+          "finished": "2026-10-16T23:15:59",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "35d9c40b5f246b1cf9043aff85e6a18a104135a87bb2cb3c8207ef11b201ad3e"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3061",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "bbb7aff9ab36c50877c149d0e2ea9c80dee20595f24ec9415cf992642f58f7c4",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-17T00:13:18",
+          "finished": "2026-10-17T00:16:10",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "bbb7aff9ab36c50877c149d0e2ea9c80dee20595f24ec9415cf992642f58f7c4"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3063",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "091012284f90965966b50d915f92776a846b1e5b3b0cdebd6ed28b173fc9c04e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-17T01:08:15",
+          "finished": "2026-10-17T01:10:48",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "091012284f90965966b50d915f92776a846b1e5b3b0cdebd6ed28b173fc9c04e"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3064",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "f45af04c8f86ce9a5f17ec8a57ce0f72162093d7265f049b9f0599a209730c4f",
+      "candidate_count": 2,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.json",
+          "started": "2026-10-16T19:25:27",
+          "finished": "2026-10-16T19:27:54",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            0,
+            0,
+            0
+          ],
+          "sha256": "64faaf96978516bd04288dba31fda42c0091ee1377acf7f91b32e0a1216a923d"
+        },
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T23:18:57",
+          "finished": "2026-10-16T23:22:03",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "f45af04c8f86ce9a5f17ec8a57ce0f72162093d7265f049b9f0599a209730c4f"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3067",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "088f13698dabd7767be5980999f2107bd31666a3871eb152841fcacfa92e425b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-17T00:10:22",
+          "finished": "2026-10-17T00:13:18",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "088f13698dabd7767be5980999f2107bd31666a3871eb152841fcacfa92e425b"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3105",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "b981f7aa0e3c739f93610b4ff4c0736d2e57dd82e95459eed5cdedf8d5500ccd",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T23:03:13",
+          "finished": "2026-10-16T23:05:37",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            17,
+            12
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "b981f7aa0e3c739f93610b4ff4c0736d2e57dd82e95459eed5cdedf8d5500ccd"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3130",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "e15cd4e22c9e1b858ea332eb8cf5693cb4bbfd32377784da4924d4991f766973",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T23:15:59",
+          "finished": "2026-10-16T23:18:57",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "e15cd4e22c9e1b858ea332eb8cf5693cb4bbfd32377784da4924d4991f766973"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3180",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "973128488fa89826c40f051a7f838402307a0c3c23efd5d7a1d89eeebc0bc916",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:18:47",
+          "finished": "2026-10-16T22:21:47",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "973128488fa89826c40f051a7f838402307a0c3c23efd5d7a1d89eeebc0bc916"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3278",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "2ff62c3550565f929c178ffb79beef4bb1f43a8d4413fd5a4eeb2d0bac968ab8",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-17T01:03:16",
+          "finished": "2026-10-17T01:06:06",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "2ff62c3550565f929c178ffb79beef4bb1f43a8d4413fd5a4eeb2d0bac968ab8"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3296",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "65171331dc2f7f583b85fa5953254af5f883700ae2ddd1e56f69786e72f9ba07",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:22:10",
+          "finished": "2026-10-16T22:25:16",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "65171331dc2f7f583b85fa5953254af5f883700ae2ddd1e56f69786e72f9ba07"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3454",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "2bd132f3c8a95310e95f259c430148fe3af6e70b9688f1a4fe10acd1777d08b1",
+      "candidate_count": 2,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.json",
+          "started": "2026-10-16T17:31:54",
+          "finished": "2026-10-16T17:33:28",
+          "timestamp_status": "finished",
+          "quality": [
+            12,
+            12,
+            9
+          ],
+          "source_priority": [
+            0,
+            0,
+            0
+          ],
+          "sha256": "3cf9368373f73b15f575052ea3a6688dbaa105ae3f26a961e7bb2ed2e98a511d"
+        },
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-17T00:04:33",
+          "finished": "2026-10-17T00:07:27",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "2bd132f3c8a95310e95f259c430148fe3af6e70b9688f1a4fe10acd1777d08b1"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3468",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "dbf84dd6791e24a32afb0f54b7b04f8aade053f4894d12961424aac9d802efb3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T23:06:06",
+          "finished": "2026-10-16T23:09:41",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "dbf84dd6791e24a32afb0f54b7b04f8aade053f4894d12961424aac9d802efb3"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3469",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "75964939bd0eddcf81b2849a2dc50dd3c14184c636f8b6c22f81187fb541ec2b",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:31:34",
+          "finished": "2026-10-16T22:34:57",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "75964939bd0eddcf81b2849a2dc50dd3c14184c636f8b6c22f81187fb541ec2b"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3470",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "1a349e7f15022a73515d14475d864070bb0aa3241afdac58a3d15c5f67f1b6fa",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T23:00:04",
+          "finished": "2026-10-16T23:03:13",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "1a349e7f15022a73515d14475d864070bb0aa3241afdac58a3d15c5f67f1b6fa"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3471",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "06e2a0cbabf8e791be245f228a8a8e20ca52f945aa2bc8e73960b2985af068c3",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:31:25",
+          "finished": "2026-10-16T22:34:49",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "06e2a0cbabf8e791be245f228a8a8e20ca52f945aa2bc8e73960b2985af068c3"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3472",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "a68a4df2238ce714600f2f46c3864b22ee2fcb3ecdd8f20f90af0560c5d97758",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:28:24",
+          "finished": "2026-10-16T22:31:34",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "a68a4df2238ce714600f2f46c3864b22ee2fcb3ecdd8f20f90af0560c5d97758"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3480",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "d3dd5fdefddc6e8a7d10f5d97ef6ea2f44cb35d0121f6099b2c1ab3e878e5d11",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T23:57:58",
+          "finished": "2026-10-17T01:03:16",
+          "timestamp_status": "finished",
+          "quality": [
+            26,
+            14,
+            0
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "d3dd5fdefddc6e8a7d10f5d97ef6ea2f44cb35d0121f6099b2c1ab3e878e5d11"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3486",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "8a0fef13811b0ea547d0ab3528b31ce7b8c608afd53448a8c350215e83b7adfc",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T22:21:50",
+          "finished": "2026-10-16T22:25:06",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "8a0fef13811b0ea547d0ab3528b31ce7b8c608afd53448a8c350215e83b7adfc"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3506",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "3689c238989fe2b44a0350ad74dd5917eb0e88df26a8d96d2cd7d34a8a4cdc64",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:28:09",
+          "finished": "2026-10-16T22:31:25",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "3689c238989fe2b44a0350ad74dd5917eb0e88df26a8d96d2cd7d34a8a4cdc64"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3518",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "9d71ea6cb8355802117e88a3c98a782eae26e032b7d4104c413b99814d72dbc6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:57:04",
+          "finished": "2026-10-16T23:00:04",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "9d71ea6cb8355802117e88a3c98a782eae26e032b7d4104c413b99814d72dbc6"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3521",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "f027847837c7e4514a575a2969baa80fd4849e5aaf734c053511293c19bb661a",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T23:09:41",
+          "finished": "2026-10-16T23:13:00",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "f027847837c7e4514a575a2969baa80fd4849e5aaf734c053511293c19bb661a"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3535",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "7ecd29cccdba09aebd561034cb41bf7c4de6f3677cae122e4f514dc85f7c1f79",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:25:16",
+          "finished": "2026-10-16T22:28:24",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "7ecd29cccdba09aebd561034cb41bf7c4de6f3677cae122e4f514dc85f7c1f79"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3675",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "84743e4f6d4b9787abe1cd8a8daaea4753551131643286560b8b2a361779fe99",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-17T00:01:47",
+          "finished": "2026-10-17T00:04:33",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "84743e4f6d4b9787abe1cd8a8daaea4753551131643286560b8b2a361779fe99"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3676",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "5423773e6b3e418476840a70d240f01853d27e450240d1c6a86b1c1d30a2e44d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:24:55",
+          "finished": "2026-10-16T22:28:08",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "5423773e6b3e418476840a70d240f01853d27e450240d1c6a86b1c1d30a2e44d"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3718",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "62b4c994e7258703eb15d5924132c336657a616fc2da0c193d302a3a2affa48c",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:04:42",
+          "finished": "2026-10-16T20:07:23",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "62b4c994e7258703eb15d5924132c336657a616fc2da0c193d302a3a2affa48c"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3772",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "209faa23e15331309909986e0a51a8cda9f2daae36cd9b7a39b71d7d52e000fc",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:52:22",
+          "finished": "2026-10-16T23:57:57",
+          "timestamp_status": "finished",
+          "quality": [
+            26,
+            14,
+            0
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "209faa23e15331309909986e0a51a8cda9f2daae36cd9b7a39b71d7d52e000fc"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3777",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "d2555d4720c0974cb0e5409d9acb5eb538c6fb68c67566adb7959a3ad9cf3ea7",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T22:19:02",
+          "finished": "2026-10-16T22:22:10",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "d2555d4720c0974cb0e5409d9acb5eb538c6fb68c67566adb7959a3ad9cf3ea7"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3782",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "b22a6c7ee60e83f8ced6de1ff131901da3b42b05762be68872d86233a522efd6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T22:21:47",
+          "finished": "2026-10-16T22:24:54",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "b22a6c7ee60e83f8ced6de1ff131901da3b42b05762be68872d86233a522efd6"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3882",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "5480726d7cdf3bebc00de0d38322c3238f9ccbe29573880884c22ec35a03ba45",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:06:19",
+          "finished": "2026-10-16T20:09:01",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "5480726d7cdf3bebc00de0d38322c3238f9ccbe29573880884c22ec35a03ba45"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3894",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "d79994a18de8967aaf5289b8dd43bb0567f9e5d9cd9efa1682ca014df11b2abf",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T21:59:08",
+          "finished": "2026-10-16T22:02:37",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "d79994a18de8967aaf5289b8dd43bb0567f9e5d9cd9efa1682ca014df11b2abf"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3905",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "891bf8f179d15b6c80d6f27948ee7d5369708d8ccbba127cef34eaae251913e6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:08:15",
+          "finished": "2026-10-16T20:11:04",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "891bf8f179d15b6c80d6f27948ee7d5369708d8ccbba127cef34eaae251913e6"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3930",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "137b43005bef2bce7f1711f7a4ee6092fc13c25e243f850c2ffecdeafd4bc5ce",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:09:01",
+          "finished": "2026-10-16T20:11:53",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "137b43005bef2bce7f1711f7a4ee6092fc13c25e243f850c2ffecdeafd4bc5ce"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3934",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "94906bf04a388ad8d5bc0fea3ba43d7f8c368adc56d49d0dce17505b3cdfaf8f",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:02:55",
+          "finished": "2026-10-16T20:05:34",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "94906bf04a388ad8d5bc0fea3ba43d7f8c368adc56d49d0dce17505b3cdfaf8f"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3935",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "93cf92448f5f305366a81d4f544ec8254ba3fd1a3fbe9ca5cbe899a897796919",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:10:16",
+          "finished": "2026-10-16T20:13:00",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "93cf92448f5f305366a81d4f544ec8254ba3fd1a3fbe9ca5cbe899a897796919"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3938",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "b873fc9cedc3e74b00827753b553391b21c72934197deda0ee1bc08afeccb386",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T20:05:34",
+          "finished": "2026-10-16T20:08:15",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "b873fc9cedc3e74b00827753b553391b21c72934197deda0ee1bc08afeccb386"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3942",
+      "selected_source": "p1d_h1_decision.r1.json",
+      "selected_sha256": "cfd1d82709627cf64fdbf2b3c45e22174302baaf14cf0a765b826c2515cde307",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r1.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r1.json",
+          "started": "2026-10-16T20:07:23",
+          "finished": "2026-10-16T20:10:16",
+          "timestamp_status": "finished",
+          "quality": [
+            24,
+            24,
+            18
+          ],
+          "source_priority": [
+            2,
+            1,
+            0
+          ],
+          "sha256": "cfd1d82709627cf64fdbf2b3c45e22174302baaf14cf0a765b826c2515cde307"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3944",
+      "selected_source": "p1d_h1_decision.r2.json",
+      "selected_sha256": "4ba6288c348e49d34da2b36961ac743b13440ec997d937800611180a0abd3eaf",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r2.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r2.json",
+          "started": "2026-10-16T21:59:03",
+          "finished": "2026-10-16T22:02:33",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            2,
+            0
+          ],
+          "sha256": "4ba6288c348e49d34da2b36961ac743b13440ec997d937800611180a0abd3eaf"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_3953",
+      "selected_source": "p1d_h1_decision.r3.json",
+      "selected_sha256": "9c446cc9a6a493bde73c51ad1be98ab42763b4c526b7cc10394bac1bc6e59b66",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r3.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r3.json",
+          "started": "2026-10-16T20:03:36",
+          "finished": "2026-10-16T20:06:19",
+          "timestamp_status": "finished",
+          "quality": [
+            23,
+            23,
+            18
+          ],
+          "source_priority": [
+            2,
+            3,
+            0
+          ],
+          "sha256": "9c446cc9a6a493bde73c51ad1be98ab42763b4c526b7cc10394bac1bc6e59b66"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4006",
+      "selected_source": "p1d_h1_decision.r0.json",
+      "selected_sha256": "fdeef70518c2002218b82f96b63ae15279839692511b9048df86a7d76455da7e",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.r0.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.r0.json",
+          "started": "2026-10-16T22:48:25",
+          "finished": "2026-10-16T23:54:03",
+          "timestamp_status": "finished",
+          "quality": [
+            26,
+            14,
+            0
+          ],
+          "source_priority": [
+            2,
+            0,
+            0
+          ],
+          "sha256": "fdeef70518c2002218b82f96b63ae15279839692511b9048df86a7d76455da7e"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4070",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "1ad60c37d6c32fe04c98e9cc30d3028795073048e47c3f9e6f3973a3f90bd407",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:05:58",
+          "finished": "2026-10-16T18:09:07",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "1ad60c37d6c32fe04c98e9cc30d3028795073048e47c3f9e6f3973a3f90bd407"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4075",
+      "selected_source": "p1d_h1_decision.shard2-4.json",
+      "selected_sha256": "2e7a410308bd8b56e89fb916bc664efb0efd0d6fc42f01ac641098fc4cf021b4",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard2-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard2-4.json",
+          "started": "2026-10-16T18:09:07",
+          "finished": "2026-10-16T18:12:54",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            2
+          ],
+          "sha256": "2e7a410308bd8b56e89fb916bc664efb0efd0d6fc42f01ac641098fc4cf021b4"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4076",
+      "selected_source": "p1d_h1_decision.shard1-4.json",
+      "selected_sha256": "4b13377e4c990538348ab9d2d521811cd02ff858229841fcb0c9218b7df6e1e6",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard1-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard1-4.json",
+          "started": "2026-10-16T18:09:14",
+          "finished": "2026-10-16T18:13:06",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            1
+          ],
+          "sha256": "4b13377e4c990538348ab9d2d521811cd02ff858229841fcb0c9218b7df6e1e6"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4077",
+      "selected_source": "p1d_h1_decision.shard3-4.json",
+      "selected_sha256": "a846c1f5dd970745e6574b60b16afcb20a7f5cc4c509ff29daadcfbc1870266d",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard3-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard3-4.json",
+          "started": "2026-10-16T18:04:50",
+          "finished": "2026-10-16T18:07:38",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            3
+          ],
+          "sha256": "a846c1f5dd970745e6574b60b16afcb20a7f5cc4c509ff29daadcfbc1870266d"
+        }
+      ]
+    },
+    {
+      "instance_id": "rich_4079",
+      "selected_source": "p1d_h1_decision.shard0-4.json",
+      "selected_sha256": "365c51374aa3844c47cfbc6c6e1e605863fe0ba12e178bce5c2ea1900df3d822",
+      "candidate_count": 1,
+      "timestamp_status": "finished",
+      "legacy_source": "p1d_h1_decision.shard0-4.json",
+      "legacy_selection_differs": false,
+      "candidates": [
+        {
+          "source": "p1d_h1_decision.shard0-4.json",
+          "started": "2026-10-16T18:08:39",
+          "finished": "2026-10-16T18:12:20",
+          "timestamp_status": "finished",
+          "quality": [
+            21,
+            21,
+            18
+          ],
+          "source_priority": [
+            1,
+            4,
+            0
+          ],
+          "sha256": "365c51374aa3844c47cfbc6c6e1e605863fe0ba12e178bce5c2ea1900df3d822"
+        }
+      ]
+    }
+  ]
+}

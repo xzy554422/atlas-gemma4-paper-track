@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "generation_status": "not_requested",
+  "agent_status": "not_run",
+  "configuration_scope": "short-context runtime probe, not official scoring",
+  "packages": {
+    "torch": "2.12.1+cu130",
+    "vllm": null,
+    "transformers": "5.13.0",
+    "compressed-tensors": null,
+    "swegemma": null,
+    "adk-submission": null
+  },
+  "gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "capability": [
+        8,
+        9
+      ],
+      "total_memory_bytes": 8585216000
+    }
+  ],
+  "compatibility": {
+    "status": "requires_runtime_test",
+    "attention_risk": false,
+    "note": "Memory capacity alone does not establish attention-kernel support."
+  },
+  "elapsed_seconds": 3.157
+}

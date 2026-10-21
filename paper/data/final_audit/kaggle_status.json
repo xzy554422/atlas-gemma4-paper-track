@@ -1,0 +1,16 @@
+{
+  "status": "authenticated",
+  "username": "yzx22442255",
+  "competition_membership_verified": ["gemma-4-developer-agent", "gemma-4-developer-agent-paper"],
+  "gpu_total_hours": 30,
+  "gpu_used_hours_before_preflight": 0,
+  "preflight_kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight",
+  "preflight_status": "complete",
+  "model_run": "failed_bounded_probe",
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "gpu_observed": "Tesla T4, capability 7.5",
+  "failure": "Triton unified attention requested 98304 bytes shared memory; T4 limit 65536 bytes",
+  "agent_status": "not_run",
+  "writeup_submission": "not_submitted_sdk_method_unavailable",
+  "checked_at": "2026-10-18"
+}

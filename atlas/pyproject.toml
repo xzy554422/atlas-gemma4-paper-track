@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlas-swe"
+version = "0.1.0"
+description = "Atlas — 面向单机预算的图引导 SWE 智能体验证框架"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = ["numpy>=1.24", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+# Compatibility extra; PyYAML is now required for fail-closed YAML validation.
+yaml = ["PyYAML>=6.0"]
+dev = ["pytest>=7.4", "PyYAML>=6.0"]
+
+[tool.setuptools]
+packages = ["atlas"]
+
+[tool.setuptools.package-data]
+atlas = ["py.typed"]

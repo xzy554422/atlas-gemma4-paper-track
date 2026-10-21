@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "paper\\data\\final_audit\\summary.json": "9a7e53ea670516c1a3c051ef59ced35a484e5e308edaebddd1ba95c9f6df201f",
+    "paper\\data\\final_audit\\cost_by_repo.csv": "682971c9478374d14becb3a329be11841d9afd4f363fafcedab656734936d614",
+    "results\\final_h2_seed0.json": "89e16e989bffad1a2a7e01c6dfea127cbbe5a964b2d5b67faeb889467772ac30"
+  },
+  "outputs": {
+    "01_diagnostic_population.png": "713ad61a44921ae977137a22e7879223b81afe554a0976e7e6ba5ecf35deda0c",
+    "01_diagnostic_population.svg": "43f6d6eec242656b9091e44e05f1a84434004b8dcbb7cf113c06cc1118a740a2",
+    "02_cost_by_repository.png": "6f9da4aa9d6d25b8ca9a34fdcd7fc07481ee3b1bd0e4a5cae04ab396737285a9",
+    "02_cost_by_repository.svg": "0a87b199c5d6f19764055f394a74e59aa50723834d0cb55ae21b6ea747bd0a31",
+    "03_localization_proxy.png": "fb7b3846a06e08d2e56558b381422a03f852c6407c46835cd8f346edae2c6c2d",
+    "03_localization_proxy.svg": "b919418dbcb1b101f458785dd6522925ce050d939ec5f2d9cc8d9111f3bf1922"
+  },
+  "limitations": "Descriptive offline task-state diagnostics. Neither resolved score nor end-to-end agent speedup."
+}

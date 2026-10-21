@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "deterministic_artifacts_sha256": {
+    "summary.json": "9a7e53ea670516c1a3c051ef59ced35a484e5e308edaebddd1ba95c9f6df201f",
+    "p1d_rows.csv": "73fa609e9ca5da4f4de7b127c1aba394e9217619e299b90002c26f4eefa1276d",
+    "cost_by_repo.csv": "682971c9478374d14becb3a329be11841d9afd4f363fafcedab656734936d614",
+    "claims.csv": "ada03f4c228e0e3ef8f21cb936b1eaa4d8682b9a970fb7a3c2d86a3eb649d397",
+    "provenance.json": "db9ca9d46e21208fd2cb0bf80b8a15104798d697524eacae37dd5f6fe890af62",
+    "input_evidence.json": "11fbc6727e9802147e8b93deceac49dd9cf9585f507ec6f23c52aeb688b1e1d0"
+  },
+  "repeat_generation_identical": true,
+  "original_frozen_research_files_checked": 33,
+  "changed_frozen_research_files": [],
+  "input_evidence_files": 2758
+}

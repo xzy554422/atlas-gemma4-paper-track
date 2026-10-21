@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "python": "3.12.13",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+  "generation_status": "failed",
+  "agent_status": "not_run",
+  "configuration_scope": "short-context runtime probe, not official scoring",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1",
+    "compressed-tensors": "0.15.0.1",
+    "swegemma": "0.2.11",
+    "adk-submission": "0.2.13"
+  },
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    }
+  ],
+  "compatibility": {
+    "status": "requires_runtime_test",
+    "attention_risk": true,
+    "note": "Memory capacity alone does not establish attention-kernel support."
+  },
+  "checkpoint_architectures": [
+    "Gemma4ForConditionalGeneration"
+  ],
+  "checkpoint_attention": {
+    "head_dim": 256,
+    "global_head_dim": 512,
+    "dtype": "bfloat16",
+    "torch_dtype": null
+  },
+  "runtime_config": {
+    "model": "/kaggle/input/models/google/gemma-4/other/gemma-4-e4b-it-qat-w4a16-ct/2",
+    "dtype": "half",
+    "tensor_parallel_size": 1,
+    "max_model_len": 2048,
+    "gpu_memory_utilization": 0.8,
+    "enforce_eager": true,
+    "disable_log_stats": true,
+    "limit_mm_per_prompt": {
+      "image": 0,
+      "video": 0,
+      "audio": 0
+    }
+  },
+  "error_type": "EngineDeadError",
+  "error": "EngineCore encountered an issue. See stack trace (above) for the root cause.",
+  "elapsed_seconds": 170.947,
+  "notebook_elapsed_seconds": 231.898
+}
