@@ -1,0 +1,131 @@
+{
+  "schema_version": 4,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "python": "3.13.15",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "generation_status": "passed",
+  "agent_status": "not_run",
+  "configuration_scope": "short-context runtime probe, not official scoring",
+  "packages": {
+    "torch": "2.13.0",
+    "vllm": "0.32.0",
+    "transformers": "5.19.0",
+    "compressed-tensors": "0.17.0",
+    "swegemma": null,
+    "adk-submission": null
+  },
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    },
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    }
+  ],
+  "compatibility": {
+    "status": "requires_runtime_test",
+    "attention_risk": true,
+    "note": "Memory capacity alone does not establish attention-kernel support."
+  },
+  "sm75_tile_patch": {
+    "source_files": [
+      {
+        "path": "/usr/local/lib/python3.13/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py",
+        "status": "patched",
+        "sha256_before": "a1d13e015969ce0b80a1024ba9e9703bfa50481cd9aa7d8f893f6cc955e657a1",
+        "sha256_after": "a13364c2ab4d83ca6adc93b315983f8be306ba14dd71daa60fe0de808d5b2cbd"
+      }
+    ],
+    "capability_major": 7,
+    "applied_modules": [
+      "vllm.v1.attention.ops.triton_unified_attention"
+    ],
+    "verify": {
+      "head512_decode": 16,
+      "head512_prefill": 16
+    }
+  },
+  "numeric_check": {
+    "cases": [
+      {
+        "head_dim": 512,
+        "kv_len": 128,
+        "decode": false,
+        "triton_max_abs_err_fp32ref": 0.000963,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.000963,
+        "triton_rel_err": 0.000248
+      },
+      {
+        "head_dim": 512,
+        "kv_len": 1,
+        "decode": true,
+        "triton_max_abs_err_fp32ref": 0.0,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.0,
+        "triton_rel_err": 0.0
+      },
+      {
+        "head_dim": 256,
+        "kv_len": 128,
+        "decode": false,
+        "triton_max_abs_err_fp32ref": 0.000984,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.000984,
+        "triton_rel_err": 0.000284
+      },
+      {
+        "head_dim": 256,
+        "kv_len": 1,
+        "decode": true,
+        "triton_max_abs_err_fp32ref": 0.0,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.0,
+        "triton_rel_err": 0.0
+      }
+    ],
+    "status": "pass",
+    "tile_prefill_head512": 16,
+    "worst_rel_err": 0.000284
+  },
+  "checkpoint_attention": {
+    "head_dim": 256,
+    "global_head_dim": 512,
+    "dtype": "bfloat16",
+    "torch_dtype": null
+  },
+  "load_seconds": 158.548,
+  "chat_probe": {
+    "prompts": [
+      {
+        "name": "sum",
+        "prompt": "Write a Python function add(a, b) that returns their sum.",
+        "raw_32tok": ".............1.1.1.1.1.1.1.1.1.1",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "Here is the Python function:\n\n```python\ndef add(a, b):\n    return a + b\n\n# Example usage:\nresult = add(5, 3)\nprint(result)  # Output: 8\n```\n\n### Explanation:\n1.  **`def add("
+      },
+      {
+        "name": "math",
+        "prompt": "What is 17 * 24? Reply with only the number.",
+        "raw_32tok": "0.0.u.u.u.u.u.u.u.u.u.u.u.u.u.u.",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "408"
+      },
+      {
+        "name": "unit_test",
+        "prompt": "Explain in one sentence what a unit test is.",
+        "raw_32tok": "00000000111111111111111111111111",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "A unit test is a piece of code written to verify that a specific, isolated component of a software application—such as a single function, method, or class—performs exactly as intended."
+      }
+    ],
+    "status": "pass"
+  },
+  "elapsed_seconds": 222.148
+}

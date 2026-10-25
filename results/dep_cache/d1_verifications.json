@@ -141,5 +141,80 @@
       "resolved": true
     },
     "elapsed_seconds": 128.2
+  },
+  "atlas-agent-d5-state/fastapi_14297": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "atlas-agent-d5-state/fastapi_14492": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "atlas-agent-d5-state/requests_6589": {
+    "agent_patch_chars": 546,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "resolved": true
+    },
+    "elapsed_seconds": 105.5
+  },
+  "atlas-agent-d5-state/requests_6644": {
+    "agent_patch_chars": 541,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 10.9
+  },
+  "atlas-agent-d5-state/requests_7502": {
+    "agent_patch_chars": 582,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "resolved": true
+    },
+    "elapsed_seconds": 128.2
+  },
+  "atlas-agent-d5-state/rich_3105": {
+    "agent_patch_chars": 402,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 12.9
+  },
+  "atlas-agent-d5-state/rich_3278": {
+    "agent_patch_chars": 248,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 12.4
   }
 }

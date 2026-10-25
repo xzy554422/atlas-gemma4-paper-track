@@ -628,9 +628,12 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
                 record(turn, action='compact', note='state \u2192 ' + str(context_chars(messages)) + ' chars')
                 turn += 1
                 continue
-            files_edited
+            viewed = '; '.join(f'{k} {v[-1]}' for k, v in
+                               list(executor.files_viewed.items())[-8:]) or 'none'
+            files_edited = ', '.join(executor.edits[-8:]) or 'none'
             note = (f'{executor.tool_calls_used}/{budgets["tool_calls"]} tool calls used; '
-                    f'patch_submitted={executor.patch_submitted}; already viewed: {viewed}. '
+                    f'patch_submitted={executor.patch_submitted}; edits in {files_edited}; '
+                    f'already viewed: {viewed}. '
                     "Do not re-read these; proceed to edit_file or submit_patch.")
             before = context_chars(messages)
             messages = compact_messages(messages, note)

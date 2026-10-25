@@ -115,3 +115,7 @@
 | 2026-10-26 | 3 | d3_full 臂完成并验证：**2/5 解决**（同 fastapi_14492、requests_7502）；**httpx_3672 首次产出非空补丁（2,106 字符）但未通过必需测试**；5/10 NameError | 同上（atlas-agent-d3-full/*） | ✅ |
 | 2026-10-26 | 3 | **G3 汇总：control 3/7、d3_sel 2/6、d3_full 2/5（验证口径）——run_command + 验证引导未提升 resolution**；轨迹方差真实存在（6589 反转）；扩展工具路径有 NameError 缺陷待修 | `results/dep_cache/d3_ablation_summary.json` | ✅ G3 完成 |
 | 2026-10-26 | 全 | **六个方向全部处置完毕**：D4 ✅ D1 ✅ D2 ✅（阴性）D3 ✅ D5 ✅（部分）D6 ⛔（runtime 不可行）。执行计划闭环 | — | ✅ |
+| 2026-10-26 | 工程 | NameError 根因修复：升级脚本吃掉 truncate 压缩分支的 `viewed`/`files_edited` 赋值行；补回后本地强制压缩回归通过（4 次压缩无异常） | `paper/scripts/agent_smoke_v5.py` | ✅ |
+| 2026-10-26 | 5 | **D5 完整验证补齐**：专用 collector 收齐 10/10 任务目录，三臂验证完成——state 臂 2/5 解决（fastapi_14492、requests_6589、requests_7502 中前两个+7502）；轨迹改变 4/10（rich_3278 空→248、httpx 1402→空、rich_3105/fastapi_14297 内容变） | `results/dep_cache/d5_ablation_summary.json` | ✅ G5 完成 |
+| 2026-10-26 | 6 | **12B 重启成功**：互联网 kernel + vLLM 0.32.0（torch 2.13.0，torchaudio 按版本 pin）——12B w4a16 在 2×T4 上加载 158.5s 并完成生成；chat 模板下 17×24=408 正确、add 函数完整、数值校验 2.84e-4。**marlin_gemm 形状不匹配在 0.32.0 已修复**（0.19.1 的冻结 wheelhouse 不含修复） | `results/dep_cache/d6_12b_vllm0320_result.json` | ✅ 可行性确认（非官方 runtime） |
+| 2026-10-26 | 论文 | writeup 更新：21 任务批量结果（3/15=20.0%）+ 三个消融（定位阴性/验证引导阴性/压缩策略有效）写入 §4；局限与未来工作同步。已提交 Writeup 同步更新（PUBLISHED，2,369 词） | `paper/draft/writeup.md` | ✅ |

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "design": "paired compaction ablation: truncate (control, D1) vs state (edits+views preserved)",
+  "tasks": [
+    "rich_3278",
+    "rich_3105",
+    "rich_3518",
+    "fastapi_14492",
+    "fastapi_14360",
+    "fastapi_14297",
+    "requests_6589",
+    "requests_6644",
+    "requests_7502",
+    "httpx_3672"
+  ],
+  "arms": {
+    "control": {
+      "rich_3278": {
+        "patch_chars": 0,
+        "resolved": false
+      },
+      "rich_3105": {
+        "patch_chars": 427,
+        "resolved": false
+      },
+      "rich_3518": {
+        "patch_chars": 0,
+        "resolved": false
+      },
+      "fastapi_14492": {
+        "patch_chars": 391,
+        "resolved": true
+      },
+      "fastapi_14360": {
+        "patch_chars": 0,
+        "resolved": false
+      },
+      "fastapi_14297": {
+        "patch_chars": 1051,
+        "resolved": false
+      },
+      "requests_6589": {
+        "patch_chars": 546,
+        "resolved": true
+      },
+      "requests_6644": {
+        "patch_chars": 541,
+        "resolved": false
+      },
+      "requests_7502": {
+        "patch_chars": 582,
+        "resolved": true
+      },
+      "httpx_3672": {
+        "patch_chars": 1402,
+        "resolved": false
+      }
+    },
+    "state": {
+      "rich_3278": {
+        "patch_chars": 248,
+        "resolved": false,
+        "verified": true
+      },
+      "rich_3105": {
+        "patch_chars": 402,
+        "resolved": false,
+        "verified": true
+      },
+      "rich_3518": {
+        "patch_chars": 0,
+        "resolved": false,
+        "verified": false
+      },
+      "fastapi_14492": {
+        "patch_chars": 391,
+        "resolved": false,
+        "verified": false
+      },
+      "fastapi_14360": {
+        "patch_chars": 0,
+        "resolved": false,
+        "verified": false
+      },
+      "fastapi_14297": {
+        "patch_chars": 1146,
+        "resolved": false,
+        "verified": false
+      },
+      "requests_6589": {
+        "patch_chars": 546,
+        "resolved": true,
+        "verified": true
+      },
+      "requests_6644": {
+        "patch_chars": 541,
+        "resolved": false,
+        "verified": true
+      },
+      "requests_7502": {
+        "patch_chars": 582,
+        "resolved": true,
+        "verified": true
+      },
+      "httpx_3672": {
+        "patch_chars": 0,
+        "resolved": false,
+        "verified": false
+      }
+    }
+  },
+  "resolution": {
+    "control": "3/10",
+    "state": "2/5 verified"
+  },
+  "trajectory_changes": [
+    "rich_3278",
+    "rich_3105",
+    "fastapi_14297",
+    "httpx_3672"
+  ],
+  "findings": [
+    "State compaction changed trajectories on 4/10 tasks (patch size differs).",
+    "Resolution: control 3/10 vs state 2/5.",
+    "rich_3278 flipped empty->248-char patch under state; httpx_3672 flipped 1402->empty.",
+    "Descriptive only (n=10 per arm)."
+  ]
+}
