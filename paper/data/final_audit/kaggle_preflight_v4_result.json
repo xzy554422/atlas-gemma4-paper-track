@@ -1,0 +1,124 @@
+{
+  "schema_version": 4,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "python": "3.12.13",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.35",
+  "generation_status": "passed",
+  "agent_status": "not_run",
+  "configuration_scope": "short-context runtime probe, not official scoring",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1",
+    "compressed-tensors": "0.15.0.1",
+    "swegemma": "0.2.11",
+    "adk-submission": "0.2.13"
+  },
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    }
+  ],
+  "compatibility": {
+    "status": "requires_runtime_test",
+    "attention_risk": true,
+    "note": "Memory capacity alone does not establish attention-kernel support."
+  },
+  "sm75_tile_patch": {
+    "source_files": [
+      {
+        "path": "/usr/local/lib/python3.12/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py",
+        "status": "patched",
+        "sha256_before": "5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921",
+        "sha256_after": "4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f"
+      }
+    ],
+    "capability_major": 7,
+    "applied_modules": [
+      "vllm.v1.attention.ops.triton_unified_attention"
+    ],
+    "verify": {
+      "head512_decode": 16,
+      "head512_prefill": 16
+    }
+  },
+  "numeric_check": {
+    "cases": [
+      {
+        "head_dim": 512,
+        "kv_len": 128,
+        "decode": false,
+        "triton_max_abs_err_fp32ref": 0.000963,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.000963,
+        "triton_rel_err": 0.000248
+      },
+      {
+        "head_dim": 512,
+        "kv_len": 1,
+        "decode": true,
+        "triton_max_abs_err_fp32ref": 0.0,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.0,
+        "triton_rel_err": 0.0
+      },
+      {
+        "head_dim": 256,
+        "kv_len": 128,
+        "decode": false,
+        "triton_max_abs_err_fp32ref": 0.000984,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.000984,
+        "triton_rel_err": 0.000284
+      },
+      {
+        "head_dim": 256,
+        "kv_len": 1,
+        "decode": true,
+        "triton_max_abs_err_fp32ref": 0.0,
+        "sdpa_fp16_max_abs_err_fp32ref": 0.0,
+        "triton_rel_err": 0.0
+      }
+    ],
+    "status": "pass",
+    "tile_prefill_head512": 16,
+    "worst_rel_err": 0.000284
+  },
+  "checkpoint_attention": {
+    "head_dim": 256,
+    "global_head_dim": 512,
+    "dtype": "bfloat16",
+    "torch_dtype": null
+  },
+  "load_seconds": 118.336,
+  "chat_probe": {
+    "prompts": [
+      {
+        "name": "sum",
+        "prompt": "Write a Python function add(a, b) that returns their sum.",
+        "raw_32tok": "\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum.\n\n(a, b) that returns their sum",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "Here are a few ways to write the Python function `add(a, b)` that returns the sum of `a` and `b`.\n\n### 1. Standard Implementation (Most Common)\n\nThis is the most straightforward and Pythonic way to write this function.\n\n```python\ndef add(a,"
+      },
+      {
+        "name": "math",
+        "prompt": "What is 17 * 24? Reply with only the number.",
+        "raw_32tok": "\n\n17 * 24 = 48888888888888888888888",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "408"
+      },
+      {
+        "name": "unit_test",
+        "prompt": "Explain in one sentence what a unit test is.",
+        "raw_32tok": "\n\nExplain in one sentence what a unit test is.\n\nExplain in one sentence what a unit test is.\n\nExplain in one sentence what a unit test is",
+        "chat_path": "tokenizer_chat_template",
+        "chat_64tok": "A unit test is a small, automated piece of code designed to verify that a specific, isolated part of a software application (a \"unit\") functions exactly as intended."
+      }
+    ],
+    "status": "pass"
+  },
+  "elapsed_seconds": 183.775,
+  "notebook_elapsed_seconds": 257.29
+}

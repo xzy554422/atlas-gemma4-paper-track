@@ -1,0 +1,281 @@
+[{"stream_name":"stderr","time":6.564556934,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.564598276,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.564604946,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.564608999,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.132166569,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.132212099,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.132217675,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.132221578,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":77.895898211,"data":"{'status': 'passed', 'exit_code': 0}\n"}
+,{"stream_name":"stdout","time":77.895933333,"data":"Installing 41 wheels from /kaggle/input/datasets/metric/gemma-4-developer-agent-wheelhouse...\n"}
+,{"stream_name":"stdout","time":77.895948904,"data":"Wheelhouse installation complete.\n"}
+,{"stream_name":"stdout","time":77.895954328,"data":"\n"}
+,{"stream_name":"stdout","time":265.439706325,"data":"\n"}
+,{"stream_name":"stdout","time":265.439731628,"data":"\n"}
+,{"stream_name":"stdout","time":265.43973549,"data":"Rendering conversations:   0%|          | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":265.439738877,"data":"Rendering conversations: 100%|██████████| 1/1 [00:00\u003c00:00, 1014.10it/s]\n"}
+,{"stream_name":"stdout","time":265.439742782,"data":"\n"}
+,{"stream_name":"stdout","time":265.439745663,"data":"Processed prompts:   0%|          | 0/1 [00:00\u003c?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]\n"}
+,{"stream_name":"stdout","time":265.439748737,"data":"Processed prompts: 100%|██████████| 1/1 [00:02\u003c00:00,  2.18s/it, est. speed input: 8.73 toks/s, output: 16.08 toks/s]\n"}
+,{"stream_name":"stdout","time":265.439751932,"data":"Processed prompts: 100%|██████████| 1/1 [00:02\u003c00:00,  2.18s/it, est. speed input: 8.73 toks/s, output: 16.08 toks/s]\n"}
+,{"stream_name":"stdout","time":265.439754999,"data":"Processed prompts: 100%|██████████| 1/1 [00:02\u003c00:00,  2.18s/it, est. speed input: 8.73 toks/s, output: 16.08 toks/s]\n"}
+,{"stream_name":"stdout","time":265.43975797,"data":"(EngineCore pid=115) INFO 10-25 01:34:40 [core.py:1210] Shutdown initiated (timeout=0)\n"}
+,{"stream_name":"stdout","time":265.439760842,"data":"(EngineCore pid=115) INFO 10-25 01:34:40 [core.py:1233] Shutdown complete\n"}
+,{"stream_name":"stdout","time":265.439764008,"data":"[rank0]:[W1025 01:34:40.765711497 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())\n"}
+,{"stream_name":"stdout","time":265.439768192,"data":"{\n"}
+,{"stream_name":"stdout","time":265.439800128,"data":"  \"schema_version\": 4,\n"}
+,{"stream_name":"stdout","time":265.439806115,"data":"  \"model\": \"gemma-4-e4b-it-qat-w4a16-ct\",\n"}
+,{"stream_name":"stdout","time":265.439810496,"data":"  \"python\": \"3.12.13\",\n"}
+,{"stream_name":"stdout","time":265.43981478,"data":"  \"platform\": \"Linux-6.18.55+-x86_64-with-glibc2.35\",\n"}
+,{"stream_name":"stdout","time":265.439827765,"data":"  \"generation_status\": \"passed\",\n"}
+,{"stream_name":"stdout","time":265.439836859,"data":"  \"agent_status\": \"not_run\",\n"}
+,{"stream_name":"stdout","time":265.439840362,"data":"  \"configuration_scope\": \"short-context runtime probe, not official scoring\",\n"}
+,{"stream_name":"stdout","time":265.439842874,"data":"  \"packages\": {\n"}
+,{"stream_name":"stdout","time":265.439845098,"data":"    \"torch\": \"2.10.0+cu128\",\n"}
+,{"stream_name":"stdout","time":265.439847419,"data":"    \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":265.439850084,"data":"    \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":265.439852427,"data":"    \"compressed-tensors\": \"0.15.0.1\",\n"}
+,{"stream_name":"stdout","time":265.439854717,"data":"    \"swegemma\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":265.439856936,"data":"    \"adk-submission\": \"0.2.13\"\n"}
+,{"stream_name":"stdout","time":265.439859194,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.439861384,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":265.439863567,"data":"    {\n"}
+,{"stream_name":"stdout","time":265.439878709,"data":"      \"name\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":265.439881199,"data":"      \"capability\": [\n"}
+,{"stream_name":"stdout","time":265.439883454,"data":"        7,\n"}
+,{"stream_name":"stdout","time":265.439885569,"data":"        5\n"}
+,{"stream_name":"stdout","time":265.43988766,"data":"      ],\n"}
+,{"stream_name":"stdout","time":265.43988985,"data":"      \"total_memory_bytes\": 15636037632\n"}
+,{"stream_name":"stdout","time":265.439892404,"data":"    }\n"}
+,{"stream_name":"stdout","time":265.439894524,"data":"  ],\n"}
+,{"stream_name":"stdout","time":265.439896612,"data":"  \"compatibility\": {\n"}
+,{"stream_name":"stdout","time":265.4398988,"data":"    \"status\": \"requires_runtime_test\",\n"}
+,{"stream_name":"stdout","time":265.43990114,"data":"    \"attention_risk\": true,\n"}
+,{"stream_name":"stdout","time":265.439903391,"data":"    \"note\": \"Memory capacity alone does not establish attention-kernel support.\"\n"}
+,{"stream_name":"stdout","time":265.439905794,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.439907868,"data":"  \"sm75_tile_patch\": {\n"}
+,{"stream_name":"stdout","time":265.439910005,"data":"    \"source_files\": [\n"}
+,{"stream_name":"stdout","time":265.43991215,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.4399156,"data":"        \"path\": \"/usr/local/lib/python3.12/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py\",\n"}
+,{"stream_name":"stdout","time":265.439918024,"data":"        \"status\": \"patched\",\n"}
+,{"stream_name":"stdout","time":265.43992033,"data":"        \"sha256_before\": \"5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921\",\n"}
+,{"stream_name":"stdout","time":265.439922722,"data":"        \"sha256_after\": \"4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f\"\n"}
+,{"stream_name":"stdout","time":265.439925091,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.439927181,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.439929261,"data":"    \"capability_major\": 7,\n"}
+,{"stream_name":"stdout","time":265.439931483,"data":"    \"applied_modules\": [\n"}
+,{"stream_name":"stdout","time":265.439933673,"data":"      \"vllm.v1.attention.ops.triton_unified_attention\"\n"}
+,{"stream_name":"stdout","time":265.439935938,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.439938015,"data":"    \"verify\": {\n"}
+,{"stream_name":"stdout","time":265.439940172,"data":"      \"head512_decode\": 16,\n"}
+,{"stream_name":"stdout","time":265.439945641,"data":"      \"head512_prefill\": 16\n"}
+,{"stream_name":"stdout","time":265.439948033,"data":"    }\n"}
+,{"stream_name":"stdout","time":265.439950143,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.439952284,"data":"  \"numeric_check\": {\n"}
+,{"stream_name":"stdout","time":265.439972265,"data":"    \"cases\": [\n"}
+,{"stream_name":"stdout","time":265.43997457,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.439976792,"data":"        \"head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.439979133,"data":"        \"kv_len\": 128,\n"}
+,{"stream_name":"stdout","time":265.439981456,"data":"        \"decode\": false,\n"}
+,{"stream_name":"stdout","time":265.439983932,"data":"        \"triton_max_abs_err_fp32ref\": 0.000963,\n"}
+,{"stream_name":"stdout","time":265.439986392,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.000963,\n"}
+,{"stream_name":"stdout","time":265.439988824,"data":"        \"triton_rel_err\": 0.000248\n"}
+,{"stream_name":"stdout","time":265.439991194,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.439993452,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.439995689,"data":"        \"head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.439998001,"data":"        \"kv_len\": 1,\n"}
+,{"stream_name":"stdout","time":265.440000302,"data":"        \"decode\": true,\n"}
+,{"stream_name":"stdout","time":265.440002638,"data":"        \"triton_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440005032,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440007385,"data":"        \"triton_rel_err\": 0.0\n"}
+,{"stream_name":"stdout","time":265.440009757,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440011996,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440014203,"data":"        \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440016489,"data":"        \"kv_len\": 128,\n"}
+,{"stream_name":"stdout","time":265.440018786,"data":"        \"decode\": false,\n"}
+,{"stream_name":"stdout","time":265.440021132,"data":"        \"triton_max_abs_err_fp32ref\": 0.000984,\n"}
+,{"stream_name":"stdout","time":265.440023509,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.000984,\n"}
+,{"stream_name":"stdout","time":265.440025892,"data":"        \"triton_rel_err\": 0.000284\n"}
+,{"stream_name":"stdout","time":265.440028242,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440030537,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440033106,"data":"        \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440035408,"data":"        \"kv_len\": 1,\n"}
+,{"stream_name":"stdout","time":265.440037686,"data":"        \"decode\": true,\n"}
+,{"stream_name":"stdout","time":265.440040012,"data":"        \"triton_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.4400424,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440044774,"data":"        \"triton_rel_err\": 0.0\n"}
+,{"stream_name":"stdout","time":265.440047198,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.44004942,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440051631,"data":"    \"status\": \"pass\",\n"}
+,{"stream_name":"stdout","time":265.440053971,"data":"    \"tile_prefill_head512\": 16,\n"}
+,{"stream_name":"stdout","time":265.440056453,"data":"    \"worst_rel_err\": 0.000284\n"}
+,{"stream_name":"stdout","time":265.440058814,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440064096,"data":"  \"checkpoint_attention\": {\n"}
+,{"stream_name":"stdout","time":265.440066697,"data":"    \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440069054,"data":"    \"global_head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.440071394,"data":"    \"dtype\": \"bfloat16\",\n"}
+,{"stream_name":"stdout","time":265.440073836,"data":"    \"torch_dtype\": null\n"}
+,{"stream_name":"stdout","time":265.440076139,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440078332,"data":"  \"load_seconds\": 118.336,\n"}
+,{"stream_name":"stdout","time":265.440080712,"data":"  \"chat_probe\": {\n"}
+,{"stream_name":"stdout","time":265.440083166,"data":"    \"prompts\": [\n"}
+,{"stream_name":"stdout","time":265.440085478,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.44008769,"data":"        \"name\": \"sum\",\n"}
+,{"stream_name":"stdout","time":265.440090109,"data":"        \"prompt\": \"Write a Python function add(a, b) that returns their sum.\",\n"}
+,{"stream_name":"stdout","time":265.440092646,"data":"        \"raw_32tok\": \"\\n\\n(a, b) that returns their sum.\\n\\n(a, b) that returns their sum.\\n\\n(a, b) that returns their sum\",\n"}
+,{"stream_name":"stdout","time":265.44009551,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.44009833,"data":"        \"chat_64tok\": \"Here are a few ways to write the Python function `add(a, b)` that returns the sum of `a` and `b`.\\n\\n### 1. Standard Implementation (Most Common)\\n\\nThis is the most straightforward and Pythonic way to write this function.\\n\\n```python\\ndef add(a,\"\n"}
+,{"stream_name":"stdout","time":265.440101413,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440103687,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440105904,"data":"        \"name\": \"math\",\n"}
+,{"stream_name":"stdout","time":265.440108298,"data":"        \"prompt\": \"What is 17 * 24? Reply with only the number.\",\n"}
+,{"stream_name":"stdout","time":265.440110738,"data":"        \"raw_32tok\": \"\\n\\n17 * 24 = 48888888888888888888888\",\n"}
+,{"stream_name":"stdout","time":265.440113225,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.440115633,"data":"        \"chat_64tok\": \"408\"\n"}
+,{"stream_name":"stdout","time":265.44011802,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440120236,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.44012248,"data":"        \"name\": \"unit_test\",\n"}
+,{"stream_name":"stdout","time":265.440124874,"data":"        \"prompt\": \"Explain in one sentence what a unit test is.\",\n"}
+,{"stream_name":"stdout","time":265.440127348,"data":"        \"raw_32tok\": \"\\n\\nExplain in one sentence what a unit test is.\\n\\nExplain in one sentence what a unit test is.\\n\\nExplain in one sentence what a unit test is\",\n"}
+,{"stream_name":"stdout","time":265.440130188,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.440132598,"data":"        \"chat_64tok\": \"A unit test is a small, automated piece of code designed to verify that a specific, isolated part of a software application (a \\\"unit\\\") functions exactly as intended.\"\n"}
+,{"stream_name":"stdout","time":265.440135464,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.440137686,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440139923,"data":"    \"status\": \"pass\"\n"}
+,{"stream_name":"stdout","time":265.440142246,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440144466,"data":"  \"elapsed_seconds\": 183.775\n"}
+,{"stream_name":"stdout","time":265.44014721,"data":"}\n"}
+,{"stream_name":"stdout","time":265.440151828,"data":"\n"}
+,{"stream_name":"stdout","time":265.440154219,"data":"{\n"}
+,{"stream_name":"stdout","time":265.440156445,"data":"  \"schema_version\": 4,\n"}
+,{"stream_name":"stdout","time":265.440158787,"data":"  \"model\": \"gemma-4-e4b-it-qat-w4a16-ct\",\n"}
+,{"stream_name":"stdout","time":265.440161179,"data":"  \"python\": \"3.12.13\",\n"}
+,{"stream_name":"stdout","time":265.440163538,"data":"  \"platform\": \"Linux-6.18.55+-x86_64-with-glibc2.35\",\n"}
+,{"stream_name":"stdout","time":265.440165977,"data":"  \"generation_status\": \"passed\",\n"}
+,{"stream_name":"stdout","time":265.440168378,"data":"  \"agent_status\": \"not_run\",\n"}
+,{"stream_name":"stdout","time":265.440170772,"data":"  \"configuration_scope\": \"short-context runtime probe, not official scoring\",\n"}
+,{"stream_name":"stdout","time":265.440173251,"data":"  \"packages\": {\n"}
+,{"stream_name":"stdout","time":265.440175542,"data":"    \"torch\": \"2.10.0+cu128\",\n"}
+,{"stream_name":"stdout","time":265.440177944,"data":"    \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":265.440180384,"data":"    \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":265.440182786,"data":"    \"compressed-tensors\": \"0.15.0.1\",\n"}
+,{"stream_name":"stdout","time":265.44018518,"data":"    \"swegemma\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":265.440187504,"data":"    \"adk-submission\": \"0.2.13\"\n"}
+,{"stream_name":"stdout","time":265.440189924,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440192175,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":265.440194454,"data":"    {\n"}
+,{"stream_name":"stdout","time":265.440196669,"data":"      \"name\": \"Tesla T4\",\n"}
+,{"stream_name":"stdout","time":265.440199008,"data":"      \"capability\": [\n"}
+,{"stream_name":"stdout","time":265.440201366,"data":"        7,\n"}
+,{"stream_name":"stdout","time":265.440203624,"data":"        5\n"}
+,{"stream_name":"stdout","time":265.440205865,"data":"      ],\n"}
+,{"stream_name":"stdout","time":265.440208099,"data":"      \"total_memory_bytes\": 15636037632\n"}
+,{"stream_name":"stdout","time":265.440210475,"data":"    }\n"}
+,{"stream_name":"stdout","time":265.440212718,"data":"  ],\n"}
+,{"stream_name":"stdout","time":265.440214922,"data":"  \"compatibility\": {\n"}
+,{"stream_name":"stdout","time":265.440217261,"data":"    \"status\": \"requires_runtime_test\",\n"}
+,{"stream_name":"stdout","time":265.440219677,"data":"    \"attention_risk\": true,\n"}
+,{"stream_name":"stdout","time":265.440222014,"data":"    \"note\": \"Memory capacity alone does not establish attention-kernel support.\"\n"}
+,{"stream_name":"stdout","time":265.44022449,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440226685,"data":"  \"sm75_tile_patch\": {\n"}
+,{"stream_name":"stdout","time":265.440228976,"data":"    \"source_files\": [\n"}
+,{"stream_name":"stdout","time":265.44023127,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.44023357,"data":"        \"path\": \"/usr/local/lib/python3.12/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py\",\n"}
+,{"stream_name":"stdout","time":265.440236126,"data":"        \"status\": \"patched\",\n"}
+,{"stream_name":"stdout","time":265.440238984,"data":"        \"sha256_before\": \"5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921\",\n"}
+,{"stream_name":"stdout","time":265.44024153,"data":"        \"sha256_after\": \"4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f\"\n"}
+,{"stream_name":"stdout","time":265.440243991,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.440248175,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440250586,"data":"    \"capability_major\": 7,\n"}
+,{"stream_name":"stdout","time":265.440252964,"data":"    \"applied_modules\": [\n"}
+,{"stream_name":"stdout","time":265.4402553,"data":"      \"vllm.v1.attention.ops.triton_unified_attention\"\n"}
+,{"stream_name":"stdout","time":265.44025768,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440259886,"data":"    \"verify\": {\n"}
+,{"stream_name":"stdout","time":265.440262164,"data":"      \"head512_decode\": 16,\n"}
+,{"stream_name":"stdout","time":265.440264493,"data":"      \"head512_prefill\": 16\n"}
+,{"stream_name":"stdout","time":265.440266827,"data":"    }\n"}
+,{"stream_name":"stdout","time":265.440269041,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.44027124,"data":"  \"numeric_check\": {\n"}
+,{"stream_name":"stdout","time":265.440273532,"data":"    \"cases\": [\n"}
+,{"stream_name":"stdout","time":265.440276024,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440278242,"data":"        \"head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.440280573,"data":"        \"kv_len\": 128,\n"}
+,{"stream_name":"stdout","time":265.440282864,"data":"        \"decode\": false,\n"}
+,{"stream_name":"stdout","time":265.44028523,"data":"        \"triton_max_abs_err_fp32ref\": 0.000963,\n"}
+,{"stream_name":"stdout","time":265.440287605,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.000963,\n"}
+,{"stream_name":"stdout","time":265.440289984,"data":"        \"triton_rel_err\": 0.000248\n"}
+,{"stream_name":"stdout","time":265.440292332,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440294546,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440296753,"data":"        \"head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.440299055,"data":"        \"kv_len\": 1,\n"}
+,{"stream_name":"stdout","time":265.440301344,"data":"        \"decode\": true,\n"}
+,{"stream_name":"stdout","time":265.440303671,"data":"        \"triton_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440306038,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440308392,"data":"        \"triton_rel_err\": 0.0\n"}
+,{"stream_name":"stdout","time":265.440310756,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440312978,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440315196,"data":"        \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440317489,"data":"        \"kv_len\": 128,\n"}
+,{"stream_name":"stdout","time":265.440319788,"data":"        \"decode\": false,\n"}
+,{"stream_name":"stdout","time":265.440322108,"data":"        \"triton_max_abs_err_fp32ref\": 0.000984,\n"}
+,{"stream_name":"stdout","time":265.440324466,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.000984,\n"}
+,{"stream_name":"stdout","time":265.440326842,"data":"        \"triton_rel_err\": 0.000284\n"}
+,{"stream_name":"stdout","time":265.440329207,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440331413,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440335582,"data":"        \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440337894,"data":"        \"kv_len\": 1,\n"}
+,{"stream_name":"stdout","time":265.440340272,"data":"        \"decode\": true,\n"}
+,{"stream_name":"stdout","time":265.44034261,"data":"        \"triton_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440345064,"data":"        \"sdpa_fp16_max_abs_err_fp32ref\": 0.0,\n"}
+,{"stream_name":"stdout","time":265.440347415,"data":"        \"triton_rel_err\": 0.0\n"}
+,{"stream_name":"stdout","time":265.440352362,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.440354992,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440357327,"data":"    \"status\": \"pass\",\n"}
+,{"stream_name":"stdout","time":265.440359678,"data":"    \"tile_prefill_head512\": 16,\n"}
+,{"stream_name":"stdout","time":265.440362058,"data":"    \"worst_rel_err\": 0.000284\n"}
+,{"stream_name":"stdout","time":265.440364528,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440366718,"data":"  \"checkpoint_attention\": {\n"}
+,{"stream_name":"stdout","time":265.440369058,"data":"    \"head_dim\": 256,\n"}
+,{"stream_name":"stdout","time":265.440371373,"data":"    \"global_head_dim\": 512,\n"}
+,{"stream_name":"stdout","time":265.440374311,"data":"    \"dtype\": \"bfloat16\",\n"}
+,{"stream_name":"stdout","time":265.440377863,"data":"    \"torch_dtype\": null\n"}
+,{"stream_name":"stdout","time":265.440382041,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.44038458,"data":"  \"load_seconds\": 118.336,\n"}
+,{"stream_name":"stdout","time":265.440386974,"data":"  \"chat_probe\": {\n"}
+,{"stream_name":"stdout","time":265.44038929,"data":"    \"prompts\": [\n"}
+,{"stream_name":"stdout","time":265.440391944,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440394158,"data":"        \"name\": \"sum\",\n"}
+,{"stream_name":"stdout","time":265.440396646,"data":"        \"prompt\": \"Write a Python function add(a, b) that returns their sum.\",\n"}
+,{"stream_name":"stdout","time":265.44039918,"data":"        \"raw_32tok\": \"\\n\\n(a, b) that returns their sum.\\n\\n(a, b) that returns their sum.\\n\\n(a, b) that returns their sum\",\n"}
+,{"stream_name":"stdout","time":265.44040261,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.440405535,"data":"        \"chat_64tok\": \"Here are a few ways to write the Python function `add(a, b)` that returns the sum of `a` and `b`.\\n\\n### 1. Standard Implementation (Most Common)\\n\\nThis is the most straightforward and Pythonic way to write this function.\\n\\n```python\\ndef add(a,\"\n"}
+,{"stream_name":"stdout","time":265.440408677,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440410924,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440413219,"data":"        \"name\": \"math\",\n"}
+,{"stream_name":"stdout","time":265.440415674,"data":"        \"prompt\": \"What is 17 * 24? Reply with only the number.\",\n"}
+,{"stream_name":"stdout","time":265.440418102,"data":"        \"raw_32tok\": \"\\n\\n17 * 24 = 48888888888888888888888\",\n"}
+,{"stream_name":"stdout","time":265.44042065,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.440423056,"data":"        \"chat_64tok\": \"408\"\n"}
+,{"stream_name":"stdout","time":265.440425474,"data":"      },\n"}
+,{"stream_name":"stdout","time":265.440427704,"data":"      {\n"}
+,{"stream_name":"stdout","time":265.440429917,"data":"        \"name\": \"unit_test\",\n"}
+,{"stream_name":"stdout","time":265.440432319,"data":"        \"prompt\": \"Explain in one sentence what a unit test is.\",\n"}
+,{"stream_name":"stdout","time":265.440434792,"data":"        \"raw_32tok\": \"\\n\\nExplain in one sentence what a unit test is.\\n\\nExplain in one sentence what a unit test is.\\n\\nExplain in one sentence what a unit test is\",\n"}
+,{"stream_name":"stdout","time":265.440437598,"data":"        \"chat_path\": \"tokenizer_chat_template\",\n"}
+,{"stream_name":"stdout","time":265.440440077,"data":"        \"chat_64tok\": \"A unit test is a small, automated piece of code designed to verify that a specific, isolated part of a software application (a \\\"unit\\\") functions exactly as intended.\"\n"}
+,{"stream_name":"stdout","time":265.44044577,"data":"      }\n"}
+,{"stream_name":"stdout","time":265.440448236,"data":"    ],\n"}
+,{"stream_name":"stdout","time":265.440450469,"data":"    \"status\": \"pass\"\n"}
+,{"stream_name":"stdout","time":265.440452886,"data":"  },\n"}
+,{"stream_name":"stdout","time":265.440455084,"data":"  \"elapsed_seconds\": 183.775,\n"}
+,{"stream_name":"stdout","time":265.440457552,"data":"  \"notebook_elapsed_seconds\": 257.29\n"}
+,{"stream_name":"stdout","time":265.440459928,"data":"}\n"}
+,{"stream_name":"stderr","time":267.823373003,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":267.823391068,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":267.96883666,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":267.968875827,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":268.66953401,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":268.959624962,"data":"[NbConvertApp] Writing 38973 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":271.512878173,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":272.328445951,"data":"[NbConvertApp] Writing 346361 bytes to __results__.html\n"}
+]

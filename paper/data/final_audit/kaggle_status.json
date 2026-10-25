@@ -51,5 +51,24 @@
     "elapsed_seconds": 360.629,
     "output_quality": "degenerate and repetitive; compatibility only, not a capability result",
     "agent_status": "not_run"
+  },
+  "preflight_v4": {
+    "kernel": "https://www.kaggle.com/code/yzx22442255/atlas-gemma4-e4b-t4-preflight-v4-numerics-chat",
+    "numeric_check": {
+      "status": "pass",
+      "tile_prefill_head512": 16,
+      "worst_rel_err_vs_fp32_sdpa": 0.000284,
+      "cases": "head_dim 256/512, prefill+decode; triton tile-16 error equals fp16-SDPA error vs fp32 reference"
+    },
+    "chat_probe": {
+      "status": "pass",
+      "path": "tokenizer_chat_template",
+      "raw_prompts": "degenerate repetition reproduced (v3 diagnosis confirmed)",
+      "templated": "coherent and correct (17*24=408; coherent unit-test definition)",
+      "conclusion": "degenerate output was a prompting artifact, not a kernel or model defect"
+    },
+    "load_seconds": 118.3,
+    "elapsed_seconds": 183.8,
+    "agent_status": "not_run"
   }
 }

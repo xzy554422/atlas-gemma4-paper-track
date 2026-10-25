@@ -77,9 +77,21 @@
       "bytes": 2189,
       "sha256": "e09f1fb00c4df94f87d829fb27e909887aff5921cb92a5e8919132397c9c6671"
     },
+    "paper/data/final_audit/kaggle_preflight_v4_generation.log": {
+      "bytes": 17421,
+      "sha256": "ca7e5ffb4d4533034097f6dca57dbbd7875bfeaedf791b934251e508491ed12d"
+    },
+    "paper/data/final_audit/kaggle_preflight_v4_kernel.log": {
+      "bytes": 27491,
+      "sha256": "9c13f086d5cb53a498b8f303e80cbab65bd7808abc22c2d3a2a125c9cd648a71"
+    },
+    "paper/data/final_audit/kaggle_preflight_v4_result.json": {
+      "bytes": 4003,
+      "sha256": "6987d4fbe77e825d0890850c87b7f7ace1169ba0b18a50f075f8ea5d6a308e11"
+    },
     "paper/data/final_audit/kaggle_status.json": {
-      "bytes": 2647,
-      "sha256": "1fdce1515b7689092206d18735f6704c425ec79b3d038d314a28c2de72e2b4b8"
+      "bytes": 3484,
+      "sha256": "ba1ca74e4fbceff379d9a3315f262358f9a55d7dc925027500eb636f7ffdd60a"
     },
     "paper/data/final_audit/p1d_rows.csv": {
       "bytes": 1137379,
@@ -106,16 +118,16 @@
       "sha256": "d7f7477a52329136aae19a31dd3cbfddd3f3a44e7d56f97e62abcd93d9bf3e83"
     },
     "paper/draft/writeup-kaggle.html": {
-      "bytes": 16927,
-      "sha256": "25537b06959d90ae245c6f0ac2736aa5c972a579464de1f6ee24706a8583de2b"
+      "bytes": 17302,
+      "sha256": "285b281a2644bf9fc7ce26e043420fce92a9274046f61b818614a0a5fc256756"
     },
     "paper/draft/writeup-kaggle.md": {
-      "bytes": 15833,
-      "sha256": "9c078f4a45756953e7ce5ec01885a81e8274586e742e7ea55cd4d636f252e89c"
+      "bytes": 16208,
+      "sha256": "ad3b0fb16c8df63f4b693dbce2c6b059bd4dcd4c3cac89cca8f554a14c1c4417"
     },
     "paper/draft/writeup.md": {
-      "bytes": 15316,
-      "sha256": "abafdddc371af60c04c89dd74c7a62fb21cfbf667eca34c4648bb86504daae48"
+      "bytes": 15699,
+      "sha256": "f62303c60eb76241a1127c80088f9fa8252c572e7e03feaf9a0a0d3c6df141a0"
     },
     "paper/figures/01_diagnostic_population.png": {
       "bytes": 44833,
@@ -169,9 +181,17 @@
       "bytes": 17801,
       "sha256": "643bf7b360c9bec68957f14350668919bd6f389e48580ebe03ba3e801f9fcc5b"
     },
+    "paper/notebooks/model_preflight_v4.ipynb": {
+      "bytes": 23899,
+      "sha256": "9fa638651efe547a20e1666e72b6ea2c9747ab2bed05a1070417e782afc555e0"
+    },
     "paper/notebooks/reproduce.ipynb": {
       "bytes": 6041,
       "sha256": "553760a95d2270d95da73fc48f3629159e45aa85d88153a0826d1d4afa8ca9cb"
+    },
+    "paper/notes/12-execution-status.md": {
+      "bytes": 6263,
+      "sha256": "fa7304de6e68c838082649b99b0236cc46a1d4340acb8251716b934b718c59f1"
     },
     "paper/scripts/final_audit.py": {
       "bytes": 34838,
@@ -181,6 +201,10 @@
       "bytes": 5191,
       "sha256": "5fa44c4779abebb6b1142f23d9e0454f1b941d7cd5f907526df9351df0aaa175"
     },
+    "paper/scripts/kaggle_preflight_v4.py": {
+      "bytes": 15047,
+      "sha256": "ece48173e0f1bab9654c1bb1df085566f8cd10d536d4f217e42d99971e366ca5"
+    },
     "paper/scripts/make_preflight_v2.py": {
       "bytes": 4988,
       "sha256": "0b438d1f384aee756d92be366d172cf7169a408aba15754868de3f4486baba0a"
@@ -188,6 +212,10 @@
     "paper/scripts/make_preflight_v3.py": {
       "bytes": 8225,
       "sha256": "ed9be69b00316eb93a15c90401de77627976b460218cc634ec06ddf3171fa49b"
+    },
+    "paper/scripts/make_preflight_v4.py": {
+      "bytes": 4116,
+      "sha256": "e6437fbf803f90c414d2771299730925f1e7c39e9e94a8c36f64f3ab502b5de4"
     },
     "paper/scripts/p1_timing.py": {
       "bytes": 26912,
