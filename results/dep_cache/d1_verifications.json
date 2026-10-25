@@ -1,0 +1,227 @@
+{
+  "rich_3061": {
+    "agent_patch_chars": 908,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 12.7
+  },
+  "rich_3064": {
+    "agent_patch_chars": 572,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 12.7
+  },
+  "rich_3067": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "rich_3105": {
+    "agent_patch_chars": 427,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 12.7
+  },
+  "requests_6589": {
+    "agent_patch_chars": 546,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "resolved": true
+    },
+    "elapsed_seconds": 105.7
+  },
+  "requests_6644": {
+    "agent_patch_chars": 541,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 11.3
+  },
+  "requests_7427": {
+    "agent_patch_chars": 1404,
+    "resolution": {
+      "baseline_required": "passed",
+      "agent_required": "no_junit",
+      "gold_required": "passed",
+      "baseline_fails": false,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 11.5
+  },
+  "requests_7502": {
+    "agent_patch_chars": 582,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "resolved": true
+    },
+    "elapsed_seconds": 128.3
+  },
+  "fastapi_11355": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "fastapi_14297": {
+    "agent_patch_chars": 1051,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 29.0
+  },
+  "fastapi_14306": {
+    "agent_patch_chars": 2314,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "missing",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 27.7
+  },
+  "fastapi_14360": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "fastapi_14448": {
+    "agent_patch_chars": 1144,
+    "resolved": false,
+    "note": "no test targets derivable"
+  },
+  "fastapi_14492": {
+    "agent_patch_chars": 391,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "resolved": true
+    },
+    "elapsed_seconds": 29.5
+  },
+  "fastapi_14873": {
+    "agent_patch_chars": 896,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 31.1
+  },
+  "fastapi_15280": {
+    "agent_patch_chars": 529,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 30.9
+  },
+  "httpx_3672": {
+    "agent_patch_chars": 1402,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 9.7
+  },
+  "rich_3278": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "rich_3518": {
+    "agent_patch_chars": 0,
+    "resolved": false,
+    "note": "empty patch; no verification run"
+  },
+  "rich_3772": {
+    "agent_patch_chars": 451,
+    "resolution": {
+      "baseline_required": "no_junit",
+      "agent_required": "no_junit",
+      "gold_required": "passed",
+      "baseline_fails": false,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 571.5
+  },
+  "rich_3934": {
+    "agent_patch_chars": 839,
+    "resolution": {
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "resolved": false
+    },
+    "elapsed_seconds": 18.3
+  }
+}

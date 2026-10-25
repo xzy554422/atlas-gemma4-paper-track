@@ -1,0 +1,119 @@
+{
+  "rich_3454": {
+    "repo": "Textualize/rich",
+    "exit_code": 1,
+    "seconds": 5.3,
+    "timed_out": false,
+    "verdict": "fail",
+    "junit": {
+      "tests": 852,
+      "failures": 14,
+      "errors": 0,
+      "skipped": 24,
+      "evidence_complete": true,
+      "bad": [
+        "test_card::test_card_render",
+        "test_markdown::test_inline_code",
+        "test_pretty::test_attrs_broken_310",
+        "test_pretty::test_max_depth_dataclass",
+        "test_pretty::test_pretty_dataclass",
+        "test_pretty::test_reference_cycle_dataclass",
+        "test_syntax::test_blank_lines",
+        "test_syntax::test_option_no_wrap",
+        "test_syntax::test_python_render",
+        "test_syntax::test_python_render_indent_guides",
+        "test_syntax::test_python_render_simple",
+        "test_syntax::test_python_render_simple_indent_guides",
+        "test_syntax::test_python_render_simple_passing_lexer_instance",
+        "test_syntax::test_syntax_highlight_ranges"
+      ]
+    },
+    "historical": {
+      "tests": 803,
+      "failures": 11,
+      "errors": 1,
+      "skipped": 23
+    },
+    "elapsed_total": 13.2
+  },
+  "fastapi_11194": {
+    "repo": "fastapi/fastapi",
+    "exit_code": 1,
+    "seconds": 22.6,
+    "timed_out": false,
+    "verdict": "fail",
+    "junit": {
+      "tests": 2486,
+      "failures": 5,
+      "errors": 0,
+      "skipped": 131,
+      "evidence_complete": true
+    },
+    "historical": {
+      "tests": 841,
+      "failures": 8,
+      "errors": 137,
+      "skipped": 0
+    },
+    "elapsed_total": 37.6,
+    "note": "5 residual failures: 3 async-plugin (official -p no:anyio), 1 fastapi-cli path env, 1 openapi version drift; 0 errors",
+    "extra_rounds": [
+      "+flask,sqlmodel",
+      "+pyyaml,email-validator,pyjwt",
+      "+passlib,bcrypt(5.x)",
+      "bcrypt->4.3.0,+ujson"
+    ]
+  },
+  "requests_7502": {
+    "repo": "psf/requests",
+    "exit_code": 1,
+    "seconds": 114.7,
+    "timed_out": false,
+    "verdict": "fail",
+    "junit": {
+      "tests": 633,
+      "failures": 12,
+      "errors": 0,
+      "skipped": 16,
+      "evidence_complete": true,
+      "bad": [
+        "tests.test_lowlevel::test_use_proxy_from_environment[ALL_PROXY-http]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[ALL_PROXY-https]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[HTTPS_PROXY-https]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[HTTP_PROXY-http]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[all_proxy-http]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[all_proxy-https]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[http_proxy-http]",
+        "tests.test_lowlevel::test_use_proxy_from_environment[https_proxy-https]",
+        "tests.test_requests.TestTimeout::test_connect_timeout[timeout0]",
+        "tests.test_requests.TestTimeout::test_connect_timeout[timeout1]",
+        "tests.test_requests.TestTimeout::test_total_timeout_connect[timeout0]",
+        "tests.test_requests.TestTimeout::test_total_timeout_connect[timeout1]"
+      ]
+    },
+    "historical": {
+      "tests": 634,
+      "failures": 4,
+      "errors": 204,
+      "skipped": 16
+    },
+    "elapsed_total": 120.8
+  },
+  "httpx_3672": {
+    "repo": "encode/httpx",
+    "exit_code": 0,
+    "seconds": 67.0,
+    "timed_out": false,
+    "verdict": "pass",
+    "junit": {
+      "tests": 128,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "evidence_complete": true,
+      "bad": []
+    },
+    "historical": null,
+    "elapsed_total": 71.4
+  }
+}

@@ -1,0 +1,80 @@
+{
+ "tasks": {
+  "requests_6589": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 546,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 945
+   },
+   "elapsed_seconds": 72.0,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_6644": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 541,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 326
+   },
+   "elapsed_seconds": 25.18,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7502": {
+   "termination": "submit_patch",
+   "turns": 8,
+   "tool_calls_used": 6,
+   "submit_called": true,
+   "patch_chars": 582,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1623
+   },
+   "elapsed_seconds": 118.12,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7427": {
+   "termination": "submit_patch",
+   "turns": 31,
+   "tool_calls_used": 22,
+   "submit_called": true,
+   "patch_chars": 1404,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 7014
+   },
+   "elapsed_seconds": 515.66,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7505": {
+   "termination": "tool_budget",
+   "turns": 36,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 8994
+   },
+   "elapsed_seconds": 716.42,
+   "error_type": null,
+   "fatal": null
+  }
+ },
+ "notebook_elapsed_seconds": 1808.142
+}

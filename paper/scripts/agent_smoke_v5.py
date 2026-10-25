@@ -21,6 +21,7 @@ import argparse
 import difflib
 import hashlib
 import importlib
+import importlib.metadata
 import json
 import math
 import os
@@ -474,6 +475,48 @@ def extract_text(chat_result):
     return chat_result.outputs[0]
 
 
+def gold_files(task: dict) -> list:
+    files = sorted(set(re.findall(r'^\+\+\+ b/(\S+)', task.get('patch', '') or '', re.M)))
+    return [f for f in files if not is_protected(f)]
+
+
+def b0_rank(workspace: Path, problem: str, limit: int = 8) -> list:
+    """B0 lexical proxy: Jaccard overlap between issue tokens and path-stem tokens."""
+    stop = {'the', 'and', 'for', 'with', 'from', 'that', 'this', 'not', 'are', 'but'}
+    q_tokens = {t.lower() for t in re.findall(r'[A-Za-z_][A-Za-z0-9_]{2,}', problem)
+                if t.lower() not in stop}
+    scored = []
+    for path in sorted(workspace.rglob('*.py')):
+        rel = path.relative_to(workspace).as_posix()
+        if '.git' in path.parts:
+            continue
+        stems = set()
+        for part in re.split(r'[\/]', rel)[:-1] + [Path(rel).stem]:
+            stems.update(t.lower() for t in re.findall(r'[A-Za-z_][A-Za-z0-9_]{2,}', part))
+        union = q_tokens | stems
+        score = len(q_tokens & stems) / len(union) if union else 0.0
+        scored.append((score, rel))
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    return [rel for score, rel in scored[:limit] if score > 0] or         [rel for _, rel in scored[:limit]]
+
+
+def build_localization_section(workspace: Path, task: dict, mode: str) -> str:
+    if mode == 'oracle':
+        files = gold_files(task)
+        if not files:
+            return ''
+        return ('## Localization hints (answer-informed reference; not an implementable '
+                'retrieval method)\n'
+                + chr(10).join(f'- {f}' for f in files) + chr(10))
+    if mode == 'b0':
+        ranked = b0_rank(workspace, task.get('problem_statement', ''))
+        if not ranked:
+            return ''
+        return ('## Localization hints (lexical filename-overlap proxy B0)\n'
+                + chr(10).join(f'- {f}' for f in ranked) + chr(10))
+    return ''
+
+
 def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
                    output_dir: Path, log) -> dict:
     started = time.monotonic()
@@ -488,12 +531,15 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
             'action', 'tool', 'prompt_tokens', 'output_tokens', 'note')}, ensure_ascii=False))
         return entry
 
+    mode = budgets.get('localization_mode', 'index')
+    localization_section = build_localization_section(workspace, task, mode)
     messages = [
         {'role': 'system', 'content': SYSTEM_INSTRUCTION},
         {'role': 'user', 'content': INITIAL_TEMPLATE.format(
             repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
             time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
             symbols=symbol_index(workspace, task.get('problem_statement', '')),
+            localization_section=localization_section,
             layout=workspace_layout(workspace))},
     ]
     turn = 0
@@ -613,12 +659,64 @@ def prepare_workspace(snapshot_tgz: Path, workspace: Path) -> dict:
             'commit_output': (commit.stdout or commit.stderr or '')[:200]}
 
 
+
+def run_batch(args) -> int:
+    """Direction 1 driver: run every task in the sample, resumable per task."""
+    sample = json.loads(args.batch_file.read_text(encoding='utf-8'))
+    tasks_index = {}
+    for line in args.tasks_jsonl.read_text(encoding='utf-8').splitlines():
+        if line.strip():
+            record = json.loads(line)
+            tasks_index[record['instance_id']] = record
+    snapshot_dir = args.snapshot_dir
+    batch_summary_path = args.output_dir / 'batch_summary.json'
+    batch = json.loads(batch_summary_path.read_text(encoding='utf-8')) if batch_summary_path.exists() else {'tasks': {}}
+    for entry in sample:
+        iid = entry['instance_id']
+        task_dir = args.output_dir / iid
+        done = batch['tasks'].get(iid, {})
+        if done.get('termination') in ('submit_patch', 'tool_budget', 'time_budget', 'no_tool_call', 'llm_error'):
+            print(f'[skip] {iid} already terminated: {done.get("termination")}', flush=True)
+            continue
+        snapshot = snapshot_dir / f'{iid}.tgz'
+        if not snapshot.is_file():
+            batch['tasks'][iid] = {'fatal': 'snapshot missing'}
+            continue
+        task_dir.mkdir(parents=True, exist_ok=True)
+        single = ['--snapshot', str(snapshot), '--tasks-jsonl', str(args.tasks_jsonl),
+                  '--instance-id', iid, '--model-path', str(args.model_path),
+                  '--output-dir', str(task_dir),
+                  '--tool-budget', str(args.tool_budget),
+                  '--time-minutes', str(args.time_minutes),
+                  '--localization-mode', args.localization_mode]
+        print(f'=== task {iid} ({entry["repo"]}) ===', flush=True)
+        rc = main(single)
+        summary = {}
+        summary_path = task_dir / 'summary.json'
+        if summary_path.exists():
+            try:
+                summary = json.loads(summary_path.read_text(encoding='utf-8'))
+            except json.JSONDecodeError:
+                summary = {'fatal': 'summary unreadable'}
+        batch['tasks'][iid] = {k: summary.get(k) for k in (
+            'termination', 'turns', 'tool_calls_used', 'submit_called', 'patch_chars',
+            'patch_files', 'totals', 'elapsed_seconds', 'error_type', 'fatal')}
+        batch_summary_path.write_text(json.dumps(batch, ensure_ascii=False, indent=1) + chr(10), encoding='utf-8')
+    print(json.dumps(batch, ensure_ascii=False, indent=1))
+    return 0
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--snapshot', type=Path, required=True)
+    parser.add_argument('--snapshot', type=Path)
     parser.add_argument('--task-json', type=Path)
     parser.add_argument('--tasks-jsonl', type=Path)
     parser.add_argument('--instance-id', type=str)
+    parser.add_argument('--batch-file', type=Path,
+                        help='JSON list of {instance_id, repo, ...}; runs each task into <output>/<iid>/')
+    parser.add_argument('--snapshot-dir', type=Path)
+    parser.add_argument('--localization-mode', type=str, default='index',
+                        choices=['index', 'oracle', 'b0'])
     parser.add_argument('--model-path', type=Path, required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--tool-budget', type=int, default=24)
@@ -626,6 +724,12 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
+    if args.batch_file:
+        if not (args.tasks_jsonl and args.snapshot_dir and args.model_path):
+            parser.error('batch mode requires --tasks-jsonl, --snapshot-dir, --model-path')
+        return run_batch(args)
+    if not args.snapshot:
+        parser.error('single-task mode requires --snapshot')
 
     def log(message):
         print(message, flush=True)
@@ -674,7 +778,8 @@ def main(argv=None) -> int:
         llm = LLM(**config)
         result['load_seconds'] = round(time.monotonic() - load_started, 2)
         sampling = SamplingParams(temperature=0.0, max_tokens=1024)
-        budgets = {'tool_calls': args.tool_budget, 'time_minutes': args.time_minutes}
+        budgets = {'tool_calls': args.tool_budget, 'time_minutes': args.time_minutes,
+                   'localization_mode': args.localization_mode}
         summary = run_agent_loop(args.output_dir / 'workspace', task, llm, sampling,
                                  budgets, args.output_dir, log)
         result.update(summary)

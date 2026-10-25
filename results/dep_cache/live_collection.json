@@ -1,0 +1,46 @@
+{
+  "rich_3454": {
+    "repo": "Textualize/rich",
+    "prep_seconds": 7.9,
+    "pip_rc": "0",
+    "pip_tail": "nusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n",
+    "elapsed": 9.8,
+    "exit_code": 0,
+    "collected": 852,
+    "collection_errors": 0,
+    "missing_modules": [],
+    "tail": "y::test_control_set_terminal_window_title\n\n=============================== warnings summary ===============================\n../usr/local/lib/python3.13/site-packages/_pytest/python.py:124\n  /usr/local/lib/python3.13/site-packages/_pytest/python.py:124: PytestRemovedIn10Warning: Passing a non-Collection iterable to parametrize is deprecated.\n  Test: test_panel.py::test_render_panel, argvalues type: zip\n  Please convert to a list or tuple.\n  See https://docs.pytest.org/en/stable/deprecations.html#parametrize-iterators\n    metafunc.parametrize(*marker.args, **marker.kwargs, _param_mark=marker)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n852 tests collected in 0.95s\n"
+  },
+  "fastapi_11194": {
+    "repo": "fastapi/fastapi",
+    "pip_rc": "0",
+    "collected": 2486,
+    "collection_errors": 0,
+    "missing_modules": [],
+    "note": "final set incl. passlib/bcrypt4.3/ujson; see baseline_runs.json"
+  },
+  "requests_7502": {
+    "repo": "psf/requests",
+    "prep_seconds": 4.4,
+    "pip_rc": "0",
+    "pip_tail": "nusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n",
+    "elapsed": 6.9,
+    "exit_code": 0,
+    "collected": 633,
+    "collection_errors": 0,
+    "missing_modules": [],
+    "tail": "ypass_proxies_win_registry[http://mylocalhostname:5000/v1.0/-True-<local>]\ntests/test_utils.py::test_should_bypass_proxies_win_registry[http://192.168.0.1/-False-]\ntests/test_utils.py::test_should_bypass_proxies_win_registry_bad_values\ntests/test_utils.py::test_set_environ[no_proxy-192.168.0.0/24,127.0.0.1,localhost.localdomain]\ntests/test_utils.py::test_set_environ[no_proxy-None]\ntests/test_utils.py::test_set_environ[a_new_key-192.168.0.0/24,127.0.0.1,localhost.localdomain]\ntests/test_utils.py::test_set_environ[a_new_key-None]\ntests/test_utils.py::test_set_environ_raises_exception\ntests/test_utils.py::test_should_bypass_proxies_win_registry_ProxyOverride_value\n\n633 tests collected in 0.38s\n"
+  },
+  "httpx_3672": {
+    "repo": "encode/httpx",
+    "prep_seconds": 2.4,
+    "pip_rc": "0",
+    "pip_tail": "nusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n",
+    "elapsed": 4.7,
+    "exit_code": 0,
+    "collected": 128,
+    "collection_errors": 0,
+    "missing_modules": [],
+    "tail": "ues\ntests/test_urls.py::test_queryparams_from_str\ntests/test_urls.py::test_queryparams_access\ntests/test_urls.py::test_queryparams_escaping\ntests/test_urls.py::test_queryparams_empty\ntests/test_urls.py::test_queryparams_set\ntests/test_urls.py::test_queryparams_append\ntests/test_urls.py::test_queryparams_remove\ntests/test_urls.py::test_queryparams_merge\ntests/test_urls.py::test_queryparams_are_hashable\ntests/test_urls.py::test_queryparams_misc[a=123&a=456&b=789]\ntests/test_urls.py::test_queryparams_misc[source1]\ntests/test_urls.py::test_queryparams_misc[source2]\ntests/test_urls.py::test_queryparams_misc[source3]\ntests/test_urls.py::test_queryparams_misc[source4]\n\n128 tests collected in 0.17s\n"
+  }
+}

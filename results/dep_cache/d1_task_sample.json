@@ -1,0 +1,134 @@
+[
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 176,
+  "patch_files": 1,
+  "instance_id": "rich_3278"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 381,
+  "patch_files": 1,
+  "instance_id": "rich_3105"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 494,
+  "patch_files": 1,
+  "instance_id": "rich_3518"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 567,
+  "patch_files": 1,
+  "instance_id": "rich_3067"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 913,
+  "patch_files": 1,
+  "instance_id": "rich_3064"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 1446,
+  "patch_files": 2,
+  "instance_id": "rich_3934"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 3664,
+  "patch_files": 1,
+  "instance_id": "rich_3772"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 8089,
+  "patch_files": 1,
+  "instance_id": "rich_3061"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 248,
+  "patch_files": 1,
+  "instance_id": "fastapi_14492"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 518,
+  "patch_files": 1,
+  "instance_id": "fastapi_14360"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 817,
+  "patch_files": 1,
+  "instance_id": "fastapi_14297"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 1175,
+  "patch_files": 1,
+  "instance_id": "fastapi_11355"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 1623,
+  "patch_files": 1,
+  "instance_id": "fastapi_14873"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 2605,
+  "patch_files": 2,
+  "instance_id": "fastapi_15280"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 5846,
+  "patch_files": 2,
+  "instance_id": "fastapi_14448"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 8565,
+  "patch_files": 2,
+  "instance_id": "fastapi_14306"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 271,
+  "patch_files": 1,
+  "instance_id": "requests_6589"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 435,
+  "patch_files": 1,
+  "instance_id": "requests_6644"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 604,
+  "patch_files": 1,
+  "instance_id": "requests_7502"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 685,
+  "patch_files": 1,
+  "instance_id": "requests_7427"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 2341,
+  "patch_files": 2,
+  "instance_id": "requests_7505"
+ },
+ {
+  "repo": "encode/httpx",
+  "patch_chars": 9385,
+  "patch_files": 7,
+  "instance_id": "httpx_3672"
+ }
+]

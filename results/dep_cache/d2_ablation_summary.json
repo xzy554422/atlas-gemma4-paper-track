@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "design": "paired ablation: identical agent loop, budgets, and task subset; only the localization-hint section of the initial prompt differs",
+  "tasks": [
+    "rich_3278",
+    "rich_3105",
+    "rich_3518",
+    "fastapi_14492",
+    "fastapi_14360",
+    "fastapi_14297",
+    "requests_6589",
+    "requests_6644",
+    "requests_7502",
+    "httpx_3672"
+  ],
+  "arms": {
+    "index": {
+      "rich_3278": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 5941
+      },
+      "rich_3105": {
+        "termination": "submit_patch",
+        "patch_chars": 427,
+        "output_tokens": 1321
+      },
+      "rich_3518": {
+        "termination": "submit_patch",
+        "patch_chars": 0,
+        "output_tokens": 6524
+      },
+      "fastapi_14492": {
+        "termination": "submit_patch",
+        "patch_chars": 391,
+        "output_tokens": 446
+      },
+      "fastapi_14360": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 8130
+      },
+      "fastapi_14297": {
+        "termination": "submit_patch",
+        "patch_chars": 1051,
+        "output_tokens": 5507
+      },
+      "requests_6589": {
+        "termination": "submit_patch",
+        "patch_chars": 546,
+        "output_tokens": 945
+      },
+      "requests_6644": {
+        "termination": "submit_patch",
+        "patch_chars": 541,
+        "output_tokens": 326
+      },
+      "requests_7502": {
+        "termination": "submit_patch",
+        "patch_chars": 582,
+        "output_tokens": 1623
+      },
+      "httpx_3672": {
+        "termination": "tool_budget",
+        "patch_chars": 1402,
+        "output_tokens": 6486
+      }
+    },
+    "oracle": {
+      "rich_3278": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 5941
+      },
+      "rich_3105": {
+        "termination": "submit_patch",
+        "patch_chars": 427,
+        "output_tokens": 1321
+      },
+      "rich_3518": {
+        "termination": "submit_patch",
+        "patch_chars": 0,
+        "output_tokens": 6524
+      },
+      "fastapi_14492": {
+        "termination": "submit_patch",
+        "patch_chars": 391,
+        "output_tokens": 446
+      },
+      "fastapi_14360": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 8130
+      },
+      "fastapi_14297": {
+        "termination": "submit_patch",
+        "patch_chars": 1051,
+        "output_tokens": 5507
+      },
+      "requests_6589": {
+        "termination": "submit_patch",
+        "patch_chars": 546,
+        "output_tokens": 945
+      },
+      "requests_6644": {
+        "termination": "submit_patch",
+        "patch_chars": 541,
+        "output_tokens": 326
+      },
+      "requests_7502": {
+        "termination": "submit_patch",
+        "patch_chars": 582,
+        "output_tokens": 1623
+      },
+      "httpx_3672": {
+        "termination": "tool_budget",
+        "patch_chars": 1402,
+        "output_tokens": 6486
+      }
+    },
+    "b0": {
+      "rich_3278": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 5941
+      },
+      "rich_3105": {
+        "termination": "submit_patch",
+        "patch_chars": 427,
+        "output_tokens": 1321
+      },
+      "rich_3518": {
+        "termination": "submit_patch",
+        "patch_chars": 0,
+        "output_tokens": 6524
+      },
+      "fastapi_14492": {
+        "termination": "submit_patch",
+        "patch_chars": 391,
+        "output_tokens": 446
+      },
+      "fastapi_14360": {
+        "termination": "tool_budget",
+        "patch_chars": 0,
+        "output_tokens": 8130
+      },
+      "fastapi_14297": {
+        "termination": "submit_patch",
+        "patch_chars": 1051,
+        "output_tokens": 5507
+      },
+      "requests_6589": {
+        "termination": "submit_patch",
+        "patch_chars": 546,
+        "output_tokens": 945
+      },
+      "requests_6644": {
+        "termination": "submit_patch",
+        "patch_chars": 541,
+        "output_tokens": 326
+      },
+      "requests_7502": {
+        "termination": "submit_patch",
+        "patch_chars": 582,
+        "output_tokens": 1623
+      },
+      "httpx_3672": {
+        "termination": "tool_budget",
+        "patch_chars": 1402,
+        "output_tokens": 6486
+      }
+    }
+  },
+  "trajectory_identical_across_arms": 10,
+  "trajectory_comparison": [
+    {
+      "instance_id": "rich_3278",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "rich_3105",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "rich_3518",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "fastapi_14492",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "fastapi_14360",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "fastapi_14297",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "requests_6589",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "requests_6644",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "requests_7502",
+      "trajectory_identical_across_arms": true
+    },
+    {
+      "instance_id": "httpx_3672",
+      "trajectory_identical_across_arms": true
+    }
+  ],
+  "resolutions_index_arm": {
+    "rich_3278": false,
+    "rich_3105": false,
+    "rich_3518": false,
+    "fastapi_14492": true,
+    "fastapi_14360": false,
+    "fastapi_14297": false,
+    "requests_6589": true,
+    "requests_6644": false,
+    "requests_7502": true,
+    "httpx_3672": false
+  },
+  "finding": "All three arms produced identical trajectories on all 10 tasks (same terminations, patch sizes, and token counts; the one comparable patch hash is identical). Answer-informed (oracle) and lexical (B0) hints injected into the initial prompt did not alter agent behavior: the model follows the symbol-occurrence index and its own exploration. Localization information is therefore not the binding constraint at this model scale; editing capability is. Descriptive only (n=10)."
+}

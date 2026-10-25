@@ -1,0 +1,95 @@
+{
+  "scanned_files": 968,
+  "per_repo": {
+    "Textualize/rich": {
+      "files": 126,
+      "with_collection_error": 84,
+      "modules": {
+        "attr": 84
+      },
+      "samples": [
+        {
+          "file": "rich_3454_baseline_full.xml",
+          "modules": [
+            "attr"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/tests/test_pretty.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.13/importlib/__init__.py"
+        },
+        {
+          "file": "rich_3454_baseline_selected.xml",
+          "modules": [
+            "attr"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/tests/test_pretty.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.13/importlib/__init__.py"
+        },
+        {
+          "file": "rich_3454_comment_only_full.xml",
+          "modules": [
+            "attr"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/tests/test_pretty.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.13/importlib/__init__.py"
+        }
+      ]
+    },
+    "fastapi/fastapi": {
+      "files": 722,
+      "with_collection_error": 588,
+      "modules": {
+        "inline_snapshot": 543,
+        "dirty_equals": 488,
+        "orjson": 278,
+        "sqlalchemy": 251,
+        "pydantic_settings": 242,
+        "flask": 131,
+        "a2wsgi": 111,
+        "strawberry": 42,
+        "uvicorn": 38,
+        "yaml": 31,
+        "jwt": 31,
+        "email_validator": 31,
+        "scripts.prepare_release": 3,
+        "fastapi.responses": 2
+      },
+      "samples": [
+        {
+          "file": "fastapi_11194_baseline_full.xml",
+          "modules": [
+            "dirty_equals",
+            "flask",
+            "inline_snapshot",
+            "orjson",
+            "pydantic_settings",
+            "sqlalchemy"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/docs_src/settings/app02/test_main.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ndocs_src/settings/app02/test_ma"
+        },
+        {
+          "file": "fastapi_11194_baseline_selected.xml",
+          "modules": [
+            "dirty_equals",
+            "inline_snapshot"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/tests/test_annotated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ntests/test_annotated.py:2: in <module>\n    f"
+        },
+        {
+          "file": "fastapi_11194_gold_full.xml",
+          "modules": [
+            "dirty_equals",
+            "flask",
+            "inline_snapshot",
+            "orjson",
+            "pydantic_settings",
+            "sqlalchemy"
+          ],
+          "head": "collection failure\nImportError while importing test module '/workspace/docs_src/settings/app02/test_main.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ndocs_src/settings/app02/test_ma"
+        }
+      ]
+    },
+    "psf/requests": {
+      "files": 120,
+      "with_collection_error": 0,
+      "modules": {},
+      "samples": []
+    }
+  }
+}

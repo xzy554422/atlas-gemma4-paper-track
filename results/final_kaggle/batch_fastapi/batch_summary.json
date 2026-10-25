@@ -1,0 +1,125 @@
+{
+ "tasks": {
+  "fastapi_14492": {
+   "termination": "submit_patch",
+   "turns": 4,
+   "tool_calls_used": 3,
+   "submit_called": true,
+   "patch_chars": 391,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 446
+   },
+   "elapsed_seconds": 43.47,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14360": {
+   "termination": "tool_budget",
+   "turns": 29,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 8130
+   },
+   "elapsed_seconds": 567.65,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14297": {
+   "termination": "submit_patch",
+   "turns": 13,
+   "tool_calls_used": 10,
+   "submit_called": true,
+   "patch_chars": 1051,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 5507
+   },
+   "elapsed_seconds": 371.95,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_11355": {
+   "termination": "submit_patch",
+   "turns": 17,
+   "tool_calls_used": 16,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2137
+   },
+   "elapsed_seconds": 145.6,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14873": {
+   "termination": "submit_patch",
+   "turns": 6,
+   "tool_calls_used": 5,
+   "submit_called": true,
+   "patch_chars": 896,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1279
+   },
+   "elapsed_seconds": 95.54,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_15280": {
+   "termination": "submit_patch",
+   "turns": 11,
+   "tool_calls_used": 6,
+   "submit_called": true,
+   "patch_chars": 529,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2796
+   },
+   "elapsed_seconds": 190.6,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14448": {
+   "termination": "submit_patch",
+   "turns": 9,
+   "tool_calls_used": 7,
+   "submit_called": true,
+   "patch_chars": 1144,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1725
+   },
+   "elapsed_seconds": 128.23,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14306": {
+   "termination": "submit_patch",
+   "turns": 17,
+   "tool_calls_used": 10,
+   "submit_called": true,
+   "patch_chars": 2314,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4431
+   },
+   "elapsed_seconds": 305.48,
+   "error_type": null,
+   "fatal": null
+  }
+ },
+ "notebook_elapsed_seconds": 2420.495
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 176,
+  "patch_files": 1,
+  "instance_id": "rich_3278"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 381,
+  "patch_files": 1,
+  "instance_id": "rich_3105"
+ },
+ {
+  "repo": "Textualize/rich",
+  "patch_chars": 494,
+  "patch_files": 1,
+  "instance_id": "rich_3518"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 248,
+  "patch_files": 1,
+  "instance_id": "fastapi_14492"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 518,
+  "patch_files": 1,
+  "instance_id": "fastapi_14360"
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "patch_chars": 817,
+  "patch_files": 1,
+  "instance_id": "fastapi_14297"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 271,
+  "patch_files": 1,
+  "instance_id": "requests_6589"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 435,
+  "patch_files": 1,
+  "instance_id": "requests_6644"
+ },
+ {
+  "repo": "psf/requests",
+  "patch_chars": 604,
+  "patch_files": 1,
+  "instance_id": "requests_7502"
+ },
+ {
+  "repo": "encode/httpx",
+  "patch_chars": 9385,
+  "patch_files": 7,
+  "instance_id": "httpx_3672"
+ }
+]
