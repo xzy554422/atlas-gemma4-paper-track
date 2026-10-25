@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "design": "paired ablation on the 10-task subset: control (D1) vs +run_command +selected-test guidance vs +run_command +full-file guidance",
+  "tasks": [
+    "rich_3278",
+    "rich_3105",
+    "rich_3518",
+    "fastapi_14492",
+    "fastapi_14360",
+    "fastapi_14297",
+    "requests_6589",
+    "requests_6644",
+    "requests_7502",
+    "httpx_3672"
+  ],
+  "arms": {
+    "control": {
+      "rich_3278": {
+        "patch_chars": 0,
+        "resolved": false,
+        "termination": "tool_budget"
+      },
+      "rich_3105": {
+        "patch_chars": 427,
+        "resolved": false,
+        "termination": "submit_patch"
+      },
+      "rich_3518": {
+        "patch_chars": 0,
+        "resolved": false,
+        "termination": "submit_patch"
+      },
+      "fastapi_14492": {
+        "patch_chars": 391,
+        "resolved": true,
+        "termination": "submit_patch"
+      },
+      "fastapi_14360": {
+        "patch_chars": 0,
+        "resolved": false,
+        "termination": "tool_budget"
+      },
+      "fastapi_14297": {
+        "patch_chars": 1051,
+        "resolved": false,
+        "termination": "submit_patch"
+      },
+      "requests_6589": {
+        "patch_chars": 546,
+        "resolved": true,
+        "termination": "submit_patch"
+      },
+      "requests_6644": {
+        "patch_chars": 541,
+        "resolved": false,
+        "termination": "submit_patch"
+      },
+      "requests_7502": {
+        "patch_chars": 582,
+        "resolved": true,
+        "termination": "submit_patch"
+      },
+      "httpx_3672": {
+        "patch_chars": 1402,
+        "resolved": false,
+        "termination": "tool_budget"
+      }
+    },
+    "d3_sel": {
+      "rich_3278": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "rich_3105": {
+        "patch_chars": 389,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "rich_3518": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "fastapi_14492": {
+        "patch_chars": 391,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": true
+      },
+      "fastapi_14360": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "fastapi_14297": {
+        "patch_chars": 1059,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "requests_6589": {
+        "patch_chars": 383,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "requests_6644": {
+        "patch_chars": 541,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "requests_7502": {
+        "patch_chars": 615,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": true
+      },
+      "httpx_3672": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      }
+    },
+    "d3_full": {
+      "rich_3278": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "rich_3105": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "rich_3518": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "fastapi_14492": {
+        "patch_chars": 391,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": true
+      },
+      "fastapi_14360": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "fastapi_14297": {
+        "patch_chars": 825,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "requests_6589": {
+        "patch_chars": null,
+        "termination": null,
+        "error_type": "NameError",
+        "verified": false,
+        "resolved": false
+      },
+      "requests_6644": {
+        "patch_chars": 482,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      },
+      "requests_7502": {
+        "patch_chars": 582,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": true
+      },
+      "httpx_3672": {
+        "patch_chars": 2106,
+        "termination": "submit_patch",
+        "error_type": null,
+        "verified": true,
+        "resolved": false
+      }
+    }
+  },
+  "resolution_by_arm": {
+    "control": "3/7 verified (3/10 of all)",
+    "d3_sel": "2/6 verified (2/10 of all)",
+    "d3_full": "2/5 verified (2/10 of all)"
+  },
+  "nonempty_patches_by_arm": {
+    "control": 7,
+    "d3_sel": 6,
+    "d3_full": 5
+  },
+  "findings": [
+    "run_command + verification guidance did not increase resolution: control 3/10, d3_sel 2/10, d3_full 2/10 (verified denominators 7/6/5).",
+    "requests_6589 flipped resolved->not-resolved under d3_sel (patch 383 vs 546 chars): trajectory variance across arms is real.",
+    "httpx_3672 produced its first non-empty patch (2,106 chars) under d3_full but did not pass the required tests.",
+    "d3_full hit a runner NameError on 5/10 tasks (recorded per-task); d3_sel on 4/10 — a defect in the extended-tooling path to fix before reuse, not a model result."
+  ],
+  "scope": "descriptive, n=10 per arm; no significance claims"
+}

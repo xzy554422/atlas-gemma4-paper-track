@@ -1,0 +1,155 @@
+{
+ "tasks": {
+  "rich_3278": {
+   "termination": "tool_budget",
+   "turns": 34,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 248,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 5348
+   },
+   "elapsed_seconds": 442.86,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3105": {
+   "termination": "submit_patch",
+   "turns": 10,
+   "tool_calls_used": 7,
+   "submit_called": true,
+   "patch_chars": 402,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2262
+   },
+   "elapsed_seconds": 180.6,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3518": {
+   "termination": "tool_budget",
+   "turns": 38,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 3638
+   },
+   "elapsed_seconds": 320.61,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14492": {
+   "termination": "submit_patch",
+   "turns": 4,
+   "tool_calls_used": 3,
+   "submit_called": true,
+   "patch_chars": 391,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 451
+   },
+   "elapsed_seconds": 33.24,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14360": {
+   "termination": "tool_budget",
+   "turns": 34,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4223
+   },
+   "elapsed_seconds": 332.63,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14297": {
+   "termination": "submit_patch",
+   "turns": 5,
+   "tool_calls_used": 3,
+   "submit_called": true,
+   "patch_chars": 1146,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1892
+   },
+   "elapsed_seconds": 142.77,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_6589": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 546,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 944
+   },
+   "elapsed_seconds": 67.58,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_6644": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 541,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 326
+   },
+   "elapsed_seconds": 27.47,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7502": {
+   "termination": "submit_patch",
+   "turns": 12,
+   "tool_calls_used": 8,
+   "submit_called": true,
+   "patch_chars": 582,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 3006
+   },
+   "elapsed_seconds": 218.59,
+   "error_type": null,
+   "fatal": null
+  },
+  "httpx_3672": {
+   "termination": "tool_budget",
+   "turns": 33,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 5487
+   },
+   "elapsed_seconds": 448.94,
+   "error_type": null,
+   "fatal": null
+  }
+ },
+ "notebook_elapsed_seconds": 2923.953
+}

@@ -105,3 +105,13 @@
 | 2026-10-25 | 2 | b0 臂（词法代理提示）10 任务完成：轨迹与 index 臂完全一致 | `results/final_kaggle/d2_b0/batch_summary.json` | ✅ |
 | 2026-10-25 | 2 | **G2 汇总：3 臂 × 10 任务配对，轨迹 10/10 完全一致**（终止原因、补丁大小、token 数全同；可比哈希相同）。结论：定位信息不是该规模模型的瓶颈，编辑能力才是；提示注入不改变行为。描述性（n=10） | `results/dep_cache/d2_ablation_summary.json` | ✅ |
 | 2026-10-25 | 2 | **G2 通过 → 方向 3（分支）与方向 5/6 待启动** | — | ⏳ |
+| 2026-10-25 | 5 | state 压缩臂 10 任务完成：rich_3278 产出 248 字符补丁（truncate 臂为空）、httpx_3672 反而空（truncate 1402）、rich_3105/fastapi_14297 补丁内容改变（402/1146 vs 427/1051）——压缩策略确实改变行为 | `results/final_kaggle/d5_state/batch_summary.json` | ✅ 行为对比完成 |
+| 2026-10-25 | 5 | state 臂改变补丁的三臂验证待做（kernel output 下载被 API 截断，仅回收 1/10 任务目录）；按切换规则记录为部分完成 | — | ⏸ 部分 |
+| 2026-10-25 | 6 | 12B 臂：模型挂载候选路径修复（Path 转换 bug）后 v3 已推送运行中；若 12B 实例未挂载则按计划记为不可行 | 运行中 | ⏳ |
+| 2026-10-25 | 3 | d3_sel/d3_full（run_command + selected/full 引导）已生成待推（GPU 槽位被 d5/d6 占用） | `paper/notebooks/model_agent_d3_*.ipynb` | ⏳ |
+| 2026-10-25 | 6 | 12B 臂 v3 完成：12B 模型挂载成功（7.71 GiB 加载 39.8s），但 vLLM 0.19.1 的 marlin_gemm 内核对该 W4A16 检查点抛 `Shape mismatch: a.size(1)=4096, size_k=8192`（引擎初始化失败，10 任务全部 RuntimeError）——与 T4/无 SM80 支持的量化内核路径问题同族。按切换规则记为**当前 runtime 不可行**，方向 6 关闭（除非 vLLM 升级） | `results/final_kaggle/d6_12b/` | ⛔ 不可行 |
+| 2026-10-25 | 3 | d3_sel/d3_full（run_command + selected/full 引导 + 依赖超集）notebook 已修复就绪，待 GPU 槽位推送 | `paper/notebooks/model_agent_d3_*.ipynb` | ⏳ |
+| 2026-10-26 | 3 | d3_sel 臂完成并三臂验证：**2/6 解决**（fastapi_14492、requests_7502）；requests_6589 反转未解决（轨迹方差）；4/10 任务 runner NameError（扩展工具路径缺陷，非模型结果） | `results/dep_cache/d1_verifications.json`（atlas-agent-d3-sel/*） | ✅ |
+| 2026-10-26 | 3 | d3_full 臂完成并验证：**2/5 解决**（同 fastapi_14492、requests_7502）；**httpx_3672 首次产出非空补丁（2,106 字符）但未通过必需测试**；5/10 NameError | 同上（atlas-agent-d3-full/*） | ✅ |
+| 2026-10-26 | 3 | **G3 汇总：control 3/7、d3_sel 2/6、d3_full 2/5（验证口径）——run_command + 验证引导未提升 resolution**；轨迹方差真实存在（6589 反转）；扩展工具路径有 NameError 缺陷待修 | `results/dep_cache/d3_ablation_summary.json` | ✅ G3 完成 |
+| 2026-10-26 | 全 | **六个方向全部处置完毕**：D4 ✅ D1 ✅ D2 ✅（阴性）D3 ✅ D5 ✅（部分）D6 ⛔（runtime 不可行）。执行计划闭环 | — | ✅ |

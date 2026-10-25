@@ -1,0 +1,126 @@
+{
+ "tasks": {
+  "rich_3278": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "rich_3105": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "rich_3518": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "fastapi_14492": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "fastapi_14360": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "fastapi_14297": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "requests_6589": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "requests_6644": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "requests_7502": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  },
+  "httpx_3672": {
+   "termination": null,
+   "turns": null,
+   "tool_calls_used": null,
+   "submit_called": null,
+   "patch_chars": null,
+   "patch_files": null,
+   "totals": null,
+   "elapsed_seconds": null,
+   "error_type": "RuntimeError",
+   "fatal": null
+  }
+ },
+ "notebook_elapsed_seconds": 496.155,
+ "runtime_finding": "12B w4a16 checkpoint loads (7.71 GiB, 39.8s) but vLLM 0.19.1 marlin_gemm kernel raises Shape mismatch (a.size(1)=4096, size_k=8192) on this Turing/quantization path; engine init fails on all tasks. Direction 6 closed as runtime-infeasible without a vLLM upgrade."
+}

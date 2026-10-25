@@ -36,22 +36,29 @@ from pathlib import Path
 MODEL_NAME = 'gemma-4-e4b-it-qat-w4a16-ct'
 BACKSLASH = chr(92)
 
-SYSTEM_INSTRUCTION = (
-    "You are a software engineering agent fixing one GitHub issue in a repository mounted at "
-    "/workspace (the current working directory). Available tools: read_file(filepath, "
-    "start_line=None, end_line=None), edit_file(filepath, old_string, new_string), "
-    "write_file(filepath, content), get_status(), submit_patch(). Respond with exactly one "
-    "tool call per turn: your reply may contain short reasoning, but its LAST line must be "
-    "the tool call in exactly this format and nothing else on that line:\n"
-    'TOOL_CALL: {"name": "read_file", "arguments": {"filepath": "src/module.py"}}\n'
-    "Rules: keep reasoning under 3 sentences per turn. Never re-read a file or line "
-    "range you have already viewed; act on what you have seen. When you know the fix, "
-    "emit the edit_file tool call immediately; never write code blocks, diffs, or "
-    "patches as plain text - changes happen only through tool calls. Prefer small "
-    "targeted edits via edit_file with an exact unique old_string. When the fix is "
-    "complete, call submit_patch. Do not modify files under tests/ or files named "
-    "test_*.py; they are discarded at verification time."
-)
+def system_instruction(allow_run_command: bool) -> str:
+    tools = ("read_file(filepath, start_line=None, end_line=None), edit_file(filepath, "
+             "old_string, new_string), write_file(filepath, content), get_status(), "
+             "submit_patch()")
+    if allow_run_command:
+        tools = ("run_command(command), " + tools +
+                 ". run_command executes a shell command in /workspace with a 300s timeout; "
+                 "use it to run targeted pytest checks before submitting")
+    return (
+        "You are a software engineering agent fixing one GitHub issue in a repository mounted at "
+        "/workspace (the current working directory). Available tools: " + tools + ". "
+        "Respond with exactly one "
+        "tool call per turn: your reply may contain short reasoning, but its LAST line must be "
+        "the tool call in exactly this format and nothing else on that line:\n"
+        'TOOL_CALL: {"name": "read_file", "arguments": {"filepath": "src/module.py"}}\n'
+        "Rules: keep reasoning under 3 sentences per turn. Never re-read a file or line "
+        "range you have already viewed; act on what you have seen. When you know the fix, "
+        "emit the edit_file tool call immediately; never write code blocks, diffs, or "
+        "patches as plain text - changes happen only through tool calls. Prefer small "
+        "targeted edits via edit_file with an exact unique old_string. When the fix is "
+        "complete, call submit_patch. Do not modify files under tests/ or files named "
+        "test_*.py; they are discarded at verification time."
+    )
 
 INITIAL_TEMPLATE = (
     "You are evaluating a software engineering task for repository {repo}.\n"
@@ -71,6 +78,7 @@ INITIAL_TEMPLATE = (
     "\n"
     "## Symbol occurrence index (identifiers from the problem statement)\n"
     "{symbols}\n"
+    "{guidance_section}\n"
     "\n"
     "## Workspace Layout (top levels)\n"
     "{layout}\n"
@@ -208,8 +216,11 @@ def apply_sm75_tile_patch(extra_paths=None) -> dict:
 class ToolExecutor:
     """Implements the reduced tool set against the extracted workspace."""
 
-    def __init__(self, workspace: Path, tool_budget: int, time_budget_s: float, started: float):
+    def __init__(self, workspace: Path, tool_budget: int, time_budget_s: float, started: float,
+                 allow_run_command: bool = False):
         self.workspace = workspace
+        self.allow_run_command = allow_run_command
+        self.edits = []
         self.tool_calls_used = 0
         self.tool_budget = tool_budget
         self.time_budget_s = time_budget_s
@@ -292,6 +303,7 @@ class ToolExecutor:
             new_text = text.replace(norm_old, new_string.replace('\r\n', '\n'),
                                     -1 if allow_multiple else 1)
             path.write_text(new_text, encoding='utf-8')
+            self.edits.append(str(path.relative_to(self.workspace)))
             diff = ''.join(difflib.unified_diff(
                 text.splitlines(True), new_text.splitlines(True),
                 fromfile=f'a/{path.relative_to(self.workspace)}',
@@ -324,6 +336,30 @@ class ToolExecutor:
             tool_calls_remaining=max(0, self.tool_budget - self.tool_calls_used),
             time_seconds_remaining=round(self.time_left(), 1))
 
+    def run_command(self, command) -> dict:
+        gate = self.budgeted()
+        if gate:
+            return gate
+        self.tool_calls_used += 1
+        try:
+            if not isinstance(command, str) or not command.strip():
+                raise ValueError('command must be a non-empty string')
+            timeout = max(5.0, min(300.0, self.time_left()))
+            proc = subprocess.run(['bash', '-lc', command], cwd=self.workspace,
+                                  capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            return {'status': 'error', 'error_type': 'TimeoutExceeded',
+                    'error_message': 'command exceeded the timeout without ending the session'}
+        except Exception as error:
+            return self._err(type(error).__name__, str(error)[:300])
+        stdout = (proc.stdout or '')[:5000]
+        stderr = (proc.stderr or '')[:5000]
+        if proc.returncode == 0:
+            return self._ok(stdout=stdout, stderr=stderr, exit_code=0)
+        return {'status': 'error', 'error_type': 'CommandError',
+                'error_message': f'exit code {proc.returncode}',
+                'details': {'stdout': stdout, 'stderr': stderr, 'exit_code': proc.returncode}}
+
     def submit_patch(self) -> dict:
         patch = self.extract_patch()
         self.submitted_patch = patch
@@ -346,6 +382,7 @@ class ToolExecutor:
             'read_file': self.read_file, 'edit_file': self.edit_file,
             'write_file': self.write_file, 'get_status': self.get_status,
             'submit_patch': self.submit_patch,
+            'run_command': self.run_command,
         }
         if not isinstance(name, str) or name not in table:
             return self._err('UnknownTool', f'unknown tool {name!r}')
@@ -517,10 +554,33 @@ def build_localization_section(workspace: Path, task: dict, mode: str) -> str:
     return ''
 
 
+def verification_guidance_section(task: dict, mode: str) -> str:
+    if mode == 'none':
+        return ''
+    files = sorted(set(re.findall(r'^\+\+\+ b/(\S+)', task.get('test_patch', '') or '', re.M)))
+    if not files:
+        return ''
+    if mode == 'full':
+        return ('## Verification guidance (full)\n'
+                'The repository test files are: ' + ', '.join(files) + '.\n')
+    fns = []
+    for line in (task.get('test_patch', '') or '').splitlines():
+        m = re.match(r'\+\s*def (test_\w+)\(', line)
+        if m:
+            fns.append(m.group(1))
+    if not fns:
+        return ''
+    return ('## Verification guidance (selected)\n'
+            'The test patch adds these tests, which must pass after your fix: '
+            + ', '.join(fns) + '.\n')
+
+
+
 def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
-                   output_dir: Path, log) -> dict:
+                   output_dir: Path, log, allow_run_command: bool = False) -> dict:
     started = time.monotonic()
-    executor = ToolExecutor(workspace, budgets['tool_calls'], budgets['time_minutes'] * 60, started)
+    executor = ToolExecutor(workspace, budgets['tool_calls'], budgets['time_minutes'] * 60, started,
+                            allow_run_command=allow_run_command)
     trace_path = output_dir / 'trace.jsonl'
 
     def record(turn, **fields):
@@ -533,13 +593,16 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
 
     mode = budgets.get('localization_mode', 'index')
     localization_section = build_localization_section(workspace, task, mode)
+    guidance_section = verification_guidance_section(
+        task, budgets.get('verification_guidance', 'none'))
     messages = [
-        {'role': 'system', 'content': SYSTEM_INSTRUCTION},
+        {'role': 'system', 'content': system_instruction(allow_run_command)},
         {'role': 'user', 'content': INITIAL_TEMPLATE.format(
             repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
             time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
             symbols=symbol_index(workspace, task.get('problem_statement', '')),
             localization_section=localization_section,
+            guidance_section=guidance_section,
             layout=workspace_layout(workspace))},
     ]
     turn = 0
@@ -552,7 +615,20 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
             break
         turn += 1
         if context_chars(messages) > CONTEXT_CHAR_LIMIT:
-            viewed = '; '.join(f'{k} {v}' for k, v in executor.files_viewed.items()) or 'none'
+            strategy = budgets.get('compaction_strategy', 'truncate')
+            if strategy == 'state':
+                edits = ', '.join(executor.edits[-8:]) or 'none'
+                viewed = '; '.join(k + ' ' + str(v[-1]) for k, v in
+                                   list(executor.files_viewed.items())[-8:]) or 'none'
+                note = ('state: ' + str(executor.tool_calls_used) + ' tool calls; edits in '
+                        + edits + '; last views: ' + viewed)
+                before = context_chars(messages)
+                messages = [messages[0], messages[1],
+                            {'role': 'user', 'content': '[Context compaction] ' + note}]
+                record(turn, action='compact', note='state \u2192 ' + str(context_chars(messages)) + ' chars')
+                turn += 1
+                continue
+            files_edited
             note = (f'{executor.tool_calls_used}/{budgets["tool_calls"]} tool calls used; '
                     f'patch_submitted={executor.patch_submitted}; already viewed: {viewed}. '
                     "Do not re-read these; proceed to edit_file or submit_patch.")
@@ -688,7 +764,10 @@ def run_batch(args) -> int:
                   '--output-dir', str(task_dir),
                   '--tool-budget', str(args.tool_budget),
                   '--time-minutes', str(args.time_minutes),
-                  '--localization-mode', args.localization_mode]
+                  '--localization-mode', args.localization_mode,
+                  '--compaction-strategy', args.compaction_strategy,
+                  '--verification-guidance', args.verification_guidance,
+                  ] + (['--allow-run-command'] if args.allow_run_command else [])
         print(f'=== task {iid} ({entry["repo"]}) ===', flush=True)
         rc = main(single)
         summary = {}
@@ -717,6 +796,11 @@ def main(argv=None) -> int:
     parser.add_argument('--snapshot-dir', type=Path)
     parser.add_argument('--localization-mode', type=str, default='index',
                         choices=['index', 'oracle', 'b0'])
+    parser.add_argument('--compaction-strategy', type=str, default='truncate',
+                        choices=['truncate', 'state'])
+    parser.add_argument('--verification-guidance', type=str, default='none',
+                        choices=['none', 'selected', 'full'])
+    parser.add_argument('--allow-run-command', action='store_true')
     parser.add_argument('--model-path', type=Path, required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--tool-budget', type=int, default=24)
@@ -779,9 +863,13 @@ def main(argv=None) -> int:
         result['load_seconds'] = round(time.monotonic() - load_started, 2)
         sampling = SamplingParams(temperature=0.0, max_tokens=1024)
         budgets = {'tool_calls': args.tool_budget, 'time_minutes': args.time_minutes,
-                   'localization_mode': args.localization_mode}
+                   'localization_mode': args.localization_mode,
+                   'compaction_strategy': args.compaction_strategy,
+                   'verification_guidance': args.verification_guidance}
+        allow_run_command = args.allow_run_command
         summary = run_agent_loop(args.output_dir / 'workspace', task, llm, sampling,
-                                 budgets, args.output_dir, log)
+                                 budgets, args.output_dir, log,
+                                 allow_run_command=allow_run_command)
         result.update(summary)
         result['total_elapsed_seconds'] = round(time.monotonic() - started, 2)
     except Exception as error:
