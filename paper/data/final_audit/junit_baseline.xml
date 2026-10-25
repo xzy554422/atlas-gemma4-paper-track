@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.791" timestamp="2026-10-25T03:26:25.446704+00:00" hostname="162f61e7a750"><testcase classname="tests.test_requests.TestRequests" name="test_post_named_tempfile" time="0.441"><failure message="TypeError: a bytes-like object is required, not '_TemporaryFileWrapper'">self = &lt;tests.test_requests.TestRequests object at 0x7a70a15c34d0&gt;
+httpbin = &lt;function prepare_url.&lt;locals&gt;.inner at 0x7a70a14a27a0&gt;
+
+    def test_post_named_tempfile(self, httpbin):
+        with tempfile.NamedTemporaryFile(mode="w+") as f:
+            f.write("named temp file contents\n")
+            f.seek(0)
+&gt;           r = requests.post(
+                httpbin("post"),
+                files={"file": f},
+            )
+
+tests/test_requests.py:1094: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/requests/api.py:134: in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/api.py:71: in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/sessions.py:635: in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/sessions.py:541: in prepare_request
+    p.prepare(
+src/requests/models.py:445: in prepare
+    self.prepare_body(data, files, json)
+src/requests/models.py:638: in prepare_body
+    (body, content_type) = self._encode_files(files, raw_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/models.py:250: in _encode_files
+    body, content_type = encode_multipart_formdata(new_fields)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fields = [&lt;urllib3.fields.RequestField object at 0x7a70a16212b0&gt;]
+boundary = '0df4f940c337c0b98db66fbaf53c298b'
+
+    def encode_multipart_formdata(
+        fields: _TYPE_FIELDS, boundary: str | None = None
+    ) -&gt; tuple[bytes, str]:
+        """
+        Encode a dictionary of ``fields`` using the multipart/form-data MIME format.
+    
+        :param fields:
+            Dictionary of fields or list of (key, :class:`~urllib3.fields.RequestField`).
+            Values are processed by :func:`urllib3.fields.RequestField.from_tuples`.
+    
+        :param boundary:
+            If not specified, then a random boundary will be generated using
+            :func:`urllib3.filepost.choose_boundary`.
+        """
+        body = BytesIO()
+        if boundary is None:
+            boundary = choose_boundary()
+    
+        for field in iter_field_objects(fields):
+            body.write(f"--{boundary}\r\n".encode("latin-1"))
+    
+            writer(body).write(field.render_headers())
+            data = field.data
+    
+            if isinstance(data, int):
+                data = str(data)  # Backwards compatibility
+    
+            if isinstance(data, str):
+                writer(body).write(data)
+            else:
+&gt;               body.write(data)
+E               TypeError: a bytes-like object is required, not '_TemporaryFileWrapper'
+
+/usr/local/lib/python3.13/site-packages/urllib3/filepost.py:81: TypeError</failure></testcase></testsuite></testsuites>

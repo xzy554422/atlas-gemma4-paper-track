@@ -15,7 +15,7 @@
   "failure": "Triton unified attention requested 98304 bytes shared memory; T4 limit 65536 bytes",
   "agent_status": "not_run",
   "writeup_submission": "submitted",
-  "checked_at": "2026-10-21",
+  "checked_at": "2026-10-25",
   "writeup_url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791929370440",
   "writeup_id": 119115,
   "writeup_content_state": "PUBLISHED",
@@ -70,5 +70,24 @@
     "load_seconds": 118.3,
     "elapsed_seconds": 183.8,
     "agent_status": "not_run"
+  },
+  "agent_smoke": {
+    "kernel": "https://www.kaggle.com/code/yzx22442255/atlas-agent-smoke-v5-requests-7502",
+    "task": "requests_7502",
+    "repo": "psf/requests",
+    "loop": "reduced harness protocol; no run_command, no ADK stack",
+    "turns": 12,
+    "tool_calls": 9,
+    "output_tokens": 2052,
+    "loop_seconds": 176.4,
+    "patch_chars": 611,
+    "verification": {
+      "method": "three arms in local docker sandbox, official hermetic pytest",
+      "baseline": "fail (required test fails without fix)",
+      "agent": "pass (exit 0, required node passed, failures=0, errors=0)",
+      "gold": "pass",
+      "local_resolution": true
+    },
+    "scope": "one task chosen for clarity; not a benchmark or resolution-rate estimate"
   }
 }

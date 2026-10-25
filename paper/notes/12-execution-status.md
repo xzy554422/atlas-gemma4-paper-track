@@ -50,3 +50,27 @@ Both gates for a real agent experiment are now open: the runtime is compatible, 
 
 Notebook runtimes observed: install ≈ 5–7 min; weight load 222 s (v3) / 118 s (v4, warm); full v4 probe 183.8 s.
 
+## Single-task agent smoke: E4B resolves requests_7502 end to end — 2026-10-25
+
+With all v4 gates open, a bounded single-task agent run was executed on the same Kaggle T4 configuration (kernel `atlas-agent-smoke-v5-requests-7502`). Task `requests_7502` (psf/requests, single-file gold fix, directive issue statement). The runner is a reduced implementation of the documented harness protocol: read_file/edit_file/write_file/get_status/submit_patch, protected-file stripping, unsubmitted-diff recovery, nudges, context compaction; no run_command, no code-graph tools, no official ADK stack. Budgets: 24 tool calls, 28 min, 768→1024 output tokens/turn, temperature 0, 8,192-token context.
+
+Iterations on the mini-harness itself (all protocol-level, recorded in trace/summary artifacts):
+
+| Version | Outcome | Cause / fix |
+|---|---|---|
+| v5 run 1–2 | fail fast | private input dataset not mounted; switched to the official competition input (`/kaggle/input/competitions/...`), which contains all snapshots and tasks.jsonl |
+| v5 run 3 | 25 turns, 17 reads, 0 edits, empty patch | model re-read files after compaction and finally emitted plain code blocks instead of tool calls |
+| v6 (code) | anti-loop instruction, symbol-occurrence index (definitions first, docs/tests pruned), files-viewed tracking, 1024-token budget | local |
+| v6 run | 12 turns, submit called, **patch empty** | `git: dubious ownership` in the extracted snapshot made every git command fail silently; fixed with `safe.directory=*`, strict baseline check, surfaced git stderr |
+| v7 run | **12 turns, 9 tool calls, 611-char patch on `src/requests/models.py`** | same line as the gold fix; agent used `hasattr(fp, "read") and callable(...)` instead of gold's `isinstance(fp, _SupportsRead) or hasattr(fp, "read")` |
+
+Phase 2 verification (`paper/scripts/verify_agent_patch.py`, local docker sandbox, three arms, official hermetic pytest command):
+
+- baseline (test_patch only): 1 test, 1 **failure** — proper FAIL_TO_PASS
+- **agent patch: exit 0, required node `TestRequests::test_post_named_tempfile` passed, failures=0, errors=0 → local resolution criterion met**
+- gold: exit 0, passed (task/env sanity)
+
+Environment repair needed along the way: the local sandbox image lacks pytest-httpbin (the official env caches it). Installed `pytest-httpbin` + `httpbin` + missing linux wheels (brotlicffi/cffi/pycparser/greenlet) from a host `pip download` into the container via a second read-only wheel mount. Historical P1D runs never exercised httpbin-fixture tests (0/634 in the old requests_7502 full-run junit), so this dependency gap predates the smoke work.
+
+Evidence: `results/final_kaggle/agent_smoke_v5/` (summary.json, trace.jsonl, agent_patch.diff, verification.json, junit_baseline/agent/gold.xml) — synced into `paper/data/final_audit/` and the release archive. The submitted writeup was updated to the same scope: gates passed once, end to end, on one task chosen for clarity; not a benchmark, not a resolution-rate estimate, no official harness.
+

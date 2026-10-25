@@ -1,0 +1,75 @@
+{
+  "instance_id": "requests_7502",
+  "target": "tests/test_requests.py::TestRequests::test_post_named_tempfile",
+  "arms": {
+    "baseline": {
+      "arm": "baseline",
+      "exit_code": 1,
+      "seconds": 1.3,
+      "timed_out": false,
+      "verdict": "fail",
+      "junit": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": [
+          "tests.test_requests.TestRequests::test_post_named_tempfile"
+        ]
+      },
+      "required_node": "failed",
+      "tail": "ackwards compatibility\n    \n            if isinstance(data, str):\n                writer(body).write(data)\n            else:\n>               body.write(data)\nE               TypeError: a bytes-like object is required, not '_TemporaryFileWrapper'\n\n/usr/local/lib/python3.13/site-packages/urllib3/filep"
+    },
+    "agent": {
+      "arm": "agent",
+      "exit_code": 0,
+      "seconds": 1.2,
+      "timed_out": false,
+      "verdict": "pass",
+      "junit": {
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": []
+      },
+      "required_node": "passed",
+      "tail": ".                                                                        [100%]\n1 passed in 0.71s"
+    },
+    "gold": {
+      "arm": "gold",
+      "exit_code": 0,
+      "seconds": 1.2,
+      "timed_out": false,
+      "verdict": "pass",
+      "junit": {
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": []
+      },
+      "required_node": "passed",
+      "tail": ".                                                                        [100%]\n1 passed in 0.73s"
+    }
+  },
+  "configuration": "local docker sandbox (swebench-sandbox), official hermetic pytest command; local absolute diagnostic, not an official competition score",
+  "prep": {
+    "seconds": 4.1,
+    "note": "[deps ok] Executing fast-path dependency injection for repo=psf/requests in /workspace...\nFast-path dependency injection complete.",
+    "pytest_httpbin_install": {
+      "exit_code": "0",
+      "tail": "the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n"
+    }
+  },
+  "elapsed_seconds": 12.91,
+  "resolution": {
+    "baseline_fails": true,
+    "agent_resolves": true,
+    "gold_resolves": true,
+    "resolved": true
+  }
+}

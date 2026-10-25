@@ -1,0 +1,77 @@
+{
+  "schema_version": 5,
+  "task": "requests_7502",
+  "workspace": {
+    "baseline_commit": "fb5b40599972",
+    "baseline_ref_ok": true,
+    "commit_output": "[main fb5b4059] SWEGEMMA_BASELINE\n"
+  },
+  "python": "3.12.13",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.35",
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ]
+    }
+  ],
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1"
+  },
+  "agent_status": "ran",
+  "sm75_tile_patch": {
+    "source_files": [
+      {
+        "path": "/usr/local/lib/python3.12/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py",
+        "status": "patched",
+        "sha256_before": "5a8af26832bd0b23604fefa4a0876e12b39101b85431c368649fbb7f779e8921",
+        "sha256_after": "4a5c746bc1342d33a6b17f1ccb5fe585b13bdc1307fbb639f4556486d1472b6f"
+      }
+    ],
+    "capability_major": 7,
+    "applied_modules": [
+      "vllm.v1.attention.ops.triton_unified_attention"
+    ],
+    "verify": {
+      "head512_decode": 16,
+      "head512_prefill": 16
+    }
+  },
+  "runtime_config": {
+    "model": "/kaggle/input/models/google/gemma-4/other/gemma-4-e4b-it-qat-w4a16-ct/2",
+    "dtype": "half",
+    "tensor_parallel_size": 1,
+    "max_model_len": 8192,
+    "gpu_memory_utilization": 0.8,
+    "enforce_eager": true,
+    "disable_log_stats": true,
+    "limit_mm_per_prompt": {
+      "image": 0,
+      "video": 0,
+      "audio": 0
+    }
+  },
+  "load_seconds": 116.92,
+  "model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "repo": "psf/requests",
+  "termination": "submit_patch",
+  "turns": 12,
+  "tool_calls_used": 9,
+  "submit_called": true,
+  "patch_chars": 611,
+  "patch_files": 1,
+  "file_tool_errors": 0,
+  "git_stderr": "",
+  "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2052
+  },
+  "elapsed_seconds": 176.44,
+  "configuration_scope": "single-task bounded agent smoke, not a competition score",
+  "total_elapsed_seconds": 326.97,
+  "notebook_elapsed_seconds": 330.816
+}
