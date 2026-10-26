@@ -1,0 +1,166 @@
+{
+  "tasks": 22,
+  "resolved": 2,
+  "resolved_ids": [
+    "requests_6589",
+    "requests_7502"
+  ],
+  "verified_unresolved": 8,
+  "unknown_or_unverified": 20,
+  "rows": [
+    {
+      "instance_id": "rich_3278",
+      "repo": "Textualize/rich",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "rich_3105",
+      "repo": "Textualize/rich",
+      "patch_chars": 427,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "rich_3518",
+      "repo": "Textualize/rich",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "rich_3067",
+      "repo": "Textualize/rich",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "rich_3064",
+      "repo": "Textualize/rich",
+      "patch_chars": 572,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "rich_3934",
+      "repo": "Textualize/rich",
+      "patch_chars": 839,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "rich_3772",
+      "repo": "Textualize/rich",
+      "patch_chars": 451,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "rich_3061",
+      "repo": "Textualize/rich",
+      "patch_chars": 908,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "fastapi_14492",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_14360",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_14297",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_11355",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_14873",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_15280",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_14448",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "fastapi_14306",
+      "repo": "fastapi/fastapi",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "requests_6589",
+      "repo": "psf/requests",
+      "patch_chars": 546,
+      "resolved": true,
+      "status": "resolved"
+    },
+    {
+      "instance_id": "requests_6644",
+      "repo": "psf/requests",
+      "patch_chars": 541,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "requests_7502",
+      "repo": "psf/requests",
+      "patch_chars": 582,
+      "resolved": true,
+      "status": "resolved"
+    },
+    {
+      "instance_id": "requests_7427",
+      "repo": "psf/requests",
+      "patch_chars": 1404,
+      "resolved": false,
+      "status": "unknown"
+    },
+    {
+      "instance_id": "requests_7505",
+      "repo": "psf/requests",
+      "patch_chars": null,
+      "resolved": null,
+      "status": "not_verified"
+    },
+    {
+      "instance_id": "httpx_3672",
+      "repo": "encode/httpx",
+      "patch_chars": 1402,
+      "resolved": false,
+      "status": "unknown"
+    }
+  ]
+}

@@ -33,7 +33,6 @@ import tarfile
 import time
 from pathlib import Path
 
-MODEL_NAME = 'gemma-4-e4b-it-qat-w4a16-ct'
 BACKSLASH = chr(92)
 
 def system_instruction(allow_run_command: bool) -> str:
@@ -73,8 +72,7 @@ INITIAL_TEMPLATE = (
     "## Execution Environment Rules\n"
     "- File view limit: 150 lines and 10000 characters per read_file call.\n"
     "- The environment is offline. Do not attempt to install packages.\n"
-    "- No command execution tool is available in this smoke configuration; reason from "
-    "file contents.\n"
+    "{execution_rule}\n"
     "\n"
     "## Symbol occurrence index (identifiers from the problem statement)\n"
     "{symbols}\n"
@@ -382,8 +380,9 @@ class ToolExecutor:
             'read_file': self.read_file, 'edit_file': self.edit_file,
             'write_file': self.write_file, 'get_status': self.get_status,
             'submit_patch': self.submit_patch,
-            'run_command': self.run_command,
         }
+        if self.allow_run_command:
+            table['run_command'] = self.run_command
         if not isinstance(name, str) or name not in table:
             return self._err('UnknownTool', f'unknown tool {name!r}')
         arguments = arguments if isinstance(arguments, dict) else {}
@@ -413,22 +412,49 @@ def strip_protected_files(diff_text: str) -> str:
 
 TOOL_CALL_RE = re.compile(r'TOOL_CALL:\s*(\{.*\})')
 
-# Rough context budget in characters (~4 chars/token) before older turns are compacted.
-# The 8,192-token window minus the 768-token completion allowance leaves ~7,400 tokens,
-# so 24,000 characters keeps the templated prompt safely inside it.
-CONTEXT_CHAR_LIMIT = 24000
+MAX_PROMPT_SHRINKS = 32
 
 
-def compact_messages(messages, note):
-    """Keep system + initial user + a status note + the last two turns."""
-    system, first = messages[0], messages[1]
-    status = {'role': 'user', 'content': '[Context compaction] Earlier turns were omitted '
-                                          'to fit the context window. Status: ' + note}
-    return [system, first, status] + messages[-4:]
+def prompt_token_count(tokenizer, messages):
+    """Count the actual chat template, including generation-prefix tokens."""
+    return len(tokenizer.apply_chat_template(
+        messages, tokenize=True, add_generation_prompt=True))
 
 
-def context_chars(messages):
-    return sum(len(m.get('content') or '') for m in messages)
+def fit_prompt(messages, tokenizer, prompt_budget, note, strategy='truncate'):
+    """Bounded compaction; retain instructions and label any truncated content.
+
+    Even the initial issue or a single tool result can exceed the window. Never
+    rely on character/token ratios or retry a compaction that made no progress.
+    """
+    messages = [dict(message) for message in messages]
+    for attempt in range(MAX_PROMPT_SHRINKS + 1):
+        count = prompt_token_count(tokenizer, messages)
+        if count <= prompt_budget:
+            return messages, count
+        if attempt == MAX_PROMPT_SHRINKS:
+            break
+        if len(messages) > 3:
+            status = {'role': 'user', 'content': '[Context compaction] ' + note}
+            if strategy == 'state':
+                messages = messages[:2] + [status]
+            else:
+                # Drop whole assistant/result pairs, never duplicate the prefix.
+                tail = messages[2:][-2:] if len(messages) > 4 else []
+                messages = messages[:2] + [status] + tail
+                if len(messages) > 3 and attempt:
+                    messages = messages[:3]
+            continue
+        candidates = [i for i in range(1, len(messages))
+                      if len(messages[i]['content']) > 64]
+        if not candidates:
+            break
+        index = max(candidates, key=lambda i: len(messages[i]['content']))
+        content = messages[index]['content']
+        keep = len(content) // 4
+        messages[index]['content'] = (content[:keep] + '\n[truncated to fit context]\n'
+                                       + content[-keep:])
+    raise ValueError('prompt cannot fit token budget without removing system instructions')
 
 
 def parse_tool_call(text: str):
@@ -507,9 +533,9 @@ def symbol_index(workspace: Path, problem: str, limit: int = 14) -> str:
 
 
 def extract_text(chat_result):
-    if isinstance(chat_result, list):
-        return chat_result[0].outputs[0]
-    return chat_result.outputs[0]
+    """Return request and completion separately: prompt IDs belong to the request."""
+    request = chat_result[0] if isinstance(chat_result, list) else chat_result
+    return request, request.outputs[0]
 
 
 def gold_files(task: dict) -> list:
@@ -599,6 +625,9 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
         {'role': 'system', 'content': system_instruction(allow_run_command)},
         {'role': 'user', 'content': INITIAL_TEMPLATE.format(
             repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
+            execution_rule=('- run_command is available for targeted offline checks.'
+                            if allow_run_command else
+                            '- No command execution tool is available; reason from file contents.'),
             time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
             symbols=symbol_index(workspace, task.get('problem_statement', '')),
             localization_section=localization_section,
@@ -608,54 +637,58 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
     turn = 0
     consecutive_nudges = 0
     totals = {'prompt_tokens': 0, 'output_tokens': 0}
+    tokenizer = llm.get_tokenizer()
+    max_model_len = budgets.get('max_model_len', 8192)
+    max_tokens = sampling.max_tokens
+    prompt_budget = max_model_len - max_tokens
+    if prompt_budget <= 0:
+        raise ValueError('max_tokens must be smaller than max_model_len')
+    model_path = budgets.get('model_path') or getattr(
+        getattr(getattr(llm, 'llm_engine', None), 'model_config', None), 'model', None)
+    settings = {'max_model_len': max_model_len, 'max_tokens': max_tokens,
+                'temperature': getattr(sampling, 'temperature', None),
+                'prompt_token_budget': prompt_budget, 'allow_run_command': allow_run_command,
+                **budgets}
+    finish_reason = None
     termination = 'tool_budget'
     while time.monotonic() - started < budgets['time_minutes'] * 60:
         if executor.tool_calls_used >= budgets['tool_calls']:
             termination = 'tool_budget'
             break
         turn += 1
-        if context_chars(messages) > CONTEXT_CHAR_LIMIT:
-            strategy = budgets.get('compaction_strategy', 'truncate')
-            if strategy == 'state':
-                edits = ', '.join(executor.edits[-8:]) or 'none'
-                viewed = '; '.join(k + ' ' + str(v[-1]) for k, v in
-                                   list(executor.files_viewed.items())[-8:]) or 'none'
-                note = ('state: ' + str(executor.tool_calls_used) + ' tool calls; edits in '
-                        + edits + '; last views: ' + viewed)
-                before = context_chars(messages)
-                messages = [messages[0], messages[1],
-                            {'role': 'user', 'content': '[Context compaction] ' + note}]
-                record(turn, action='compact', note='state \u2192 ' + str(context_chars(messages)) + ' chars')
-                turn += 1
-                continue
-            viewed = '; '.join(f'{k} {v[-1]}' for k, v in
-                               list(executor.files_viewed.items())[-8:]) or 'none'
-            files_edited = ', '.join(executor.edits[-8:]) or 'none'
-            note = (f'{executor.tool_calls_used}/{budgets["tool_calls"]} tool calls used; '
-                    f'patch_submitted={executor.patch_submitted}; edits in {files_edited}; '
-                    f'already viewed: {viewed}. '
-                    "Do not re-read these; proceed to edit_file or submit_patch.")
-            before = context_chars(messages)
-            messages = compact_messages(messages, note)
-            record(turn, action='compact', note=f'{before} -> {context_chars(messages)} chars')
-            turn += 1
+        viewed = '; '.join(f'{k} {v[-1]}' for k, v in
+                           list(executor.files_viewed.items())[-8:]) or 'none'
+        note = (f'{executor.tool_calls_used} tool calls; edits: '
+                + (', '.join(executor.edits[-8:]) or 'none') + '; viewed: ' + viewed)
         try:
-            out = extract_text(llm.chat(messages, sampling, use_tqdm=False))
+            # One smaller retry for template/engine disagreement, never an
+            # unbounded outer-loop context recovery.
+            for attempt in range(2):
+                messages, estimated_tokens = fit_prompt(
+                    messages, tokenizer, prompt_budget if not attempt else
+                    min(prompt_budget - 256, estimated_tokens - 256), note,
+                    budgets.get('compaction_strategy', 'truncate'))
+                try:
+                    request, out = extract_text(llm.chat(messages, sampling, use_tqdm=False))
+                    break
+                except Exception as error:
+                    if attempt or 'context' not in str(error).lower():
+                        raise
+                    record(turn, action='compact', note='bounded context error retry')
         except Exception as error:
-            if 'context' in str(error).lower() and context_chars(messages) > 8000:
-                messages = compact_messages(messages, 'context error recovery')
-                record(turn, action='compact', note='context error recovery')
-                continue
             record(turn, action='llm_error', note=str(error)[:300])
             termination = 'llm_error'
             break
         text = out.text or ''
-        totals['prompt_tokens'] += len(getattr(out, 'prompt_token_ids', []) or [])
-        totals['output_tokens'] += len(out.token_ids or [])
+        prompt_tokens = len(getattr(request, 'prompt_token_ids', None) or [])
+        output_tokens = len(out.token_ids or [])
+        finish_reason = getattr(out, 'finish_reason', None)
+        totals['prompt_tokens'] += prompt_tokens
+        totals['output_tokens'] += output_tokens
         call = parse_tool_call(text)
         if call is None:
             consecutive_nudges += 1
-            record(turn, action='nudge', prompt_tokens=len(getattr(out, 'prompt_token_ids', []) or []),
+            record(turn, action='nudge', prompt_tokens=prompt_tokens, finish_reason=finish_reason,
                    output_tokens=len(out.token_ids or []), text_head=text[:400])
             if consecutive_nudges > len(NUDGES):
                 termination = 'no_tool_call'
@@ -671,7 +704,7 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
             result = executor.dispatch(call['name'], call['arguments'])
             action = 'tool_call'
         record(turn, action=action, tool=call.get('name'),
-               prompt_tokens=len(getattr(out, 'prompt_token_ids', []) or []),
+               prompt_tokens=prompt_tokens, finish_reason=finish_reason,
                output_tokens=len(out.token_ids or []),
                text_head=text[:1500], tool_result_head=json.dumps(result, ensure_ascii=False)[:600])
         messages.append({'role': 'assistant', 'content': text[-800:]})
@@ -684,7 +717,8 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
 
     patch = executor.submitted_patch or executor.extract_patch()
     summary = {
-        'schema_version': 5, 'model': MODEL_NAME,
+        'schema_version': 5, 'model': str(model_path) if model_path is not None else None,
+        'settings': settings, 'finish_reason': finish_reason,
         'task': task.get('instance_id'), 'repo': task.get('repo'),
         'python': platform.python_version(), 'platform': platform.platform(),
         'termination': termination, 'turns': turn,
@@ -770,7 +804,9 @@ def run_batch(args) -> int:
                   '--localization-mode', args.localization_mode,
                   '--compaction-strategy', args.compaction_strategy,
                   '--verification-guidance', args.verification_guidance,
-                  ] + (['--allow-run-command'] if args.allow_run_command else [])
+                  '--max-model-len', str(args.max_model_len)]
+        if args.allow_run_command:
+            single.append('--allow-run-command')
         print(f'=== task {iid} ({entry["repo"]}) ===', flush=True)
         rc = main(single)
         summary = {}
@@ -804,6 +840,7 @@ def main(argv=None) -> int:
     parser.add_argument('--verification-guidance', type=str, default='none',
                         choices=['none', 'selected', 'full'])
     parser.add_argument('--allow-run-command', action='store_true')
+    parser.add_argument('--max-model-len', type=int, default=8192)
     parser.add_argument('--model-path', type=Path, required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--tool-budget', type=int, default=24)
@@ -832,6 +869,7 @@ def main(argv=None) -> int:
     prep = prepare_workspace(args.snapshot, args.output_dir / 'workspace')
     log(f'workspace prepared: {prep}')
     result = {'schema_version': 5, 'task': task.get('instance_id'), 'workspace': prep,
+              'model': str(args.model_path),
               'python': platform.python_version(), 'platform': platform.platform(),
               'gpus': [], 'packages': {}, 'agent_status': 'not_run'}
     for package in ('torch', 'vllm', 'transformers'):
@@ -856,7 +894,8 @@ def main(argv=None) -> int:
             raise RuntimeError('No CUDA GPU available.')
         from vllm import LLM, SamplingParams
         config = {'model': str(args.model_path), 'dtype': 'half',
-                  'tensor_parallel_size': 1, 'max_model_len': 8192,
+                  'tensor_parallel_size': 1,
+                  'max_model_len': args.max_model_len,
                   'gpu_memory_utilization': 0.80, 'enforce_eager': True,
                   'disable_log_stats': True,
                   'limit_mm_per_prompt': {'image': 0, 'video': 0, 'audio': 0}}
@@ -868,7 +907,9 @@ def main(argv=None) -> int:
         budgets = {'tool_calls': args.tool_budget, 'time_minutes': args.time_minutes,
                    'localization_mode': args.localization_mode,
                    'compaction_strategy': args.compaction_strategy,
-                   'verification_guidance': args.verification_guidance}
+                   'verification_guidance': args.verification_guidance,
+                   'max_model_len': args.max_model_len,
+                   'model_path': str(args.model_path)}
         allow_run_command = args.allow_run_command
         summary = run_agent_loop(args.output_dir / 'workspace', task, llm, sampling,
                                  budgets, args.output_dir, log,

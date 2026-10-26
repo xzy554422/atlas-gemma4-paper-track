@@ -1,0 +1,292 @@
+{
+  "batch_httpx/httpx_3672": {
+    "repo": "encode/httpx",
+    "resolution": {
+      "required_names": [
+        "tests/test_parsers.py::test_client_connection_close",
+        "tests/test_parsers.py::test_parser",
+        "tests/test_parsers.py::test_parser_repr",
+        "tests/test_parsers.py::test_parser_server",
+        "tests/test_parsers.py::test_server_connection_close"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_parsers.py::test_client_connection_close",
+        "tests/test_parsers.py::test_parser",
+        "tests/test_parsers.py::test_parser_repr",
+        "tests/test_parsers.py::test_parser_server",
+        "tests/test_parsers.py::test_server_connection_close"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 5,
+        "agent": 5,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 1402
+  },
+  "batch_requests/requests_6589": {
+    "repo": "psf/requests",
+    "resolution": {
+      "required_names": [
+        "tests/test_requests.py::TestRequests::test_content_length_for_bytes_data",
+        "tests/test_requests.py::TestRequests::test_content_length_for_string_data_counts_bytes"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_requests.py::TestRequests::test_content_length_for_string_data_counts_bytes"
+      ],
+      "already_passing": [
+        "tests/test_requests.py::TestRequests::test_content_length_for_bytes_data"
+      ],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 6,
+        "agent": 5,
+        "gold": 5
+      },
+      "resolved": true,
+      "status": "resolved"
+    },
+    "patch_chars": 546
+  },
+  "batch_requests/requests_6644": {
+    "repo": "psf/requests",
+    "resolution": {
+      "required_names": [
+        "tests/test_adapters.py::test_request_url_trims_leading_path_separators"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_adapters.py::test_request_url_trims_leading_path_separators"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 1,
+        "agent": 1,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 541
+  },
+  "batch_requests/requests_7427": {
+    "repo": "psf/requests",
+    "resolution": {
+      "required_names": [
+        "tests/test_utils.py::test_should_bypass_proxies_no_proxy_domain_boundary"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "no_junit",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_utils.py::test_should_bypass_proxies_no_proxy_domain_boundary"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 1,
+        "agent": null,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 1404
+  },
+  "batch_requests/requests_7502": {
+    "repo": "psf/requests",
+    "resolution": {
+      "required_names": [
+        "tests/test_requests.py::TestRequests::test_post_named_tempfile"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "passed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": true,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_requests.py::TestRequests::test_post_named_tempfile"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 5,
+        "agent": 4,
+        "gold": 4
+      },
+      "resolved": true,
+      "status": "resolved"
+    },
+    "patch_chars": 582
+  },
+  "batch_rich/rich_3061": {
+    "repo": "Textualize/rich",
+    "resolution": {
+      "required_names": [
+        "tests/test_panel.py::test_render_size",
+        "tests/test_text.py::test_extend_style",
+        "tests/test_text.py::test_tabs_to_spaces",
+        "tests/test_text.py::test_tabs_to_spaces_spans"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_panel.py::test_render_size",
+        "tests/test_text.py::test_extend_style",
+        "tests/test_text.py::test_tabs_to_spaces_spans"
+      ],
+      "already_passing": [
+        "tests/test_text.py::test_tabs_to_spaces"
+      ],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 12,
+        "agent": 12,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 908
+  },
+  "batch_rich/rich_3064": {
+    "repo": "Textualize/rich",
+    "resolution": {
+      "required_names": [
+        "tests/test_markdown.py::test_partial_table"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_markdown.py::test_partial_table"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 3,
+        "agent": 3,
+        "gold": 2
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 572
+  },
+  "batch_rich/rich_3105": {
+    "repo": "Textualize/rich",
+    "resolution": {
+      "required_names": [
+        "tests/test_console.py::test_export_html",
+        "tests/test_console.py::test_export_html_inline",
+        "tests/test_console.py::test_save_html"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_console.py::test_export_html",
+        "tests/test_console.py::test_export_html_inline",
+        "tests/test_console.py::test_save_html"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 3,
+        "agent": 3,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 427
+  },
+  "batch_rich/rich_3772": {
+    "repo": "Textualize/rich",
+    "resolution": {
+      "required_names": [
+        "tests/test_traceback.py::test_recursive_exception"
+      ],
+      "baseline_required": "no_junit",
+      "agent_required": "no_junit",
+      "gold_required": "passed",
+      "baseline_fails": false,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": null,
+        "agent": null,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 451
+  },
+  "batch_rich/rich_3934": {
+    "repo": "Textualize/rich",
+    "resolution": {
+      "required_names": [
+        "tests/test_live.py::test_live_empty"
+      ],
+      "baseline_required": "failed",
+      "agent_required": "failed",
+      "gold_required": "passed",
+      "baseline_fails": true,
+      "agent_resolves": false,
+      "gold_resolves": true,
+      "fail_to_pass": [
+        "tests/test_live.py::test_live_empty"
+      ],
+      "already_passing": [],
+      "regressions": [],
+      "whole_file_failures": {
+        "baseline": 1,
+        "agent": 2,
+        "gold": 0
+      },
+      "resolved": false,
+      "status": "unknown"
+    },
+    "patch_chars": 839
+  }
+}

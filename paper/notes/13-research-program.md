@@ -119,3 +119,7 @@
 | 2026-10-26 | 5 | **D5 完整验证补齐**：专用 collector 收齐 10/10 任务目录，三臂验证完成——state 臂 2/5 解决（fastapi_14492、requests_6589、requests_7502 中前两个+7502）；轨迹改变 4/10（rich_3278 空→248、httpx 1402→空、rich_3105/fastapi_14297 内容变） | `results/dep_cache/d5_ablation_summary.json` | ✅ G5 完成 |
 | 2026-10-26 | 6 | **12B 重启成功**：互联网 kernel + vLLM 0.32.0（torch 2.13.0，torchaudio 按版本 pin）——12B w4a16 在 2×T4 上加载 158.5s 并完成生成；chat 模板下 17×24=408 正确、add 函数完整、数值校验 2.84e-4。**marlin_gemm 形状不匹配在 0.32.0 已修复**（0.19.1 的冻结 wheelhouse 不含修复） | `results/dep_cache/d6_12b_vllm0320_result.json` | ✅ 可行性确认（非官方 runtime） |
 | 2026-10-26 | 论文 | writeup 更新：21 任务批量结果（3/15=20.0%）+ 三个消融（定位阴性/验证引导阴性/压缩策略有效）写入 §4；局限与未来工作同步。已提交 Writeup 同步更新（PUBLISHED，2,369 词） | `paper/draft/writeup.md` | ✅ |
+| 2026-10-26 | 验证修复 | 严格判据过严（整文件必须退出0，把无关网络用例算入）→ 改回严格原始（0解决）→ 再修正为 **SWE-bench delta 语义**：必需测试 baseline 失败→agent 通过→gold 同转移→无回归。13 项验证器回归测试通过 | `paper/scripts/verify_agent_patch.py`、`results/audit_reverify_20261025_final/` | ✅ |
+| 2026-10-26 | 1 修正 | **E4B 正确口径：10 个可验证补丁中 2 个解决（requests_6589、requests_7502）**，8 个确认未解决；此前 3/15 与 0/10 均作废 | `results/dep_cache/e4b_delta_verification.json` | ✅ |
+| 2026-10-26 | 6 | **12B 全量批完成**（22/22，3 小时）：6,144 上下文可运行，但**表现劣于 E4B**——非空补丁 8 vs 16、平均轮数 28.7 vs 17.0、多次 no-tool-call 退出。配置差异（vLLM 0.32/0.19、6144/8192、量化配方）不可归因于纯模型规模 | `results/dep_cache/model_ladder_summary.json` | ✅ |
+| 2026-10-26 | 论文 | 判据修正 + 模型阶梯结论写入 §4；已提交 Writeup 同步（PUBLISHED，2,520 词）。**遗留**：12B 补丁内容因 kernel output 截断未全量下载，仅汇总层面对比；12B token 计数受修正前 runner 影响 | `paper/draft/writeup.md` | ⚠️ 部分 |

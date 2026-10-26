@@ -16,7 +16,8 @@ fake_vllm = types.ModuleType('vllm')
 
 
 class FakeSamplingParams:
-    def __init__(self, **kwargs):
+    def __init__(self, max_tokens=1024, **kwargs):
+        self.max_tokens = max_tokens
         self.kwargs = kwargs
 
 
@@ -49,7 +50,16 @@ class Resp:
         self.outputs = [Out(text)]
 
 
+class FakeTokenizer:
+    def apply_chat_template(self, messages, tokenize=True, add_generation_prompt=False, **kw):
+        text = ' '.join(str(m.get('content', '')) for m in messages)
+        return list(range(len(text.split()))) if tokenize else text
+
+
 class FakeLLM(FakeLLMClass):
+    def get_tokenizer(self):
+        return FakeTokenizer()
+
     def chat(self, messages, sampling, use_tqdm=False):
         return [Resp('TOOL_CALL: {"name": "submit_patch"}')]
 

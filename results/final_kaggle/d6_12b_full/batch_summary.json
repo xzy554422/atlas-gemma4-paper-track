@@ -1,0 +1,335 @@
+{
+ "tasks": {
+  "rich_3278": {
+   "termination": "tool_budget",
+   "turns": 45,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4296
+   },
+   "elapsed_seconds": 484.28,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3105": {
+   "termination": "tool_budget",
+   "turns": 42,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2355
+   },
+   "elapsed_seconds": 481.6,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3518": {
+   "termination": "tool_budget",
+   "turns": 45,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1485
+   },
+   "elapsed_seconds": 407.19,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3067": {
+   "termination": "submit_patch",
+   "turns": 15,
+   "tool_calls_used": 10,
+   "submit_called": true,
+   "patch_chars": 686,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1174
+   },
+   "elapsed_seconds": 165.88,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3064": {
+   "termination": "no_tool_call",
+   "turns": 21,
+   "tool_calls_used": 12,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4566
+   },
+   "elapsed_seconds": 479.37,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3934": {
+   "termination": "tool_budget",
+   "turns": 32,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 7376
+   },
+   "elapsed_seconds": 736.53,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3772": {
+   "termination": "no_tool_call",
+   "turns": 32,
+   "tool_calls_used": 17,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4681
+   },
+   "elapsed_seconds": 547.24,
+   "error_type": null,
+   "fatal": null
+  },
+  "rich_3061": {
+   "termination": "no_tool_call",
+   "turns": 33,
+   "tool_calls_used": 19,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 4509
+   },
+   "elapsed_seconds": 547.1,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14492": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 391,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 262
+   },
+   "elapsed_seconds": 28.22,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14360": {
+   "termination": "tool_budget",
+   "turns": 45,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1580
+   },
+   "elapsed_seconds": 410.33,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14297": {
+   "termination": "submit_patch",
+   "turns": 26,
+   "tool_calls_used": 19,
+   "submit_called": true,
+   "patch_chars": 988,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 7503
+   },
+   "elapsed_seconds": 687.92,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_11355": {
+   "termination": "no_tool_call",
+   "turns": 6,
+   "tool_calls_used": 3,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 3309
+   },
+   "elapsed_seconds": 285.56,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14873": {
+   "termination": "tool_budget",
+   "turns": 45,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1725
+   },
+   "elapsed_seconds": 416.13,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_15280": {
+   "termination": "tool_budget",
+   "turns": 34,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1547
+   },
+   "elapsed_seconds": 315.98,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14448": {
+   "termination": "tool_budget",
+   "turns": 45,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 7024
+   },
+   "elapsed_seconds": 824.01,
+   "error_type": null,
+   "fatal": null
+  },
+  "fastapi_14306": {
+   "termination": "submit_patch",
+   "turns": 18,
+   "tool_calls_used": 12,
+   "submit_called": true,
+   "patch_chars": 1868,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 2438
+   },
+   "elapsed_seconds": 283.25,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_6589": {
+   "termination": "submit_patch",
+   "turns": 3,
+   "tool_calls_used": 2,
+   "submit_called": true,
+   "patch_chars": 470,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 323
+   },
+   "elapsed_seconds": 37.94,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_6644": {
+   "termination": "submit_patch",
+   "turns": 34,
+   "tool_calls_used": 21,
+   "submit_called": true,
+   "patch_chars": 502,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1713
+   },
+   "elapsed_seconds": 311.42,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7502": {
+   "termination": "submit_patch",
+   "turns": 10,
+   "tool_calls_used": 8,
+   "submit_called": true,
+   "patch_chars": 543,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1557
+   },
+   "elapsed_seconds": 166.68,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7427": {
+   "termination": "submit_patch",
+   "turns": 20,
+   "tool_calls_used": 12,
+   "submit_called": true,
+   "patch_chars": 716,
+   "patch_files": 1,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1502
+   },
+   "elapsed_seconds": 232.78,
+   "error_type": null,
+   "fatal": null
+  },
+  "requests_7505": {
+   "termination": "tool_budget",
+   "turns": 35,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1441
+   },
+   "elapsed_seconds": 331.85,
+   "error_type": null,
+   "fatal": null
+  },
+  "httpx_3672": {
+   "termination": "tool_budget",
+   "turns": 43,
+   "tool_calls_used": 24,
+   "submit_called": false,
+   "patch_chars": 0,
+   "patch_files": 0,
+   "totals": {
+    "prompt_tokens": 0,
+    "output_tokens": 1823
+   },
+   "elapsed_seconds": 409.45,
+   "error_type": null,
+   "fatal": null
+  }
+ },
+ "notebook_elapsed_seconds": 10208.485
+}

@@ -355,7 +355,7 @@ def select_tests(changed_files, problem_statement, graph_path):
 
 
 # ------------------------------------------------------------------ pytest
-def run_pytest(c, targets, junit, timeout=PYTEST_TIMEOUT, cont_on_error=False):
+def run_pytest(c, targets, junit, timeout=PYTEST_TIMEOUT, cont_on_error=False, rootdir=None):
     """逐字复刻官方 hermetic pytest（官方命令见 HARNESS_README §8.2 步骤 4）。
 
     `cont_on_error=True` 只用于**全量套件口径**：官方 target 口径绝不加它。
@@ -370,6 +370,8 @@ def run_pytest(c, targets, junit, timeout=PYTEST_TIMEOUT, cont_on_error=False):
         return None, 0.0, "no targets", False
     tgt = " ".join(shlex.quote(t) for t in targets)
     extra = " --continue-on-collection-errors" if cont_on_error else ""
+    if rootdir is not None:
+        extra += ' --rootdir=' + shlex.quote(rootdir)
     # 超时必须由**容器内**的 timeout 保证。
     # 2026-10-16 实测：只靠宿主 subprocess timeout 时，宿主的 docker exec
     # 客户端被掐断，但容器里的 pytest 继续跑（State: R）。宿主随后卡在
