@@ -1,0 +1,112 @@
+{
+  "instance_id": "fastapi_14492",
+  "repo": "fastapi/fastapi",
+  "test_files": [
+    "tests/test_tutorial/test_metadata/test_tutorial001_1.py"
+  ],
+  "required_tests": [
+    "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema"
+  ],
+  "agent_patch_chars": 391,
+  "arms": {
+    "baseline": {
+      "arm": "baseline",
+      "exit_code": 1,
+      "seconds": 1.2,
+      "timed_out": false,
+      "verdict": "fail",
+      "junit": {
+        "tests": 2,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": [
+          "tests.test_tutorial.test_metadata.test_tutorial001_1::test_openapi_schema"
+        ]
+      },
+      "required_node": "failed",
+      "required_statuses": {
+        "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema": "failed"
+      },
+      "cases": {
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_items": "passed",
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_openapi_schema": "failed"
+      },
+      "tail": "y': \"Deadpool's favorite app. Nuff said.\", 'description': '\\nChimichangApp ...** (_not implemented_).\\n* **Read users** (_not implemented_).\\n', 'termsOfService': 'http://example.com/terms/', ...}}\nE         Use -v to get more diff\n\ntests/test_tutorial/test_metadata/test_tutorial001_1.py:17: Asserti"
+    },
+    "agent": {
+      "arm": "agent",
+      "exit_code": 0,
+      "seconds": 0.8,
+      "timed_out": false,
+      "verdict": "pass",
+      "junit": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": []
+      },
+      "required_node": "all_passed",
+      "required_statuses": {
+        "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema": "passed"
+      },
+      "cases": {
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_items": "passed",
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_openapi_schema": "passed"
+      },
+      "tail": "..                                                                       [100%]\n2 passed in 0.28s"
+    },
+    "gold": {
+      "arm": "gold",
+      "exit_code": 0,
+      "seconds": 0.8,
+      "timed_out": false,
+      "verdict": "pass",
+      "junit": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "evidence_complete": true,
+        "bad": []
+      },
+      "required_node": "all_passed",
+      "required_statuses": {
+        "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema": "passed"
+      },
+      "cases": {
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_items": "passed",
+        "tests.test_tutorial.test_metadata.test_tutorial001_1::test_openapi_schema": "passed"
+      },
+      "tail": "..                                                                       [100%]\n2 passed in 0.28s"
+    }
+  },
+  "resolution": {
+    "required_names": [
+      "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema"
+    ],
+    "baseline_required": "failed",
+    "agent_required": "passed",
+    "gold_required": "passed",
+    "baseline_fails": true,
+    "agent_resolves": true,
+    "gold_resolves": true,
+    "fail_to_pass": [
+      "tests/test_tutorial/test_metadata/test_tutorial001_1.py::test_openapi_schema"
+    ],
+    "already_passing": [],
+    "regressions": [],
+    "whole_file_failures": {
+      "baseline": 1,
+      "agent": 0,
+      "gold": 0
+    },
+    "resolved": true,
+    "status": "resolved"
+  },
+  "fingerprint": "8cfcf305567eca0a4923c990123ec44888f9bcc92f6d42bfe8689e5dae22583b",
+  "elapsed_seconds": 29.9
+}

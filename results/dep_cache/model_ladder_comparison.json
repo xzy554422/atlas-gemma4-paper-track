@@ -1,0 +1,229 @@
+{
+  "configuration_note": "E4B: vLLM 0.19.1, max_model_len 8192, util 0.80. 12B: vLLM 0.32.0, max_model_len 6144, util 0.80. A configuration comparison, not a pure model-size effect.",
+  "e4b_nonempty": 10,
+  "b12_nonempty": 8,
+  "e4b_verified_resolved": 2,
+  "b12_patch_verification": "NOT YET VERIFIED (12B patches collected, awaiting three-arm delta check)",
+  "rows": [
+    {
+      "instance_id": "rich_3278",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3105",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 427,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3518",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3067",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 686,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3064",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 572,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "no_tool_call",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3934",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 839,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3772",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 451,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "no_tool_call",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "rich_3061",
+      "repo": "Textualize/rich",
+      "e4b_patch_chars": 908,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "no_tool_call",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14492",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 391,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14360",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14297",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 988,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_11355",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "no_tool_call",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14873",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_15280",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14448",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "fastapi_14306",
+      "repo": "fastapi/fastapi",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 1868,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "requests_6589",
+      "repo": "psf/requests",
+      "e4b_patch_chars": 546,
+      "b12_patch_chars": 470,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": true,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "requests_6644",
+      "repo": "psf/requests",
+      "e4b_patch_chars": 541,
+      "b12_patch_chars": 502,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "requests_7502",
+      "repo": "psf/requests",
+      "e4b_patch_chars": 582,
+      "b12_patch_chars": 543,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": true,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "requests_7427",
+      "repo": "psf/requests",
+      "e4b_patch_chars": 1404,
+      "b12_patch_chars": 716,
+      "e4b_termination": "?",
+      "b12_termination": "submit_patch",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "requests_7505",
+      "repo": "psf/requests",
+      "e4b_patch_chars": 0,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    },
+    {
+      "instance_id": "httpx_3672",
+      "repo": "encode/httpx",
+      "e4b_patch_chars": 1402,
+      "b12_patch_chars": 0,
+      "e4b_termination": "?",
+      "b12_termination": "tool_budget",
+      "e4b_verified_resolved": false,
+      "b12_verified_resolved": null
+    }
+  ]
+}

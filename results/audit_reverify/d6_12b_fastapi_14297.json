@@ -1,0 +1,174 @@
+{
+  "instance_id": "fastapi_14297",
+  "repo": "fastapi/fastapi",
+  "test_files": [
+    "tests/test_compat.py",
+    "tests/test_optional_file_list.py"
+  ],
+  "required_tests": [
+    "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union",
+    "tests/test_compat.py::test_serialize_sequence_value_with_optional_list",
+    "tests/test_optional_file_list.py::test_optional_bytes_list",
+    "tests/test_optional_file_list.py::test_optional_bytes_list_no_files"
+  ],
+  "agent_patch_chars": 988,
+  "arms": {
+    "baseline": {
+      "arm": "baseline",
+      "exit_code": 1,
+      "seconds": 1.5,
+      "timed_out": false,
+      "verdict": "fail",
+      "junit": {
+        "tests": 14,
+        "failures": 3,
+        "errors": 0,
+        "skipped": 3,
+        "evidence_complete": true,
+        "bad": [
+          "tests.test_compat::test_serialize_sequence_value_with_none_first_in_union",
+          "tests.test_compat::test_serialize_sequence_value_with_optional_list",
+          "tests.test_optional_file_list::test_optional_bytes_list"
+        ]
+      },
+      "required_node": "failed",
+      "required_statuses": {
+        "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union": "failed",
+        "tests/test_compat.py::test_serialize_sequence_value_with_optional_list": "failed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list": "failed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list_no_files": "passed"
+      },
+      "cases": {
+        "tests.test_compat::test_model_field_default_required": "passed",
+        "tests.test_compat::test_v1_plain_validator_function": "skipped",
+        "tests.test_compat::test_is_model_field": "passed",
+        "tests.test_compat::test_get_model_config": "passed",
+        "tests.test_compat::test_complex": "passed",
+        "tests.test_compat::test_propagates_pydantic2_model_config": "passed",
+        "tests.test_compat::test_is_bytes_sequence_annotation_union": "passed",
+        "tests.test_compat::test_is_uploadfile_sequence_annotation": "passed",
+        "tests.test_compat::test_serialize_sequence_value_with_optional_list": "failed",
+        "tests.test_compat::test_serialize_sequence_value_with_none_first_in_union": "failed",
+        "tests.test_compat::test_is_pv1_scalar_field": "skipped",
+        "tests.test_compat::test_get_model_fields_cached": "skipped",
+        "tests.test_optional_file_list::test_optional_bytes_list": "failed",
+        "tests.test_optional_file_list::test_optional_bytes_list_no_files": "passed"
+      },
+      "tail": "llections.abc.Sequence'>, subclass = typing.Union\n\n>   ???\nE   TypeError: issubclass() arg 1 must be a class\n\n<frozen abc>:123: TypeError\n=========================== short test summary info ============================\nFAILED tests/test_compat.py::test_serialize_sequence_value_with_optional_list\nFAI"
+    },
+    "agent": {
+      "arm": "agent",
+      "exit_code": 1,
+      "seconds": 1.2,
+      "timed_out": false,
+      "verdict": "fail",
+      "junit": {
+        "tests": 14,
+        "failures": 3,
+        "errors": 0,
+        "skipped": 3,
+        "evidence_complete": true,
+        "bad": [
+          "tests.test_compat::test_serialize_sequence_value_with_none_first_in_union",
+          "tests.test_compat::test_serialize_sequence_value_with_optional_list",
+          "tests.test_optional_file_list::test_optional_bytes_list"
+        ]
+      },
+      "required_node": "failed",
+      "required_statuses": {
+        "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union": "failed",
+        "tests/test_compat.py::test_serialize_sequence_value_with_optional_list": "failed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list": "failed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list_no_files": "passed"
+      },
+      "cases": {
+        "tests.test_compat::test_model_field_default_required": "passed",
+        "tests.test_compat::test_v1_plain_validator_function": "skipped",
+        "tests.test_compat::test_is_model_field": "passed",
+        "tests.test_compat::test_get_model_config": "passed",
+        "tests.test_compat::test_complex": "passed",
+        "tests.test_compat::test_propagates_pydantic2_model_config": "passed",
+        "tests.test_compat::test_is_bytes_sequence_annotation_union": "passed",
+        "tests.test_compat::test_is_uploadfile_sequence_annotation": "passed",
+        "tests.test_compat::test_serialize_sequence_value_with_optional_list": "failed",
+        "tests.test_compat::test_serialize_sequence_value_with_none_first_in_union": "failed",
+        "tests.test_compat::test_is_pv1_scalar_field": "skipped",
+        "tests.test_compat::test_get_model_fields_cached": "skipped",
+        "tests.test_optional_file_list::test_optional_bytes_list": "failed",
+        "tests.test_optional_file_list::test_optional_bytes_list_no_files": "passed"
+      },
+      "tail": "       TypeError: Subscripted generics cannot be used with class and instance checks\n\n/usr/local/lib/python3.13/typing.py:1396: TypeError\n=========================== short test summary info ============================\nFAILED tests/test_compat.py::test_serialize_sequence_value_with_optional_list\nFAI"
+    },
+    "gold": {
+      "arm": "gold",
+      "exit_code": 0,
+      "seconds": 1.1,
+      "timed_out": false,
+      "verdict": "fail",
+      "junit": {
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 3,
+        "evidence_complete": true,
+        "bad": []
+      },
+      "required_node": "all_passed",
+      "required_statuses": {
+        "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union": "passed",
+        "tests/test_compat.py::test_serialize_sequence_value_with_optional_list": "passed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list": "passed",
+        "tests/test_optional_file_list.py::test_optional_bytes_list_no_files": "passed"
+      },
+      "cases": {
+        "tests.test_compat::test_model_field_default_required": "passed",
+        "tests.test_compat::test_v1_plain_validator_function": "skipped",
+        "tests.test_compat::test_is_model_field": "passed",
+        "tests.test_compat::test_get_model_config": "passed",
+        "tests.test_compat::test_complex": "passed",
+        "tests.test_compat::test_propagates_pydantic2_model_config": "passed",
+        "tests.test_compat::test_is_bytes_sequence_annotation_union": "passed",
+        "tests.test_compat::test_is_uploadfile_sequence_annotation": "passed",
+        "tests.test_compat::test_serialize_sequence_value_with_optional_list": "passed",
+        "tests.test_compat::test_serialize_sequence_value_with_none_first_in_union": "passed",
+        "tests.test_compat::test_is_pv1_scalar_field": "skipped",
+        "tests.test_compat::test_get_model_fields_cached": "skipped",
+        "tests.test_optional_file_list::test_optional_bytes_list": "passed",
+        "tests.test_optional_file_list::test_optional_bytes_list_no_files": "passed"
+      },
+      "tail": ".s........ss..                                                           [100%]\n11 passed, 3 skipped in 0.43s"
+    }
+  },
+  "resolution": {
+    "required_names": [
+      "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union",
+      "tests/test_compat.py::test_serialize_sequence_value_with_optional_list",
+      "tests/test_optional_file_list.py::test_optional_bytes_list",
+      "tests/test_optional_file_list.py::test_optional_bytes_list_no_files"
+    ],
+    "baseline_required": "failed",
+    "agent_required": "failed",
+    "gold_required": "passed",
+    "baseline_fails": true,
+    "agent_resolves": false,
+    "gold_resolves": true,
+    "fail_to_pass": [
+      "tests/test_compat.py::test_serialize_sequence_value_with_none_first_in_union",
+      "tests/test_compat.py::test_serialize_sequence_value_with_optional_list",
+      "tests/test_optional_file_list.py::test_optional_bytes_list"
+    ],
+    "already_passing": [
+      "tests/test_optional_file_list.py::test_optional_bytes_list_no_files"
+    ],
+    "regressions": [],
+    "whole_file_failures": {
+      "baseline": 3,
+      "agent": 3,
+      "gold": 0
+    },
+    "resolved": false,
+    "status": "unresolved"
+  },
+  "fingerprint": "4ed2dc9450cf6d7b9f5b257cbfd34c62cad7b546323af2942ff4b78c16f675af",
+  "elapsed_seconds": 29.8
+}

@@ -618,22 +618,36 @@ def run_agent_loop(workspace: Path, task: dict, llm, sampling, budgets: dict,
         return entry
 
     mode = budgets.get('localization_mode', 'index')
+    slim_initial = False
+    def build_initial_messages():
+        return [
+            {'role': 'system', 'content': system_instruction(allow_run_command)},
+            {'role': 'user', 'content': INITIAL_TEMPLATE.format(
+                repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
+                time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
+                symbols=('' if slim_initial else symbol_index(workspace, task.get('problem_statement', ''))),
+                localization_section=('' if slim_initial else build_localization_section(workspace, task, mode)),
+                guidance_section=guidance_section,
+                layout=('' if slim_initial else workspace_layout(workspace)))},
+        ]
     localization_section = build_localization_section(workspace, task, mode)
     guidance_section = verification_guidance_section(
         task, budgets.get('verification_guidance', 'none'))
-    messages = [
-        {'role': 'system', 'content': system_instruction(allow_run_command)},
-        {'role': 'user', 'content': INITIAL_TEMPLATE.format(
-            repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
-            execution_rule=('- run_command is available for targeted offline checks.'
-                            if allow_run_command else
-                            '- No command execution tool is available; reason from file contents.'),
-            time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
-            symbols=symbol_index(workspace, task.get('problem_statement', '')),
-            localization_section=localization_section,
-            guidance_section=guidance_section,
-            layout=workspace_layout(workspace))},
-    ]
+    def build_initial_messages():
+        return [
+            {'role': 'system', 'content': system_instruction(allow_run_command)},
+            {'role': 'user', 'content': INITIAL_TEMPLATE.format(
+                repo=task.get('repo', ''), problem=task.get('problem_statement', ''),
+                execution_rule=('- run_command is available for targeted offline checks.'
+                                if allow_run_command else
+                                '- No command execution tool is available; reason from file contents.'),
+                time_budget=budgets['time_minutes'], tool_budget=budgets['tool_calls'],
+                symbols=('' if slim_initial else symbol_index(workspace, task.get('problem_statement', ''))),
+                localization_section=('' if slim_initial else localization_section),
+                guidance_section=guidance_section,
+                layout=('' if slim_initial else workspace_layout(workspace)))},
+        ]
+    messages = build_initial_messages()
     turn = 0
     consecutive_nudges = 0
     totals = {'prompt_tokens': 0, 'output_tokens': 0}
@@ -773,6 +787,31 @@ def prepare_workspace(snapshot_tgz: Path, workspace: Path) -> dict:
 
 
 
+SMALL_ARTIFACT_NAMES = ('summary.json', 'batch_summary.json')
+SMALL_ARTIFACT_SUFFIXES = ('.diff', '.jsonl')
+
+
+def pack_artifacts(output_dir: Path) -> Path | None:
+    """Zip summaries and diffs at the output root; skip any workspace trees."""
+    import zipfile
+    output_dir = Path(output_dir)
+    target = output_dir / 'artifacts.zip'
+    packed = 0
+    with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(output_dir.rglob('*')):
+            if not path.is_file() or path == target:
+                continue
+            rel = path.relative_to(output_dir)
+            if 'workspace' in rel.parts:
+                continue
+            if path.name in SMALL_ARTIFACT_NAMES or path.suffix in SMALL_ARTIFACT_SUFFIXES:
+                archive.write(path, rel.as_posix())
+                packed += 1
+    print(f'packed {packed} artifacts into {target} '
+          f'({target.stat().st_size if target.exists() else 0} bytes)', flush=True)
+    return target if packed else None
+
+
 def run_batch(args) -> int:
     """Direction 1 driver: run every task in the sample, resumable per task."""
     sample = json.loads(args.batch_file.read_text(encoding='utf-8'))
@@ -820,6 +859,7 @@ def run_batch(args) -> int:
             'termination', 'turns', 'tool_calls_used', 'submit_called', 'patch_chars',
             'patch_files', 'totals', 'elapsed_seconds', 'error_type', 'fatal')}
         batch_summary_path.write_text(json.dumps(batch, ensure_ascii=False, indent=1) + chr(10), encoding='utf-8')
+    pack_artifacts(args.output_dir)
     print(json.dumps(batch, ensure_ascii=False, indent=1))
     return 0
 
@@ -896,7 +936,7 @@ def main(argv=None) -> int:
         config = {'model': str(args.model_path), 'dtype': 'half',
                   'tensor_parallel_size': 1,
                   'max_model_len': args.max_model_len,
-                  'gpu_memory_utilization': 0.80, 'enforce_eager': True,
+                  'gpu_memory_utilization': 0.92, 'enforce_eager': True,
                   'disable_log_stats': True,
                   'limit_mm_per_prompt': {'image': 0, 'video': 0, 'audio': 0}}
         result['runtime_config'] = config

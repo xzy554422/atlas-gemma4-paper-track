@@ -123,3 +123,5 @@
 | 2026-10-26 | 1 修正 | **E4B 正确口径：10 个可验证补丁中 2 个解决（requests_6589、requests_7502）**，8 个确认未解决；此前 3/15 与 0/10 均作废 | `results/dep_cache/e4b_delta_verification.json` | ✅ |
 | 2026-10-26 | 6 | **12B 全量批完成**（22/22，3 小时）：6,144 上下文可运行，但**表现劣于 E4B**——非空补丁 8 vs 16、平均轮数 28.7 vs 17.0、多次 no-tool-call 退出。配置差异（vLLM 0.32/0.19、6144/8192、量化配方）不可归因于纯模型规模 | `results/dep_cache/model_ladder_summary.json` | ✅ |
 | 2026-10-26 | 论文 | 判据修正 + 模型阶梯结论写入 §4；已提交 Writeup 同步（PUBLISHED，2,520 词）。**遗留**：12B 补丁内容因 kernel output 截断未全量下载，仅汇总层面对比；12B token 计数受修正前 runner 影响 | `paper/draft/writeup.md` | ⚠️ 部分 |
+| 2026-10-26 | 6 | 12B 全量批三臂验证完成：**4/7 可验证任务解决**（fastapi_14492、requests_6589、requests_7427、requests_7502），vs E4B 的 2/10。12B 多解决了 fastapi_14492 和 requests_7427 | `results/audit_reverify/d6_12b_verify_*/` | ✅ |
+| 2026-10-26 | 6 | **方向 6 结论改判：12B 在 vLLM 0.32.0 下可行且优于 E4B**（在重叠子集上）——但配置差异（vLLM 版本/上下文/量化配方）不可归因于纯模型规模 | — | ✅ 方向 6 完成 |
