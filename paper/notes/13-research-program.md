@@ -125,3 +125,5 @@
 | 2026-10-26 | 论文 | 判据修正 + 模型阶梯结论写入 §4；已提交 Writeup 同步（PUBLISHED，2,520 词）。**遗留**：12B 补丁内容因 kernel output 截断未全量下载，仅汇总层面对比；12B token 计数受修正前 runner 影响 | `paper/draft/writeup.md` | ⚠️ 部分 |
 | 2026-10-26 | 6 | 12B 全量批三臂验证完成：**4/7 可验证任务解决**（fastapi_14492、requests_6589、requests_7427、requests_7502），vs E4B 的 2/10。12B 多解决了 fastapi_14492 和 requests_7427 | `results/audit_reverify/d6_12b_verify_*/` | ✅ |
 | 2026-10-26 | 6 | **方向 6 结论改判：12B 在 vLLM 0.32.0 下可行且优于 E4B**（在重叠子集上）——但配置差异（vLLM 版本/上下文/量化配方）不可归因于纯模型规模 | — | ✅ 方向 6 完成 |
+| 2026-11-02 | 6 | 12B 全量批（22 任务）在 vLLM 0.32.0 下完成运行，全部产出 summary/trace/patch，但 **12B 补丁文件未通过三臂沙箱验证** — kernel output API 截断导致补丁文件不可达 | `results/dep_cache/model_ladder_final.json` | ⏳ |
+| 2026-11-02 | 6 | **模型阶梯对比状态：12B 补丁已产出但未验证，resolution 未知。需要 collector kernel 或手动下载补丁文件后再验证** | — | ⏳ |

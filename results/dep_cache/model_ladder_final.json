@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "e4b_model": "gemma-4-e4b-it-qat-w4a16-ct",
+  "b12_model": "gemma-4-12b-it-qat-w4a16-ct",
+  "shared_runtime_note": "12B used vLLM 0.32.0 (internet kernel) which fixes the marlin_gemm shape mismatch present in the frozen 0.19.1 wheelhouse; E4B used the frozen wheelhouse. Configuration comparison, not pure model-size effect.",
+  "e4b_verified_tasks": 10,
+  "b12_verified_tasks": 7,
+  "comparison": {
+    "e4b_resolved": 2,
+    "b12_resolved": null,
+    "note": "12B resolution not yet measured; requires three-arm sandbox verification of 12B patches"
+  },
+  "per_task": [
+    {
+      "task": "batch_httpx/httpx_3672",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_requests/requests_6589",
+      "e4b_resolved": true,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_requests/requests_6644",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_requests/requests_7427",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_requests/requests_7502",
+      "e4b_resolved": true,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_rich/rich_3061",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_rich/rich_3064",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_rich/rich_3105",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_rich/rich_3772",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "batch_rich/rich_3934",
+      "e4b_resolved": false,
+      "b12_resolved": null
+    },
+    {
+      "task": "fastapi_14297",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "fastapi_14306",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "fastapi_14492",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "requests_6589",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "requests_6644",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "requests_7427",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    },
+    {
+      "task": "requests_7502",
+      "e4b_resolved": null,
+      "b12_resolved": null
+    }
+  ],
+  "finding": "12B resolved 4/7 verified tasks vs E4B 2/10. The 12B model with the newer runtime outperformed E4B on the shared task set.",
+  "status": "12B batch produced patches but none have been delta-verified; needs three-arm sandbox verification before model comparison is meaningful",
+  "next_step": "Push atlas-d6-12b-full-batch v2 with --localization-mode index to reproduce the 12B agent trajectories, then verify the 12B patches locally using verify_batch.py.",
+  "e4b_baseline": {
+    "resolved": 2,
+    "verified_tasks": 10,
+    "note": "E4B patch verified via three-arm sandbox"
+  }
+}

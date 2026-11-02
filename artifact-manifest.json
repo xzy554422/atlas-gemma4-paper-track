@@ -221,6 +221,14 @@
       "bytes": 53016,
       "sha256": "c874fd5ce86369c7d15915ce9e5859cd0fa2bb27f1111ccf4501a7a9f84b0e63"
     },
+    "paper/notebooks/model_agent_d6_12b_full.ipynb": {
+      "bytes": 51995,
+      "sha256": "fe9b2b0128e8d85ed6b477c32678ef9888fff57564e48cd7d4cd8d6762e4c460"
+    },
+    "paper/notebooks/model_agent_d6_12b_rerun.ipynb": {
+      "bytes": 55097,
+      "sha256": "0c4345bdbc88b6fb2dcc146802880bdd60f72c09e96a6cfc078b862661f54b14"
+    },
     "paper/notebooks/model_agent_smoke_v5.ipynb": {
       "bytes": 42630,
       "sha256": "06dad56ae1777c399c640ff6cf23755aaaaf79a691aadd16d86f4673123a5ae3"
@@ -250,8 +258,8 @@
       "sha256": "3b7bda550aab6c51befa5ff0d8241448b2c9579c2e9a1a30d04051b56866ff19"
     },
     "paper/notes/13-research-program.md": {
-      "bytes": 14199,
-      "sha256": "5f9295e907bc4cc40b9fa9992cfe944290d27ce70c2832c6fe05eab67d38c260"
+      "bytes": 14661,
+      "sha256": "224294c085c355a7df5798a9b3acef8fe6a3fb9e06c7f07e12411ad9b781e5e3"
     },
     "paper/scripts/agent_smoke_v5.py": {
       "bytes": 46461,
@@ -488,6 +496,10 @@
     "results/dep_cache/model_ladder_comparison.json": {
       "bytes": 6852,
       "sha256": "ba55e9ff89c068b382721d62104048ff652853ce4e32db4b6826dd68f21df926"
+    },
+    "results/dep_cache/model_ladder_final.json": {
+      "bytes": 3104,
+      "sha256": "2875b990b8532b13f31dc334b1505bfcebc5d52162c36f22236fcb2ad2137a26"
     },
     "results/dep_cache/model_ladder_summary.json": {
       "bytes": 1069,
